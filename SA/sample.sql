@@ -95,6 +95,4 @@ INSERT INTO Hotel.service_detail (service_detail_id, service_id, item_id, quanti
 (3, 3, 1, 1),
 (4, 2, 1, 1);
 
-select * from hotel.booking
-exec dw.hotel.main_proc_first_load
 

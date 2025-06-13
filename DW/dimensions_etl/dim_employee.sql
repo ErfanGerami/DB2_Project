@@ -3,6 +3,10 @@ AS BEGIN
     INSERT INTO log(procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('Hotel.fill_dim_employee_first_load', GETDATE(), 'start', 'hotel.dim_employee', 0);
 
+    TRUNCATE TABLE hotel.dim_employee;
+    INSERT INTO LOG(procedure_name, time, description, effected_table, number_of_rows)
+    VALUES ('Hotel.fill_dim_employee_first_load', GETDATE(), 'truncate table hotel.dim_employee', 'hotel.dim_employee', @@ROWCOUNT);
+
     insert into hotel.dim_employee (
         employee_id, national_code, birthday, role_id,
         first_name, last_name, phone_number, address,

@@ -14,9 +14,10 @@ BEGIN
     while @current_date < @end_date
     begin
 
-        insert into hotel.fact_daily_hotel (room_id, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
+        insert into hotel.fact_daily_hotel (room_id,room_key, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
         select 
             r.room_id,
+            room_key,
             r.status_id,
             @current_date as date_id,
             count(fs.service_id) as total_service_count,
@@ -25,10 +26,12 @@ BEGIN
             ISNULL(sum(fs.discount_amount), 0) as total_service_discount
         from sa.hotel.room r 
         left join hotel.fact_transactional_service fs on fs.room_id = r.room_id and fs.date_id >= @current_date and fs.date_id < dateadd(day, 1, @current_date)
-        
+        LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
         group by 
             r.room_id,
-            r.status_id;
+            r.status_id,
+            dr.room_key
+            ;
 
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
         values ('fill_fact_daily_hotel_first_load', getdate(), 'inserted data for date: ' + cast(@current_date as varchar(10)), 'fact_daily_hotel', @@ROWCOUNT);
@@ -59,9 +62,10 @@ BEGIN
     while @current_date < @end_date
     begin
 
-        insert into hotel.fact_daily_hotel (room_id, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
+        insert into hotel.fact_daily_hotel (room_id,room_key, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
         select 
             r.room_id,
+            room_key,
             r.status_id,
             @current_date as date_id,
             count(fs.service_id) as total_service_count,
@@ -70,10 +74,14 @@ BEGIN
             ISNULL(sum(fs.discount_amount), 0) as total_service_discount
         from sa.hotel.room r 
         left join hotel.fact_transactional_service fs on fs.room_id = r.room_id and   fs.room_id = r.room_id and fs.date_id >= @current_date and fs.date_id < dateadd(day, 1, @current_date)
-        
+        LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
+
         group by 
             r.room_id,
-            r.status_id;
+            r.status_id,
+            dr.room_key
+
+            ;
 
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
         values ('fill_fact_daily_hotel', getdate(), 'inserted data for date: ' + cast(@current_date as varchar(10)), 'fact_daily_hotel', @@ROWCOUNT);

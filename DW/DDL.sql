@@ -191,9 +191,9 @@ CREATE TABLE dim_tier (
     discount_per_service DECIMAL(5,2),
     discount_per_booking DECIMAL(5,2)
 );
-
 create table  hotel.fact_transactional_service (
-    room_id INT ,
+    room_key INT ,
+    room_id INT,
     guest_id INT,
     employee_id INT,
     date_id DATE,
@@ -207,8 +207,9 @@ create table  hotel.fact_transactional_service (
 );
 
 create table hotel.fact_transactional_booking (
-    guest_id INT,
+    room_key INT,
     room_id INT,
+    guest_id INT,
     tier_id INT,
     checkin_time DATE,
     checkout_time DATE,
@@ -222,7 +223,9 @@ create table hotel.fact_transactional_booking (
     total_room_discount DECIMAL(10,2),
 );
 create table hotel.fact_daily_hotel (
+    room_key INT,
     room_id INT,
+
     room_status_id INT,
     date_id DATE,
     total_service_count INT,
@@ -232,6 +235,7 @@ create table hotel.fact_daily_hotel (
 );
 
 create table hotel.fact_acc_hotel (
+    room_key INT,
     room_id INT,
     room_status_id INT,
     running_service_cost DECIMAL(10,2),
