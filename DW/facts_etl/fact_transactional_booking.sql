@@ -13,10 +13,11 @@ BEGIN
     while @current_date < @end_date
     begin
 
-        insert into hotel.fact_transactional_booking (guest_id, room_id, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)
+        insert into hotel.fact_transactional_booking (guest_id, room_id,room_key, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)
         select 
             b.primary_guest_id as guest_id,
             b.room_id,
+            fs.room_key,
             g.tier_id,
             b.checkin_time,
             b.checkout_time,
@@ -32,6 +33,8 @@ BEGIN
         left join hotel.fact_transactional_service fs on fs.booking_id = b.booking_id 
         left join sa.hotel.room r on r.room_id = b.room_id
         left join sa.hotel.guest g on g.guest_id = b.primary_guest_id
+     ---   LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
+
         where checkout_time >= @current_date and checkout_time < dateadd(day, 1, @current_date)
         group by 
             b.primary_guest_id,
@@ -41,7 +44,9 @@ BEGIN
             b.checkout_time,
             b.booking_id,
             b.total_charge,
-            b.total_discount;
+            b.total_discount,
+            fs.room_key
+            ;
 
 
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
@@ -73,10 +78,11 @@ BEGIN
     while @current_date < @end_date
     begin
 
-        insert into hotel.fact_transactional_booking (guest_id, room_id, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)
+        insert into hotel.fact_transactional_booking (guest_id, room_id,room_key, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)
         select 
             b.primary_guest_id as guest_id,
             b.room_id,
+            fs.room_key,
             g.tier_id,
             b.checkin_time,
             b.checkout_time,
@@ -92,6 +98,8 @@ BEGIN
         left join hotel.fact_transactional_service fs on fs.booking_id = b.booking_id 
         left join sa.hotel.room r on r.room_id = b.room_id
         left join sa.hotel.guest g on g.guest_id = b.primary_guest_id
+      ---  LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
+
         where checkout_time >= @current_date and checkout_time < dateadd(day, 1, @current_date)
         group by 
             b.primary_guest_id,
@@ -101,7 +109,10 @@ BEGIN
             b.checkout_time,
             b.booking_id,
             b.total_charge,
-            b.total_discount;
+            b.total_discount,
+            fs.room_key
+
+            ;
 
 
         insert into log (procedure_name, time, description, effected_table, number_of_rows)

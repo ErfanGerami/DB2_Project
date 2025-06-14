@@ -96,3 +96,7 @@ INSERT INTO Hotel.service_detail (service_detail_id, service_id, item_id, quanti
 (4, 2, 1, 1);
 
 
+
+exec dw.hotel.main_proc_first_load
+
+

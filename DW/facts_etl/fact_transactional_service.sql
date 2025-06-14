@@ -16,26 +16,28 @@ BEGIN
     while @current_date<@end_date
     begin
 
-        insert into hotel.fact_transactional_service (room_id, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
+        insert into hotel.fact_transactional_service (room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
         select 
             s.room_id,
+            dr.room_key,
             b.primary_guest_id as guest_id,
             s.employee_id,
             cast(s.time as date) as date_id,
             g.tier_id,
             s.service_id,
             b.booking_id,
-            sum(i.charge * sd.quantity) as charge,
-            sum(i.cost * sd.quantity) as cost,
-            sum(sd.quantity) as item_count,
-            sum(i.charge * sd.quantity * t.discount_for_service / 100) as discount_amount
+            ISNULL(sum(i.charge * sd.quantity),0) as charge,
+            ISNULL(sum(i.cost * sd.quantity), 0) as cost,
+            ISNULL(sum(sd.quantity), 0) as item_count,
+            ISNULL(sum(i.charge * sd.quantity * t.discount_for_service / 100), 0) as discount_amount
         from sa.hotel.service s
         LEFT JOIN  sa.hotel.service_detail sd on s.service_id = sd.service_id
         LEFT join sa.hotel.item i on sd.item_id = i.item_id
         JOIN sa.hotel.booking b ON s.room_id = b.room_id AND (b.checkout_time >= s.[time] or b.checkout_time is null) and b.checkin_time <= s.time
         JOIN sa.hotel.guest g ON b.primary_guest_id = g.guest_id
         JOIN sa.hotel.tier t ON g.tier_id = t.tier_id
-        ---where s.[time] >= @current_date and s.[time] < dateadd(day, 1, @current_date)
+        LEFT JOIN hotel.dim_room dr ON dr.room_id=s.room_id and current_flag=1
+        where s.[time] >= @current_date and s.[time] < dateadd(day, 1, @current_date)
         group by 
             s.room_id,
             b.primary_guest_id,
@@ -44,7 +46,9 @@ BEGIN
             g.tier_id,
             s.service_id,
             b.booking_id,
-            sd.service_detail_id;
+            sd.service_detail_id,
+            dr.room_key
+            ;
 
 
         
@@ -84,25 +88,28 @@ BEGIN
     while @current_date<@end_date
     begin
 
-        insert into hotel.fact_transactional_service (room_id, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
+        insert into hotel.fact_transactional_service (room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
         select 
             s.room_id,
+            dr.room_key,
             b.primary_guest_id as guest_id,
             s.employee_id,
             cast(s.time as date) as date_id,
             g.tier_id,
             s.service_id,
             b.booking_id,
-            sum(i.charge * sd.quantity) as charge,
-            sum(i.cost * sd.quantity) as cost,
-            sum(sd.quantity) as item_count,
-            sum(i.charge * sd.quantity * t.discount_for_service / 100) as discount_amount
+            ISNULL(sum(i.charge * sd.quantity),0) as charge,
+            ISNULL(sum(i.cost * sd.quantity),0) as cost,
+            ISNULL(sum(sd.quantity),0) as item_count,
+            ISNULL(sum(i.charge * sd.quantity * t.discount_for_service / 100),0) as discount_amount
        from sa.hotel.service s
         LEFT JOIN  sa.hotel.service_detail sd on s.service_id = sd.service_id
         LEFT join sa.hotel.item i on sd.item_id = i.item_id
         JOIN sa.hotel.booking b ON s.room_id = b.room_id AND (b.checkout_time >= s.[time]  or b.checkout_time is null) and b.checkin_time <= s.time
         JOIN sa.hotel.guest g ON b.primary_guest_id = g.guest_id
         JOIN sa.hotel.tier t ON g.tier_id = t.tier_id
+        LEFT JOIN hotel.dim_room dr ON dr.room_id=s.room_id and current_flag=1
+
         where s.[time] >= @current_date and s.[time] < dateadd(day, 1, @current_date)
         group by 
             s.room_id,
@@ -112,7 +119,9 @@ BEGIN
             g.tier_id,
             s.service_id,
             b.booking_id,
-            sd.service_detail_id;
+            sd.service_detail_id,
+            dr.room_key
+            ;
 
 
         

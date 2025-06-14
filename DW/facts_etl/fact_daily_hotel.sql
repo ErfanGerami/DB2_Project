@@ -17,7 +17,7 @@ BEGIN
         insert into hotel.fact_daily_hotel (room_id,room_key, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
         select 
             r.room_id,
-            room_key,
+            fs.room_key,
             r.status_id,
             @current_date as date_id,
             count(fs.service_id) as total_service_count,
@@ -30,8 +30,7 @@ BEGIN
         group by 
             r.room_id,
             r.status_id,
-            dr.room_key
-            ;
+            fs.room_key;
 
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
         values ('fill_fact_daily_hotel_first_load', getdate(), 'inserted data for date: ' + cast(@current_date as varchar(10)), 'fact_daily_hotel', @@ROWCOUNT);
@@ -65,7 +64,7 @@ BEGIN
         insert into hotel.fact_daily_hotel (room_id,room_key, room_status_id, date_id, total_service_count, total_service_cost, total_service_charge, total_service_discount)
         select 
             r.room_id,
-            room_key,
+            fs.room_key,
             r.status_id,
             @current_date as date_id,
             count(fs.service_id) as total_service_count,
@@ -79,10 +78,7 @@ BEGIN
         group by 
             r.room_id,
             r.status_id,
-            dr.room_key
-
-            ;
-
+            fs.room_key;
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
         values ('fill_fact_daily_hotel', getdate(), 'inserted data for date: ' + cast(@current_date as varchar(10)), 'fact_daily_hotel', @@ROWCOUNT);
 

@@ -6,6 +6,8 @@ TRUNCATE TABLE Restaurant.[table];
 TRUNCATE TABLE Restaurant.Employee;
 TRUNCATE TABLE Restaurant.[role];
 TRUNCATE TABLE Restaurant.category;
+DBCC CHECKIDENT ('dw.[restaurant].[dim_food]', RESEED, 0);
+
 
 -- Insert sample categories
 INSERT INTO Restaurant.category (category_id, category_name, description)
@@ -58,5 +60,9 @@ VALUES
 (5, 4, 1, 1),
 (6, 4, 3, 2);
 
-
 select * from dw.Restaurant.fact_transactional_restaurant
+select * from dw.Restaurant.fact_daily_restaurant 
+select * from dw.Restaurant.fact_acc_restaurant
+select * from shared.dates
+select * from dw.restaurant.update_log where table_name='Restaurant.fact_acc_restaurant'
+

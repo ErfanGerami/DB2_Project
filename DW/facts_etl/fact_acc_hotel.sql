@@ -71,7 +71,7 @@ BEGIN
                 temp_acc temp ON r.room_id = temp.room_id
             LEFT JOIN stays s 
                 ON r.room_id = s.room_id
-            LEFT JOIN hotel.dim_room  dr ON r.room_id=dr.room_id and dr.current_flag;
+            LEFT JOIN hotel.dim_room  dr ON r.room_id=dr.room_id and dr.current_flag=1;
 
             insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
             values ('fill_fact_acc_hotel', GETDATE(), 'inserted data for date: ' + CAST(@current_date AS VARCHAR(10)), 'fact_acc_hotel', @@ROWCOUNT);
@@ -130,7 +130,7 @@ BEGIN
                 ON fact.room_id = temp.room_id 
             LEFT JOIN stays s 
                 ON fact.room_id = s.room_id
-            LEFT JOIN hotel.dim_room dr on dr.room_id=fact.room_id and dr.current_flag;
+            LEFT JOIN hotel.dim_room dr on dr.room_id=fact.room_id and dr.current_flag=1;
         
             insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
             values ('fill_fact_acc_hotel', GETDATE(), 'updated data for date: ' + CAST(@current_date AS VARCHAR(10)), 'fact_acc_hotel', @@ROWCOUNT);
@@ -232,7 +232,7 @@ BEGIN
                 temp_acc temp ON r.room_id = temp.room_id
             LEFT JOIN stays s 
                 ON r.room_id = s.room_id
-            LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and dr.current_flag
+            LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and dr.current_flag=1
             ;
             insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
             values ('fill_fact_acc_hotel_first_load', GETDATE(), 'inserted data for date: ' + CAST(@current_date AS VARCHAR(10)), 'fact_acc_hotel', @@ROWCOUNT);
@@ -290,7 +290,7 @@ BEGIN
                 ON fact.room_id = temp.room_id
             LEFT JOIN stays s 
                 ON fact.room_id = s.room_id
-            LEFT JOIN hotel.dim_room dr ON dr.room_id=fact.room_id and current_flag
+            LEFT JOIN hotel.dim_room dr ON dr.room_id=fact.room_id and dr.current_flag=1;
                 ;
         
             insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)

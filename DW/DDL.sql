@@ -22,7 +22,6 @@ CREATE TABLE  shared.dim_date (
 );
 
 
-
 CREATE TABLE  Restaurant.dim_employee (
     employee_id INT ,
     name VARCHAR(50) ,
@@ -36,13 +35,16 @@ CREATE TABLE  Restaurant.dim_employee (
     address TEXT,
     salary DECIMAL(10, 2),
     previous_salary DECIMAL(10,2),
-    salray_changed_date DATE,
+    effective_date DATE,
     hire_date DATE,
 	is_active BIT,
 	gender varchar(6),
    
 );
 
+SELECT food_key, category_id, date_id, time_id AS Expr1, quantity, total_charge, total_ingridient_cost, total_charge_after_tax, total_tax_amount
+FROM     Restaurant.fact_daily_restaurant
+WHERE  (date_id >= CAST(? AS date)) AND (date_id < DATEADD([DAY], 1, CAST(? AS date)))
 
 
 CREATE TABLE  Restaurant.dim_table (
@@ -58,18 +60,19 @@ CREATE TABLE restaurant.dim_food (
     food_name VARCHAR(255),
     category_id INT,
     category_name VARCHAR(255),
-    time_to_prepare INT,
+    time_to_prepare INT,    
     meal VARCHAR(100),
     cooking_method VARCHAR(100),
     cost DECIMAL(10,2),
     ingrediant_cost DECIMAL(10,2),
     start_date DATE,
     end_date DATE,
+    bits char(2),
     current_flag BIT,
 	first_served date
 );
 
-
+select * from Restaurant.dim_food
 
 
 
@@ -258,6 +261,10 @@ CREATE table Log(
     number_of_rows INT
 );
 
-
-
+create table restaurant.update_log(
+    table_name VARCHAR(100),
+    time datetime,
+    date date,
+    DESCRIPTION text
+)
 
