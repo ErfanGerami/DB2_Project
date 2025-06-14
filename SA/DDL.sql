@@ -79,6 +79,7 @@ CREATE TABLE  shared.dates (
 
 
 
+
 create SCHEMA Hotel;
 
 create table Hotel.Country(
