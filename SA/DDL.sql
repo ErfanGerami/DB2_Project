@@ -78,6 +78,12 @@ CREATE TABLE  shared.dates (
 );
 
 
+CREATE LOGIN erfang1 WITH PASSWORD = '  ';
+USE DW;
+CREATE USER erfang1 FOR LOGIN erfang1;
+USE DW;
+EXEC sp_addrolemember 'db_owner', 'erfang1';
+
 
 
 create SCHEMA Hotel;
@@ -87,13 +93,12 @@ create table Hotel.Country(
     country_name VARCHAR(100),
     country_code VARCHAR(10)
 );  
-
 create table Hotel.tier (
     tier_id INT,
     type VARCHAR(50),
     points_to_reach INT,
-    discount_for_service DECIMAL(5,2),
-    discount_for_stay DECIMAL(5,2)
+    discount_per_service DECIMAL(5,2),
+    discount_per_booking DECIMAL(5,2)
 );
 
 create table Hotel.Guest(
@@ -146,12 +151,10 @@ create table Hotel.category(
     category_name VARCHAR(100),
     description TEXT
 );
-
 create table Hotel.Employee(
     employee_id INT,
     national_code VARCHAR(20),
     birthday DATE,
-    role_id INT,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     phone_number VARCHAR(20),

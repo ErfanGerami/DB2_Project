@@ -4,6 +4,8 @@ BEGIN
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
     values ('main_proc_first_load', getdate(), 'start', 'main_proc_first_load', 0);
+    exec Hotel.fill_dim_tier_first_load;
+
     exec Hotel.fill_dim_room_first_load;
     exec hotel.fill_dim_item_first_load;
     exec hotel.fill_dim_employee_first_load;
@@ -24,7 +26,8 @@ BEGIN
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
     values ('main_proc', getdate(), 'start', 'main_proc', 0);
-     exec Hotel.fill_dim_room;
+    exec Hotel.fill_dim_tier;
+    exec Hotel.fill_dim_room;
     exec hotel.fill_dim_item;
     exec hotel.fill_dim_employee;
     exec hotel.fill_dim_room_status;
@@ -39,5 +42,5 @@ BEGIN
 
 END;
 
-exec hotel.main_proc_first_load
+
 

@@ -18,13 +18,13 @@ AS BEGIN
         country_id, country_name, country_code,
         email, points,
         tier_id, tier_type, tier_points_to_reach,
-        discount_for_service, discount_for_stay
+        discount_per_service, discount_per_booking
     )
     SELECT guest_id, first_name, last_name, national_code, phone_number,
            g.country_id, c.country_name, c.country_code,
            email, points,
            g.tier_id, type, points_to_reach,
-           discount_for_service, discount_for_stay
+           discount_per_service, discount_per_booking
     FROM SA.hotel.guest g
     JOIN SA.hotel.country c ON g.country_id = c.country_id
     JOIN SA.hotel.tier t ON g.tier_id = t.tier_id;
@@ -54,14 +54,14 @@ as BEGIN
             country_id, country_name, country_code,
             email, points,
             tier_id, tier_type, tier_points_to_reach,
-            discount_for_service, discount_for_stay
+            discount_per_service, discount_per_booking
         )
         select
             guest_id, first_name, last_name, national_code, phone_number,
             g.country_id, c.country_name, c.country_code,
             email, points,
             g.tier_id, type, points_to_reach,
-            discount_for_service, discount_for_stay
+            discount_per_service, discount_per_booking
         from SA.hotel.guest g JOIN SA.hotel.country c ON g.country_id = c.country_id
         JOIN SA.hotel.tier t ON g.tier_id = t.tier_id;
 

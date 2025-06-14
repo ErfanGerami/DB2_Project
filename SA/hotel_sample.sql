@@ -21,7 +21,7 @@ INSERT INTO Hotel.Country (country_id, country_name, country_code) VALUES
 (5, 'Germany', 'DE');
 
 -- Populate Hotel.tier
-INSERT INTO Hotel.tier (tier_id, type, points_to_reach, discount_for_service, discount_for_stay) VALUES
+INSERT INTO Hotel.tier (tier_id, type, points_to_reach, discount_per_service, discount_per_booking) VALUES
 (1, 'Bronze', 0, 0.00, 0.00),
 (2, 'Silver', 1000, 5.00, 5.00),
 (3, 'Gold', 5000, 10.00, 10.00),
@@ -70,10 +70,10 @@ INSERT INTO Hotel.category (category_id, category_name, description) VALUES
 (4, 'Spa', 'Spa and wellness services.');
 
 -- Populate Hotel.Employee
-INSERT INTO Hotel.Employee (employee_id, national_code, birthday, role_id, first_name, last_name, phone_number, address, salary, hire_date, is_active, gender) VALUES
-(1, 'E123', '1990-05-15', 1, 'Mike', 'Johnson', '555-1111', '111 Hotel St', 3000.00, '2022-01-10', 1, 'Male'),
-(2, 'E456', '1985-08-20', 2, 'Susan', 'Lee', '555-2222', '222 Hotel St', 2500.00, '2021-03-15', 1, 'Female'),
-(3, 'E789', '1995-02-28', 3, 'David', 'Chen', '555-3333', '333 Hotel St', 2000.00, '2023-07-01', 1, 'Male');
+INSERT INTO Hotel.Employee (employee_id, national_code, birthday, first_name, last_name, phone_number, address, salary, hire_date, is_active, gender) VALUES
+(1, 'E123', '1990-05-15', 'Mike', 'Johnson', '555-1111', '111 Hotel St', 3000.00, '2022-01-10', 1, 'Male'),
+(2, 'E456', '1985-08-20', 'Susan', 'Lee', '555-2222', '222 Hotel St', 2500.00, '2021-03-15', 1, 'Female'),
+(3, 'E789', '1995-02-28', 'David', 'Chen', '555-3333', '333 Hotel St', 2000.00, '2023-07-01', 1, 'Male');
 
 -- Populate Hotel.service
 INSERT INTO Hotel.service (service_id, employee_id, room_id, time, duration_to_complete, type, description) VALUES

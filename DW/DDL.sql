@@ -21,7 +21,7 @@ CREATE TABLE  shared.dim_date (
     day_weak_shamsi VARCHAR(100)
 );
 
-
+select * from restaurant.dim_employee
 CREATE TABLE  Restaurant.dim_employee (
     employee_id INT ,
     name VARCHAR(50) ,
@@ -151,7 +151,6 @@ create table Hotel.dim_employee(
     employee_id INT,
     national_code VARCHAR(20),
     birthday DATE,
-    role_id INT,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     phone_number VARCHAR(20),
@@ -185,10 +184,10 @@ CREATE TABLE hotel.dim_guest (
     tier_id INT,
     tier_type VARCHAR(100),
     tier_points_to_reach INT,
-    discount_for_service DECIMAL(5,2),
-    discount_for_stay DECIMAL(5,2)
+    discount_per_service DECIMAL(5,2),
+    discount_per_booking DECIMAL(5,2)
 );
-CREATE TABLE dim_tier (
+CREATE TABLE hotel.dim_tier (
     tier_id INT,
     type VARCHAR(100),
     points_to_reach INT,
@@ -204,6 +203,7 @@ create table  hotel.fact_transactional_service (
     tier_id INT,
     service_id INT,
     booking_id INT,
+    item_id INT,
     charge DECIMAL(10,2),
     cost DECIMAL(10,2),
     item_count INT,

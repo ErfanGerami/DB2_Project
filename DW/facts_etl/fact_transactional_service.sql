@@ -16,8 +16,9 @@ BEGIN
     while @current_date<@end_date
     begin
 
-        insert into hotel.fact_transactional_service (room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
+        insert into hotel.fact_transactional_service (item_id,room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
         select 
+            sd.item_id,
             s.room_id,
             dr.room_key,
             b.primary_guest_id as guest_id,
@@ -29,7 +30,7 @@ BEGIN
             ISNULL(sum(i.charge * sd.quantity),0) as charge,
             ISNULL(sum(i.cost * sd.quantity), 0) as cost,
             ISNULL(sum(sd.quantity), 0) as item_count,
-            ISNULL(sum(i.charge * sd.quantity * t.discount_for_service / 100), 0) as discount_amount
+            ISNULL(sum(i.charge * sd.quantity * t.discount_per_service / 100), 0) as discount_amount
         from sa.hotel.service s
         LEFT JOIN  sa.hotel.service_detail sd on s.service_id = sd.service_id
         LEFT join sa.hotel.item i on sd.item_id = i.item_id
@@ -47,7 +48,8 @@ BEGIN
             s.service_id,
             b.booking_id,
             sd.service_detail_id,
-            dr.room_key
+            dr.room_key,
+            sd.item_id
             ;
 
 
@@ -88,8 +90,9 @@ BEGIN
     while @current_date<@end_date
     begin
 
-        insert into hotel.fact_transactional_service (room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
+        insert into hotel.fact_transactional_service (item_id,room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
         select 
+            sd.item_id,
             s.room_id,
             dr.room_key,
             b.primary_guest_id as guest_id,
@@ -101,7 +104,7 @@ BEGIN
             ISNULL(sum(i.charge * sd.quantity),0) as charge,
             ISNULL(sum(i.cost * sd.quantity),0) as cost,
             ISNULL(sum(sd.quantity),0) as item_count,
-            ISNULL(sum(i.charge * sd.quantity * t.discount_for_service / 100),0) as discount_amount
+            ISNULL(sum(i.charge * sd.quantity * t.discount_per_service / 100),0) as discount_amount
        from sa.hotel.service s
         LEFT JOIN  sa.hotel.service_detail sd on s.service_id = sd.service_id
         LEFT join sa.hotel.item i on sd.item_id = i.item_id
@@ -120,7 +123,8 @@ BEGIN
             s.service_id,
             b.booking_id,
             sd.service_detail_id,
-            dr.room_key
+            dr.room_key,
+            sd.item_id
             ;
 
 

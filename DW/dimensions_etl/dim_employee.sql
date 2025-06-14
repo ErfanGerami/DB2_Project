@@ -8,11 +8,11 @@ AS BEGIN
     VALUES ('Hotel.fill_dim_employee_first_load', GETDATE(), 'truncate table hotel.dim_employee', 'hotel.dim_employee', @@ROWCOUNT);
 
     insert into hotel.dim_employee (
-        employee_id, national_code, birthday, role_id,
+        employee_id, national_code, birthday,
         first_name, last_name, phone_number, address,
         salary, hire_date, is_active
     )
-    SELECT employee_id, national_code, birthday, role_id,
+    SELECT employee_id, national_code, birthday,
            first_name, last_name, phone_number, address,
            salary, hire_date, is_active
     FROM SA.hotel.employee;
@@ -49,12 +49,12 @@ BEGIN
 
     WHEN NOT MATCHED BY TARGET THEN
         INSERT (
-            employee_id, national_code, birthday, role_id,
+            employee_id, national_code, birthday,
             first_name, last_name, phone_number, address,
             salary, hire_date, is_active, gender
         )
         VALUES (
-            source.employee_id, source.national_code, source.birthday, source.role_id,
+            source.employee_id, source.national_code, source.birthday,
             source.first_name, source.last_name, source.phone_number, source.address,
             source.salary, source.hire_date, source.is_active, source.gender
         )
