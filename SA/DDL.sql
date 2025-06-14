@@ -64,9 +64,20 @@ CREATE TABLE Restaurant.order_details (
 
 
 
+create SCHEMA shared;
 
-
-
+CREATE TABLE  shared.dates (
+    key_date DATE,
+    key_date_shamsi VARCHAR(100),
+    year INT,
+    year_shamsi VARCHAR(100),
+    quarter INT,
+    quarter_shamsi VARCHAR(100),
+    month INT,
+    month_shamsi VARCHAR(100),
+    day_weak INT,
+    day_weak_shamsi VARCHAR(100)
+);
 
 
 

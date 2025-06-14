@@ -1,5 +1,6 @@
 create schema Restaurant;
 create schema shared;
+
 CREATE TABLE  Restaurant.dim_category (
     category_id INT,
     category_name VARCHAR(255),
@@ -50,7 +51,6 @@ CREATE TABLE  Restaurant.dim_table (
     location VARCHAR(255),
     number INT
 );
-
 CREATE TABLE restaurant.dim_food (
 	tax decimal(10,2),
     food_id INT,
@@ -62,14 +62,17 @@ CREATE TABLE restaurant.dim_food (
     meal VARCHAR(100),
     cooking_method VARCHAR(100),
     cost DECIMAL(10,2),
-    cost_changed BIT,
+    ingrediant_cost DECIMAL(10,2),
     start_date DATE,
     end_date DATE,
     current_flag BIT,
-    ingrediant_cost DECIMAL(10,2),
-	ingrediant_cost_changed BIT,
 	first_served date
 );
+
+
+
+
+
 
 CREATE TABLE Restaurant.fact_transactional_restaurant (
     food_key INT,
@@ -85,11 +88,10 @@ CREATE TABLE Restaurant.fact_transactional_restaurant (
     after_tax_charge DECIMAL(10,2)
 );
 
-
 CREATE TABLE Restaurant.fact_daily_restaurant (
     food_key INT,
     category_id INT,
-    time_id DATE,
+    date_id DATE,
     quantity INT,
     total_charge DECIMAL(10,2),
     total_ingridient_cost DECIMAL(10,2),
@@ -115,9 +117,8 @@ CREATE TABLE Restaurant.fact_acc_restaurant (
 
 create schema hotel;
 
-
 CREATE TABLE hotel.dim_room (
-    sur_key INT IDENTITY(1,1),
+    room_key INT IDENTITY(1,1),
     room_id INT,
     capacity INT,
     floor INT,
