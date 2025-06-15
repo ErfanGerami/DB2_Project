@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataWarehouseFirstLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{9A0141FC-4111-4E3D-A927-4BD390A66B0D}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{1F336FD7-C637-4F56-B05B-93C61D7C9EB1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -36,7 +36,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -80,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5234,7 +5234,7 @@ where [refTable].[food_key] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5249,50 +5249,16 @@ where [refTable].[food_key] = ?</property>
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\filling fact_acc_restaurant\truncate fact_acc_restaurant"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6ec222d2-e69e-41a2-b78e-15e38746566c}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="truncate fact_acc_restaurant"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-              SQLTask:SqlStatementSource="truncate table restaurant.temp_acc" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\filling fact_acc_restaurant\truncate temp_acc"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F5D19351-EE67-436C-8F40-CFD9C723E062}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="truncate temp_acc"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-              SQLTask:SqlStatementSource="truncate table restaurant.temp_acc" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\filling fact_acc_restaurant.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{5425E5B5-FD77-4F3F-BDCB-0DF629C1AC11}"
-          DTS:From="Package\filling fact_acc_restaurant\truncate temp_acc"
+          DTS:DTSID="{74B3165D-2DF3-4974-9B93-0EFA512B0FFB}"
+          DTS:From="Package\filling fact_acc_restaurant\filling temp_acc"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\filling fact_acc_restaurant\filling temp_acc" />
+          DTS:To="Package\filling fact_acc_restaurant\log" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -7367,7 +7333,7 @@ FROM    restaurant.fact_transactional_restaurant where
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8502,7 +8468,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8555,7 +8521,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_employee"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8606,7 +8572,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate factdailyrestaurant"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8640,7 +8606,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate fact_transactional_restaurant"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8796,13 +8762,13 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Id="Package\calculate first date3"
           TopLeft="809.391490168333,1051.48333155998" />
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\fill dim_category"
-          TopLeft="534.652748565639,140.640739762743" />
-        <NodeLayout
           Size="138.4,41.6"
           Id="Package\fill diim_table"
           TopLeft="743.217551984975,144.372221218276" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\fill dim_category"
+          TopLeft="534.652748565639,140.640739762743" />
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\fill dim_employee"
@@ -8819,40 +8785,32 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Size="92,41.6"
           Id="Package\filling fact_acc_restaurant\log"
           TopLeft="40.8583231457003,312.449995547781" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\filling fact_acc_restaurant\truncate fact_acc_restaurant"
-          TopLeft="73.6749482650332,187.483330523388" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\filling fact_acc_restaurant\truncate temp_acc"
-          TopLeft="85.133280972311,26.0666649791929" />
         <EdgeLayout
           Id="Package\filling fact_acc_restaurant.PrecedenceConstraints[Constraint]"
-          TopLeft="167.133280972311,67.6666649791929">
+          TopLeft="180.374948948003,144.999999095996">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.241667975692,35.7333341168031"
+              EndConnector="-93.5166258023027,167.449996451785"
               Start="0,0"
-              End="13.241667975692,28.2333341168031">
+              End="-93.5166258023027,159.949996451785">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.8666670584016" />
+                    End="0,79.7249982258925" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.8666670584016"
-                    Point2="0,17.8666670584016"
-                    Point3="4,17.8666670584016" />
+                    Point1="0,79.7249982258925"
+                    Point2="0,83.7249982258925"
+                    Point3="-4,83.7249982258925" />
                   <mssgle:LineSegment
-                    End="9.241667975692,17.8666670584016" />
+                    End="-89.5166258023027,83.7249982258925" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.241667975692,17.8666670584016"
-                    Point2="13.241667975692,17.8666670584016"
-                    Point3="13.241667975692,21.8666670584016" />
+                    Point1="-89.5166258023027,83.7249982258925"
+                    Point2="-93.5166258023027,83.7249982258925"
+                    Point3="-93.5166258023027,87.7249982258925" />
                   <mssgle:LineSegment
-                    End="13.241667975692,28.2333341168031" />
+                    End="-93.5166258023027,159.949996451785" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9112,26 +9070,26 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="189.933484800822,55.4666642559902"
+              EndConnector="189.93348480082,55.466664255994"
               Start="0,0"
-              End="189.933484800822,47.9666642559902">
+              End="189.93348480082,47.966664255994">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7333321279951" />
+                    End="0,23.733332127997" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.7333321279951"
-                    Point2="0,27.7333321279951"
-                    Point3="4,27.7333321279951" />
+                    Point1="0,23.733332127997"
+                    Point2="0,27.733332127997"
+                    Point3="4,27.733332127997" />
                   <mssgle:LineSegment
-                    End="185.933484800822,27.7333321279951" />
+                    End="185.93348480082,27.733332127997" />
                   <mssgle:CubicBezierSegment
-                    Point1="185.933484800822,27.7333321279951"
-                    Point2="189.933484800822,27.7333321279951"
-                    Point3="189.933484800822,31.7333321279951" />
+                    Point1="185.93348480082,27.733332127997"
+                    Point2="189.93348480082,27.733332127997"
+                    Point3="189.93348480082,31.733332127997" />
                   <mssgle:LineSegment
-                    End="189.933484800822,47.9666642559902" />
+                    End="189.93348480082,47.966664255994" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9146,9 +9104,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="205.966804429227,224.399998529488"
+              EndConnector="205.966804429227,224.39999852949"
               Start="0,0"
-              End="198.466804429227,224.399998529488">
+              End="198.466804429227,224.39999852949">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -9159,13 +9117,13 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
                     Point2="102.983402214613,0"
                     Point3="102.983402214613,4" />
                   <mssgle:LineSegment
-                    End="102.983402214613,220.399998529488" />
+                    End="102.983402214613,220.39999852949" />
                   <mssgle:CubicBezierSegment
-                    Point1="102.983402214613,220.399998529488"
-                    Point2="102.983402214613,224.399998529488"
-                    Point3="106.983402214613,224.399998529488" />
+                    Point1="102.983402214613,220.39999852949"
+                    Point2="102.983402214613,224.39999852949"
+                    Point3="106.983402214613,224.39999852949" />
                   <mssgle:LineSegment
-                    End="198.466804429227,224.399998529488" />
+                    End="198.466804429227,224.39999852949" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9466,82 +9424,6 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\fill dim_category">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\fill dim_category\OLE DB Destination"
-          TopLeft="278.333318125871,245.266664961113" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\fill dim_category\OLE DB Source"
-          TopLeft="107.499994126459,18.1999998734395" />
-        <EdgeLayout
-          Id="Package\fill dim_category.Paths[OLE DB Source Output]"
-          TopLeft="183.499994126459,59.7999998734395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="180.433323999412,185.466665087674"
-              Start="0,0"
-              End="180.433323999412,177.966665087674">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,88.7333325438368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,88.7333325438368"
-                    Point2="0,92.7333325438368"
-                    Point3="4,92.7333325438368" />
-                  <mssgle:LineSegment
-                    End="176.433323999412,92.7333325438368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="176.433323999412,92.7333325438368"
-                    Point2="180.433323999412,92.7333325438368"
-                    Point3="180.433323999412,96.7333325438368" />
-                  <mssgle:LineSegment
-                    End="180.433323999412,177.966665087674" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\fill dim_category\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\fill dim_category\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\fill diim_table">
     <LayoutInfo>
       <GraphLayout
@@ -9606,6 +9488,82 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\fill diim_table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\fill dim_category">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\fill dim_category\OLE DB Destination"
+          TopLeft="278.333318125871,245.266664961113" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\fill dim_category\OLE DB Source"
+          TopLeft="107.499994126459,18.1999998734395" />
+        <EdgeLayout
+          Id="Package\fill dim_category.Paths[OLE DB Source Output]"
+          TopLeft="183.499994126459,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.433323999412,185.466665087674"
+              Start="0,0"
+              End="180.433323999412,177.966665087674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.7333325438368"
+                    Point2="0,92.7333325438368"
+                    Point3="4,92.7333325438368" />
+                  <mssgle:LineSegment
+                    End="176.433323999412,92.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.433323999412,92.7333325438368"
+                    Point2="180.433323999412,92.7333325438368"
+                    Point3="180.433323999412,96.7333325438368" />
+                  <mssgle:LineSegment
+                    End="180.433323999412,177.966665087674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill dim_category\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill dim_category\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
