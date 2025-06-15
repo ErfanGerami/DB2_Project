@@ -58,7 +58,7 @@ BEGIN
 
     DECLARE @row_count INT;
     
-    INSERT INTO Hotel.tier(tier_id,type, points_to_reach, discount_for_service, discount_for_stay)
+    INSERT INTO Hotel.tier(tier_id,type, points_to_reach, discount_per_service, discount_per_booking)
     SELECT tier_id,type, points_to_reach, discount_for_service, discount_for_stay FROM Source.Hotel.tier;
     
     SET @row_count = @@ROWCOUNT;
@@ -190,8 +190,8 @@ BEGIN
 
     DECLARE @row_count INT;
     
-    INSERT INTO Hotel.Employee( employee_id,national_code, birthday, role_id, first_name, last_name, phone_number, address, salary, hire_date, is_active, gender)
-    SELECT employee_id,national_code, birthday, role_id, first_name, last_name, phone_number, address, salary, hire_date, is_active, CASE when is_male = 1 then  'male' else 'female' end
+    INSERT INTO Hotel.Employee( employee_id,national_code, birthday, first_name, last_name, phone_number, address, salary, hire_date, is_active, gender)
+    SELECT employee_id,national_code, birthday, first_name, last_name, phone_number, address, salary, hire_date, is_active, CASE when is_male = 1 then  'male' else 'female' end
     FROM Source.Hotel.Employee;
     
     SET @row_count = @@ROWCOUNT;

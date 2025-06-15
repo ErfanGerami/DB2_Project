@@ -1,0 +1,180 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MultidimensionalProject1</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>71QhuJtvKo1/q2AKLvi0JrC1a6k=6/14/2025 12:42:39 PM6/14/2025 11:57:46 AM</TimeStamp>
+        <ID>
+          <String>DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>sITTW6zjk+fU6zzwvaARLtSJHHA=6/15/2025 12:11:56 PM6/14/2025 4:04:21 PM</TimeStamp>
+        <ID>
+          <String>DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rLYWoZPbtRfVJAW/snk0wn3cL8Q=6/14/2025 4:22:37 PM6/14/2025 4:22:37 PM</TimeStamp>
+        <ID>
+          <String>Dim Item</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xJt/ojC6HolS4Uuk6svxu8znXHw=6/14/2025 4:23:44 PM6/14/2025 4:23:44 PM</TimeStamp>
+        <ID>
+          <String>Dim Room</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dz1wsiLXdnMctgRGvvw++UTk07g=6/14/2025 4:24:06 PM6/14/2025 4:24:05 PM</TimeStamp>
+        <ID>
+          <String>Dim Room Status</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>d6tsitnlObj0McmK0qzjppE9rJ4=6/14/2025 4:25:03 PM6/14/2025 4:25:03 PM</TimeStamp>
+        <ID>
+          <String>Dim Employee</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2m/+oucKMIR/aGZjpI3/RzjnOvM=6/14/2025 4:27:27 PM6/14/2025 4:27:27 PM</TimeStamp>
+        <ID>
+          <String>Fact Transactional Service</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5g1YQLjI6l0t8FtaPTmW/6mmqSo=6/14/2025 4:44:32 PM6/14/2025 4:44:32 PM</TimeStamp>
+        <ID>
+          <String>Dim Tier</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xhxyaRnynJyrtM55fWuzKGl0qx4=6/14/2025 4:57:18 PM6/14/2025 4:57:18 PM</TimeStamp>
+        <ID>
+          <String>Fact Transactional Service 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>JfWqziCR5RPlpflED1OcQd1vuCA=6/14/2025 5:09:48 PM6/14/2025 5:09:48 PM</TimeStamp>
+        <ID>
+          <String>Dim Guest</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/VFzJWS5IFkIpy0x0TNkhoo7WYc=6/15/2025 2:43:56 PM6/15/2025 12:31:21 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ct6o2ZBSvYpOjzZA7SwLNQmxHyk=6/15/2025 2:45:56 PM6/15/2025 2:45:56 PM</TimeStamp>
+        <ID>
+          <String>Fact Transactional Booking</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>FlTN79sEYsuxxAhEicpzdG+kRks=6/15/2025 2:50:02 PM6/15/2025 2:50:02 PM</TimeStamp>
+        <ID>
+          <String>Fact Daily Hotel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bxXGhQBfHPg4MknfYTQ+K+DKggs=6/15/2025 2:51:32 PM6/15/2025 2:51:32 PM</TimeStamp>
+        <ID>
+          <String>Fact Acc Hotel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>m5jZPNQ+dOv8dAf+DXRxJlIP4vA=6/15/2025 2:48:36 PM6/15/2025 2:45:56 PMLETuKhM23YOsNNil3gzor3yqyZ0=6/15/2025 2:45:56 PM6/15/2025 2:45:56 PM</TimeStamp>
+        <ID>
+          <String>DW 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>EdC9TvGZ22yVySvJf8+2V1mZ1J4=6/15/2025 2:46:25 PM6/14/2025 4:54:13 PMjdUfZio3U6mtbiuBFHNzuuBa6lY=6/14/2025 4:57:18 PM6/14/2025 4:54:13 PM</TimeStamp>
+        <ID>
+          <String>DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>HDn8DIZEvCoO7vRQsWpL6P/uQkM=6/15/2025 2:50:52 PM6/15/2025 2:50:01 PMYlemRmQcxUBoy2otbRZd0czFDqI=6/15/2025 2:50:02 PM6/15/2025 2:50:01 PM</TimeStamp>
+        <ID>
+          <String>fact_daily_hotel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>a0TMMoV74y7P2UiJuFuSkVdCFHI=6/15/2025 3:02:15 PM6/15/2025 2:51:32 PM50Xh99vUbFxd3DVQtaDk7kbsIZc=6/15/2025 2:51:32 PM6/15/2025 2:51:32 PM</TimeStamp>
+        <ID>
+          <String>fact_acc_hotel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>+XZHziTF37ApMA/g46Prq8K39YI=6/14/2025 12:33:01 PM6/14/2025 12:17:34 PM</TimeStamp>
+        <ID>
+          <String>Role</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>3RMwI9uxAU7i2EgCQVFavWhYmdQ=6/14/2025 12:25:36 PM6/14/2025 12:22:11 PM</TimeStamp>
+        <ID>
+          <String>Role 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>/W5T/gL4CI0k2J3JnI00nq7O/QM=6/14/2025 12:25:34 PM6/14/2025 12:24:30 PM</TimeStamp>
+        <ID>
+          <String>Role 2</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>5s0hPXk/eue6Bp5lz21gHVKceQk=6/14/2025 12:25:34 PM6/14/2025 11:36:45 AM</TimeStamp>
+      <ID>
+        <String>MultidimensionalProject1</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-06-15T11:32:17.703333Z</LastDeployed>
+</DeploymentSnapshot>

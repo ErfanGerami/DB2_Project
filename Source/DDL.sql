@@ -77,6 +77,7 @@ CREATE TABLE Restaurant.order_details (
 
 
 create SCHEMA Hotel;
+
 create table Hotel.Country(
     country_id INT PRIMARY KEY IDENTITY(1,1),
     country_name VARCHAR(100) NOT NULL,
@@ -138,13 +139,13 @@ create table Hotel.booking(
     FOREIGN KEY (room_id) REFERENCES Hotel.room(room_id) ON DELETE SET NULL
 );
 
-create table Hotel.Booking_Guest(
-    booking_id INT  ,
-    guest_id INT ,
-    PRIMARY KEY (booking_id, guest_id),
-    FOREIGN KEY (booking_id) REFERENCES Hotel.booking(booking_id) ON DELETE NO ACTION,
-    FOREIGN KEY (guest_id) REFERENCES Hotel.Guest(guest_id) ON DELETE NO ACTION
-);
+-- create table Hotel.Booking_Guest(
+--     booking_id INT  ,
+--     guest_id INT ,
+--     PRIMARY KEY (booking_id, guest_id),
+--     FOREIGN KEY (booking_id) REFERENCES Hotel.booking(booking_id) ON DELETE NO ACTION,
+--     FOREIGN KEY (guest_id) REFERENCES Hotel.Guest(guest_id) ON DELETE NO ACTION
+-- );
 
 create table Hotel.category(
     category_id INT PRIMARY KEY IDENTITY(1,1),
@@ -157,7 +158,6 @@ create table Hotel.Employee(
     employee_id INT PRIMARY KEY IDENTITY(1,1),
     national_code VARCHAR(20) NOT NULL,
     birthday DATE NOT NULL,
-    role_id INT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     phone_number VARCHAR(20),

@@ -141,10 +141,10 @@ create table Hotel.booking(
     total_discount DECIMAL(10, 2),
 );
 
-create table Hotel.Booking_Guest(
-    booking_id INT,
-    guest_id INT
-);
+-- create table Hotel.Booking_Guest(
+--     booking_id INT,
+--     guest_id INT
+-- );
 
 create table Hotel.category(
     category_id INT,
