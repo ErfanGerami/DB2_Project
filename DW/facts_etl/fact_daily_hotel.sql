@@ -31,7 +31,6 @@ BEGIN
             r.room_id,
             r.status_id,
             fs.room_key;
-
         insert into log (procedure_name, time, description, effected_table, number_of_rows)
         values ('fill_fact_daily_hotel_first_load', getdate(), 'inserted data for date: ' + cast(@current_date as varchar(10)), 'fact_daily_hotel', @@ROWCOUNT);
 

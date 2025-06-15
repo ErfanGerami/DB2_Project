@@ -16,6 +16,8 @@ VALUES
 (2, 'Main Course', 'Main dishes'),
 (3, 'Desserts', 'Sweet dishes');
 
+
+
 -- Insert roles
 INSERT INTO Restaurant.[role] (role_id, role_name, description)
 VALUES 
@@ -59,3 +61,7 @@ VALUES
 (4, 3, 3, 1),
 (5, 4, 1, 1),
 (6, 4, 3, 2);
+
+dw.hotel.main_proc_first_load
+
+

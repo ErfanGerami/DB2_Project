@@ -10,11 +10,11 @@ AS BEGIN
     insert into hotel.dim_employee (
         employee_id, national_code, birthday,
         first_name, last_name, phone_number, address,
-        salary, hire_date, is_active
+        salary, hire_date, is_active,gender
     )
     SELECT employee_id, national_code, birthday,
            first_name, last_name, phone_number, address,
-           salary, hire_date, is_active
+           salary, hire_date, is_active,gender
     FROM SA.hotel.employee;
     INSERT INTO LOG(procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('Hotel.fill_dim_employee_first_load', GETDATE(), 'insert into hotel.dim_employee', 'hotel.dim_employee', @@ROWCOUNT);
@@ -70,7 +70,8 @@ BEGIN
     UPDATE emp
     SET emp.is_active = source.is_active
     FROM hotel.dim_employee emp
-    JOIN SA.hotel.employee source ON emp.employee_id = source.employee_id;
+    JOIN SA.hotel.employee source ON emp.employee_id = source.employee_id
+    ;
 
     INSERT INTO Log(procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('Hotel.fill_dim_employee', GETDATE(), 'update is_active', 'hotel.dim_employee', @@ROWCOUNT);
