@@ -6,22 +6,96 @@ CREATE TABLE  Restaurant.dim_category (
     category_name VARCHAR(255),
     description TEXT
 );
-
-
-CREATE TABLE  shared.dim_date (
-    key_date DATE,
-    key_date_shamsi VARCHAR(100),
-    year INT,
-    year_shamsi VARCHAR(100),
-    quarter INT,
-    quarter_shamsi VARCHAR(100),
-    month INT,
-    month_shamsi VARCHAR(100),
-    day_weak INT,
-    day_weak_shamsi VARCHAR(100)
+select * from shared.dim_date
+CREATE TABLE shared.dim_date (
+    time_key DATE ,
+    full_date_alternate_key VARCHAR(20),
+    persian_full_date_alternate_key VARCHAR(20),
+    day_number_of_week INT,
+    persian_day_number_of_week INT,
+    english_day_name_of_week VARCHAR(20),
+    persian_day_name_of_week NVARCHAR(20),
+    day_number_of_month INT,
+    persian_day_number_of_month INT,
+    day_number_of_year INT,
+    persian_day_number_of_year INT,
+    week_number_of_year INT,
+    persian_week_number_of_year INT,
+    english_month_name VARCHAR(20),
+    persian_month_name NVARCHAR(20),
+    month_number_of_year INT,
+    persian_month_number_of_year INT,
+    calendar_quarter INT,
+    persian_calendar_quarter INT,
+    calendar_year INT,
+    persian_calendar_year INT,
+    calendar_semester INT,
+    persian_calendar_semester INT
 );
+select * from dw.hotel.fact_acc_hotel
+select * from dw.hotel.fact_daily_hotel
+select * from hotel.dim_room
+select * from sa.hotel.room
+-- WITH DateRange AS (
+--     SELECT CAST(GETDATE() - 10 AS DATE) AS d
+--     UNION ALL
+--     SELECT DATEADD(DAY, 1, d)
+--     FROM DateRange
+--     WHERE d < CAST(GETDATE() + 10 AS DATE)
+-- )
+-- INSERT INTO shared.dim_date (
+--     time_key,
+--     full_date_alternate_key,
+--     persian_full_date_alternate_key,
+--     day_number_of_week,
+--     persian_day_number_of_week,
+--     english_day_name_of_week,
+--     persian_day_name_of_week,
+--     day_number_of_month,
+--     persian_day_number_of_month,
+--     day_number_of_year,
+--     persian_day_number_of_year,
+--     week_number_of_year,
+--     persian_week_number_of_year,
+--     english_month_name,
+--     persian_month_name,
+--     month_number_of_year,
+--     persian_month_number_of_year,
+--     calendar_quarter,
+--     persian_calendar_quarter,
+--     calendar_year,
+--     persian_calendar_year,
+--     calendar_semester,
+--     persian_calendar_semester
+-- )
+-- SELECT
+--     d AS time_key,
+--     FORMAT(d, 'yyyy/MM/dd') AS full_date_alternate_key,
+--     FORMAT(d, 'yyyy/MM/dd') AS persian_full_date_alternate_key,  -- Placeholder
+--     DATEPART(WEEKDAY, d) AS day_number_of_week,
+--     DATEPART(WEEKDAY, d) AS persian_day_number_of_week,  -- Placeholder
+--     DATENAME(WEEKDAY, d) AS english_day_name_of_week,
+--     N'شنبه' AS persian_day_name_of_week,  -- Placeholder
+--     DAY(d) AS day_number_of_month,
+--     DAY(d) AS persian_day_number_of_month,  -- Placeholder
+--     DATEPART(DAYOFYEAR, d) AS day_number_of_year,
+--     DATEPART(DAYOFYEAR, d) AS persian_day_number_of_year,  -- Placeholder
+--     DATEPART(WEEK, d) AS week_number_of_year,
+--     DATEPART(WEEK, d) AS persian_week_number_of_year,  -- Placeholder
+--     DATENAME(MONTH, d) AS english_month_name,
+--     N'فروردین' AS persian_month_name,  -- Placeholder
+--     MONTH(d) AS month_number_of_year,
+--     MONTH(d) AS persian_month_number_of_year,  -- Placeholder
+--     DATEPART(QUARTER, d) AS calendar_quarter,
+--     DATEPART(QUARTER, d) AS persian_calendar_quarter,  -- Placeholder
+--     YEAR(d) AS calendar_year,
+--     YEAR(d) AS persian_calendar_year,  -- Placeholder
+--     CASE WHEN DATEPART(QUARTER, d) <= 2 THEN 1 ELSE 2 END AS calendar_semester,
+--     CASE WHEN DATEPART(QUARTER, d) <= 2 THEN 1 ELSE 2 END AS persian_calendar_semester  -- Placeholder
+-- FROM DateRange
+-- OPTION (MAXRECURSION 100);
 
-select * from restaurant.dim_employee
+
 CREATE TABLE  Restaurant.dim_employee (
     employee_id INT ,
     name VARCHAR(50) ,

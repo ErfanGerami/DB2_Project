@@ -101,9 +101,9 @@ INSERT INTO Hotel.service_detail (service_detail_id, service_id, item_id, quanti
 -- update hotel.room set cost_per_day=1
 -- update hotel.employee set salary=10 
 exec dw.hotel.main_proc_first_load
--- exec dw.hotel.main_proc
+ exec dw.hotel.main_proc
 -- -- select * from dw.hotel.dim_room
--- update sa.hotel.room set cost_per_day=111
+--update sa.hotel.room set cost_per_day=111
 -- update sa.hotel.employee set salary=11
 -- select * from dw.hotel.fact_transactional_service
 -- select * from dw.hotel.fact_transactional_booking
@@ -111,6 +111,6 @@ exec dw.hotel.main_proc_first_load
 
 -- select * from dw.hotel.dim_employee
 
-
+select * from dw.hotel.fact_acc_hotel
 
 

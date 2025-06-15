@@ -55,7 +55,7 @@ BEGIN
             ) select 
                 r.room_id,
                 dr.room_key,
-                ISNULL(temp.room_status_id, 0),
+                r.status_id,
                 ISNULL(temp.running_service_cost, 0),
                 ISNULL(temp.running_service_charge, 0),
                 ISNULL(temp.running_service_count, 0),
@@ -124,7 +124,9 @@ BEGIN
                     ELSE 0
                 END,
                 fact.running_number_of_bookings = fact.running_number_of_bookings + ISNULL(s.running_number_of_bookings, 0),
-                room_key=dr.room_key
+                room_key=dr.room_key,
+                room_status_id=dr.status_id
+
             FROM hotel.fact_acc_hotel fact
             LEFT JOIN temp_acc temp 
                 ON fact.room_id = temp.room_id 
@@ -216,7 +218,7 @@ BEGIN
             ) select 
                 r.room_id,
                 dr.room_key,
-                ISNULL(temp.room_status_id, 0),
+                dr.status_id,
                 ISNULL(temp.running_service_cost, 0),
                 ISNULL(temp.running_service_charge, 0),
                 ISNULL(temp.running_service_count, 0),
@@ -284,7 +286,8 @@ BEGIN
                     ELSE 0
                 END,
                 fact.running_number_of_bookings = fact.running_number_of_bookings + ISNULL(s.running_number_of_bookings, 0),
-                room_key=dr.room_key
+                room_key=dr.room_key,
+                room_status_id=dr.status_id
             FROM hotel.fact_acc_hotel fact
             LEFT JOIN temp_acc temp 
                 ON fact.room_id = temp.room_id
