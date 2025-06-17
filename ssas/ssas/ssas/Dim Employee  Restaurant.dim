@@ -1,0 +1,398 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c8526f8a-80ed-433c-b96d-62f2ccc54ee9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Employee  Restaurant</ID>
+  <Name>Dim Employee  Restaurant</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e124a52e-8154-464b-815c-b95bd2c0a564">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="5671bcb4-fbc9-49e9-a746-3f038c2607e6">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c1f593bb-9e45-4179-9c73-5ac4a1a24266">
+      <ID>Employee Id</ID>
+      <Name>Employee Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4296656a-31d3-4207-9d78-832a76926910">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="52775418-74c1-4b1e-9f66-fe608db886ca">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>employee_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e1416f1d-7bf4-4e5a-8056-8bfe9137159f">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8f1c5107-b0bb-4557-a8ef-e358a6991638">
+          <TableID>Restaurant_dim_employee</TableID>
+          <ColumnID>national_code</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="f17b55d4-d865-4f4d-beb7-14f9bfe62520">
+          <AttributeID>Name</AttributeID>
+          <Name>Name_</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7d2393fc-16b4-4de0-8877-888d6d25942d">
+          <AttributeID>Last Name</AttributeID>
+          <Name>Last Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f7b85cbe-e995-4723-b8db-0e8bfda54fe3">
+          <AttributeID>Phone Number</AttributeID>
+          <Name>Phone Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f9c9faba-9537-4726-813e-12826d127ed0">
+          <AttributeID>Birthday</AttributeID>
+          <Name>Birthday</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1e05fcfc-3d75-4d66-8663-56a62d5e4f69">
+          <AttributeID>Role Id</AttributeID>
+          <Name>Role Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2cfb1e6e-9651-4240-83bb-7f85546ac999">
+          <AttributeID>Role Name</AttributeID>
+          <Name>Role Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2c9f7f2b-6b81-4953-b6e8-7c79c0a62323">
+          <AttributeID>Role Description</AttributeID>
+          <Name>Role Description</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3a2de75d-9881-43c6-be7c-6f2ec36b8064">
+          <AttributeID>Address</AttributeID>
+          <Name>Address</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cb462138-e2dd-48d3-b5b8-8c76c120903c">
+          <AttributeID>Salary</AttributeID>
+          <Name>Salary</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c19d4a5f-295c-44d1-a7af-5ab11dfbf773">
+          <AttributeID>Previous Salary</AttributeID>
+          <Name>Previous Salary</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d2babdd0-0577-4b17-b0d0-d5e36d9ff169">
+          <AttributeID>Effective Date</AttributeID>
+          <Name>Effective Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9dfd9ab5-d4a9-4294-b8c0-90baca64f75d">
+          <AttributeID>Hire Date</AttributeID>
+          <Name>Hire Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2d5853ab-7e0e-47bd-ab54-504ee1bcdc55">
+          <AttributeID>Is Active</AttributeID>
+          <Name>Is Active</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8d7902ce-9ff0-48d5-a664-1bc34af6d529">
+          <AttributeID>Gender</AttributeID>
+          <Name>Gender</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e7a0c52c-46ff-4ac4-ba23-2af97b7148de">
+      <ID>Name</ID>
+      <Name>Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="357a7462-2a21-43bb-96e9-d80557a8c034">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="992f20ed-806c-412f-b75e-b41bb0ce96c7">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="314dec03-c28e-4d1d-a7e6-85aee547a9fd">
+      <ID>Last Name</ID>
+      <Name>Last Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="443b4c62-4dc0-4a55-9277-e604b09df61e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57d4e387-431c-44a0-86bd-7bd9e4a78f61">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>last_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1ecb86df-9dbf-42a8-a6ad-b55847778bce">
+      <ID>Phone Number</ID>
+      <Name>Phone Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f7bdd0a1-b3a7-4f9c-a48d-c6d5578f1577">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2a621708-0e6a-476f-963d-3447d901c7a2">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>phone_number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="67fea047-7ec5-4863-ba09-17cdd75ca07a">
+      <ID>Birthday</ID>
+      <Name>Birthday</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ecc8f88a-c317-4304-a0b2-63482452f282">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f74300f1-2938-44b1-a38b-c89f5e8584ad">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>birthday</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ca98acc6-1312-4bc8-ba98-cf376a124992">
+      <ID>Role Id</ID>
+      <Name>Role Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="608f0aca-c114-46b7-a376-1951dc3e7af9">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c5db16c-6a6d-435c-ae3d-f2890feb4c49">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>role_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9271b740-d2ea-48fb-91ac-be83cfabf917">
+      <ID>Role Name</ID>
+      <Name>Role Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="97d2e6b2-3916-4b77-a8c1-0efa4b57c93f">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1dc5dec2-cb9e-4105-a27d-713e9ad5c821">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>role_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="811c989d-2d04-4e1e-8e1f-bb381bab1848">
+      <ID>Role Description</ID>
+      <Name>Role Description</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6b1e2595-10e4-4377-806c-ecda04664bd6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="79f966e5-8eb1-4b6f-8d60-b047a170dd81">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>employee_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0dc04ce0-a55c-4e2a-9156-6598164367ec">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1f395174-710f-4b0e-ab35-0e06603d1841">
+          <TableID>Restaurant_dim_employee</TableID>
+          <ColumnID>national_code</ColumnID>
+        </Source>
+      </NameColumn>
+      <ValueColumn dwd:design-time-name="51b97374-2f8b-4794-acb6-4a390966e45a">
+        <DataType>Binary</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4df8a2aa-7a44-431d-8e48-6f62608c1553">
+          <TableID>Restaurant_dim_employee</TableID>
+          <ColumnID>role_description</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f087c3a1-110b-4165-b59b-dd0191c8e4d6">
+      <ID>Address</ID>
+      <Name>Address</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9aae364b-ea83-4991-9df1-2d8969681418">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="03e80022-1501-4581-90ef-7f3b00e59e02">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>employee_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="eeb940d5-9d92-4d1e-b897-6cd1dc8bad57">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3c6634bf-84c7-4557-908c-664379786ad4">
+          <TableID>Restaurant_dim_employee</TableID>
+          <ColumnID>national_code</ColumnID>
+        </Source>
+      </NameColumn>
+      <ValueColumn dwd:design-time-name="6bde955a-d951-4fb7-95cf-d6ad263fd1ab">
+        <DataType>Binary</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7eecd468-259b-4b1f-80d2-74d2df8a2420">
+          <TableID>Restaurant_dim_employee</TableID>
+          <ColumnID>address</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="17586143-660f-4620-868f-d58d5f76f94e">
+      <ID>Salary</ID>
+      <Name>Salary</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8130ad88-1ab0-4b06-834b-c2351d20b49a">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0600964d-2184-45da-b342-5d640231c2d5">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>salary</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="716561a8-c1fe-47e1-8151-dae6a499b266">
+      <ID>Previous Salary</ID>
+      <Name>Previous Salary</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0116274e-8714-4818-8867-c77f563ac2f4">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8bae4d5-07e8-463d-b037-7e97fd276bac">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>previous_salary</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="66bda442-7dbb-4141-a57f-34eeb9d712dd">
+      <ID>Effective Date</ID>
+      <Name>Effective Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4f86e740-7e64-4f98-a1bd-ca34a827f74c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="acb8d915-4c13-40e4-b003-4184f7f845a4">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>effective_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="49a78fd6-cca7-4e27-861a-a11b699d9ddd">
+      <ID>Hire Date</ID>
+      <Name>Hire Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c23b5fde-20ff-45a5-8b4f-d153346050c8">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dde0da4f-5a78-4067-86e7-ebd7364993eb">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>hire_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="177b77bd-ca05-41ff-99fc-08a8465de73f">
+      <ID>Is Active</ID>
+      <Name>Is Active</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a9e7c36-93c5-482e-9fec-c5fc58e1962c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0fbc09e-6691-46a2-94a9-d3b2bd66d8f3">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>is_active</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="42233625-d391-47f2-9e04-f31f6afea184">
+      <ID>Gender</ID>
+      <Name>Gender</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d70bcdb2-3a99-4f2d-8857-a14194eb37ba">
+          <DataType>WChar</DataType>
+          <DataSize>6</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="15ca5fb7-4f4a-4c60-a4ad-9a2e8db64566">
+            <TableID>Restaurant_dim_employee</TableID>
+            <ColumnID>gender</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

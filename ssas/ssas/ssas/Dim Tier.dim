@@ -1,0 +1,143 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0307af26-a34a-45fa-a4bc-51e872f1cc9e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Tier</ID>
+  <Name>Dim Tier</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="0112728f-7cc5-4f77-84fa-9c7bb7d3518f">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="55a787d7-bc5b-4803-b02e-735978711d27">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="ae5d56ee-7b0c-491e-b261-78286bcabd5d">
+      <ID>Tier Id</ID>
+      <Name>Tier Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25afa2f6-1ba1-4261-954d-1e40c9a6200d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cb1b7e98-fa61-4e53-ab1c-30bb7f56788a">
+            <TableID>hotel_dim_tier</TableID>
+            <ColumnID>tier_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="06a9c98e-2c87-4398-a839-d3c713dc9c6a">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e0fb0442-0fae-462f-9d4d-3d7130ec7004">
+          <TableID>hotel_dim_tier</TableID>
+          <ColumnID>type</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="296a465f-6cc3-4500-b6e7-7aa20f936b5d">
+          <AttributeID>Points To Reach</AttributeID>
+          <Name>Points To Reach</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b41860e3-5f08-47bd-bb20-2e2c0af0ca15">
+          <AttributeID>Discount Per Service</AttributeID>
+          <Name>Discount Per Service</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="58e33dea-7541-4feb-8b92-f51ab444fbd3">
+          <AttributeID>Discount Per Booking</AttributeID>
+          <Name>Discount Per Booking</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f7a4fa59-c29b-4356-becd-873cd5306208">
+      <ID>Points To Reach</ID>
+      <Name>Points To Reach</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9bfcd00c-7977-405d-a868-0376e1bf7688">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="99e985c8-d115-4d79-bfc4-43eebb2edf80">
+            <TableID>hotel_dim_tier</TableID>
+            <ColumnID>points_to_reach</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9281c4e1-5c54-4f6d-9308-24c4955c1614">
+      <ID>Discount Per Service</ID>
+      <Name>Discount Per Service</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9429a50b-0dcd-42f8-9bf5-bd6ddb62b2f3">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf8d070f-25a3-460a-b8b5-efef5ee2c135">
+            <TableID>hotel_dim_tier</TableID>
+            <ColumnID>discount_per_service</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5414fbe3-8b14-4383-972e-966ffe1d6d71">
+      <ID>Discount Per Booking</ID>
+      <Name>Discount Per Booking</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="06b6ce1a-feab-40f5-8c26-de872a30c7b2">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d57854e3-059f-4b9a-a774-b312396c1df1">
+            <TableID>hotel_dim_tier</TableID>
+            <ColumnID>discount_per_booking</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

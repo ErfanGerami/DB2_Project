@@ -1,0 +1,367 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="049f9f61-80c7-40ba-81fd-0d245ee5294f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Food</ID>
+  <Name>Dim Food</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="943a5444-9a9f-43f8-9f80-370f251e85fd">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="6c5fa036-bedf-441a-8f72-fd913feca995">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="f8baba65-b0b3-4eb7-bb55-a8eb8e499e1c">
+      <ID>Food Key</ID>
+      <Name>Food Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="215cfd55-b03e-415c-a373-d1194a1f0d8b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0c59dd14-079f-4d0a-9339-d550c75e6cda">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>food_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5d61b3bc-da3f-4a1e-acd8-9dced4a090fe">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5ed0ab76-8911-4241-9767-a7cd861a019d">
+          <TableID>Restaurant_dim_food</TableID>
+          <ColumnID>food_name</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5c6bbf78-5aba-4208-ae39-d44ad3f60cad">
+          <AttributeID>Tax</AttributeID>
+          <Name>Tax</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed9ef0d4-7ba9-46b5-8ff7-5c60e10f9fd0">
+          <AttributeID>Food Id</AttributeID>
+          <Name>Food Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4215ddb8-1e7c-4095-8473-bdde9209d2ff">
+          <AttributeID>Category Id</AttributeID>
+          <Name>Category Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="716ab428-b408-4500-abc3-a45d8f3e694a">
+          <AttributeID>Category Name</AttributeID>
+          <Name>Category Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ba1bbdce-afe5-4565-8f6e-382f04adc62d">
+          <AttributeID>Time To Prepare</AttributeID>
+          <Name>Time To Prepare</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="881a5694-e1a2-4ddb-a14c-8f07813d6c93">
+          <AttributeID>Meal</AttributeID>
+          <Name>Meal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5bbf8b43-cfd4-4e64-8635-d14b8c2e2545">
+          <AttributeID>Cooking Method</AttributeID>
+          <Name>Cooking Method</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a11b1e49-b41c-4ab6-88a4-dbc8e34e3291">
+          <AttributeID>Cost</AttributeID>
+          <Name>Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a45c2756-55f7-4102-af25-9351689a1204">
+          <AttributeID>Ingrediant Cost</AttributeID>
+          <Name>Ingrediant Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="14694a82-2b63-4b3d-814d-8cfcb1fd6fb6">
+          <AttributeID>Start Date</AttributeID>
+          <Name>Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8342b41f-beb2-427a-ab3f-449390305535">
+          <AttributeID>End Date</AttributeID>
+          <Name>End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c124c991-edf2-4902-9425-b179eaa9bd66">
+          <AttributeID>Bits</AttributeID>
+          <Name>Bits</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1a15e8a8-6fce-4576-8661-7a87f2bc7d56">
+          <AttributeID>Current Flag</AttributeID>
+          <Name>Current Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="df4b236b-b957-4ab9-9b95-4bf1ba0c7bf7">
+          <AttributeID>First Served</AttributeID>
+          <Name>First Served</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2e72cda6-8b3e-4411-8f41-1aee4bb41678">
+      <ID>Tax</ID>
+      <Name>Tax</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="772a3bc2-80e5-45a6-9162-b926780b7fc0">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="915dda9a-0066-4a89-8a7b-f3e9d0793ff9">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>tax</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e3effd82-04c0-48bc-9a8d-6ec8cace49a2">
+      <ID>Food Id</ID>
+      <Name>Food Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83a75c78-246e-477b-87d9-de26b8b47946">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ff7f85bf-99c9-421c-959f-b10e7cccce38">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>food_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9984fe7d-e91c-48c3-a33c-98d8fddb417b">
+      <ID>Category Id</ID>
+      <Name>Category Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="12eb3d0d-f0ce-4db8-87e7-76965f84669b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e2972f9-fe59-4d03-8e85-ffabc2a2de35">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>category_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b35df8ce-41e3-4bb3-9e5a-f8795cc11f81">
+      <ID>Category Name</ID>
+      <Name>Category Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="912abd55-8f88-489b-b85a-db59dc417524">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a717966-d055-4671-8e71-d78f34ac6d6e">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>category_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="65806eb0-f745-4642-ad67-a245604b28ee">
+      <ID>Time To Prepare</ID>
+      <Name>Time To Prepare</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d5b1b301-6f1f-46fd-99d9-933513e05d48">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad2a5a01-5a8a-4491-84f7-984705ce5f46">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>time_to_prepare</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6efa0543-0aeb-49eb-9e4e-a9dc6eea5513">
+      <ID>Meal</ID>
+      <Name>Meal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d24bc8ba-f0c1-4b3d-b766-96bedca9f27f">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02974f87-e1f7-45c7-9495-10326ba5f9aa">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>meal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7abcdc26-2959-4ef1-a643-7b5c2ba8f4ae">
+      <ID>Cooking Method</ID>
+      <Name>Cooking Method</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cc9260f4-5b74-46c5-879a-812d4e372863">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="df491ed5-e7c9-4fea-b7ba-a6177789ab4a">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>cooking_method</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f3b58aa2-6f72-499a-b4bf-de097a4eb21e">
+      <ID>Cost</ID>
+      <Name>Cost</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f036a6ec-dc83-4bef-b01c-1e1152f66322">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="19e5f235-603c-4c5d-beb1-b63f8ad72301">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>cost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="38c67eba-ad58-4028-8aa7-bb0c957a81b1">
+      <ID>Ingrediant Cost</ID>
+      <Name>Ingrediant Cost</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c81aef7c-12c4-463a-a960-ac10622ee1d1">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bda4064f-85f0-4f48-b14a-d563fedba32f">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>ingrediant_cost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f27c45e3-16ea-4a86-be32-c99e29c50528">
+      <ID>Start Date</ID>
+      <Name>Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="75a96c12-2afe-430a-8629-b0d89ff7cb7c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="595bbd3a-ce18-4dfe-b1aa-b13b07c6885c">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>start_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2bc7a453-3a73-4e86-99f0-aef3464ef559">
+      <ID>End Date</ID>
+      <Name>End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b2c8dbd9-92cd-4dbd-b267-072dd5be2e08">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7f46c6f7-5d79-4698-9426-ab78a973c1a1">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>end_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="04594d33-8590-4d90-a491-7b121aed34fe">
+      <ID>Bits</ID>
+      <Name>Bits</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a4c50315-1d29-469c-9df5-c681c1e7eb94">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="03553b09-96a0-45d5-9ac7-06a6ef243a1a">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>bits</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1f3ab85a-cad3-44e4-b6d3-fe4562b8a43b">
+      <ID>Current Flag</ID>
+      <Name>Current Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3c41dc60-55ed-41e8-a3a0-4839bf4bd34e">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7500342d-4e54-4ea1-85c4-736d5fa84b67">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>current_flag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b81eda58-8e9c-4e34-a9c7-24aeeb75102b">
+      <ID>First Served</ID>
+      <Name>First Served</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="11caee81-e6f6-41f5-b250-3974c0ba13dc">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="40e0fc2b-2fa1-4339-9ec6-9411c2ea60b3">
+            <TableID>Restaurant_dim_food</TableID>
+            <ColumnID>first_served</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

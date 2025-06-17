@@ -1,0 +1,574 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="39b3e737-0b52-4b5e-bd05-10b5ea279c25" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DataWarehouseSourceView 6</ID>
+  <Name>fact_transactional_restaurant</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="15" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10711" scrolltop="-3122" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24807" y="11070" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="fact_transactional_restaurant" left="20" top="0" logicalid="7" controlid="1" masterid="0" hint1="0" hint2="0" width="3344" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000100d0000da120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Restaurant_fact_transactional_restaurant" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_category" left="4289" top="562" logicalid="8" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000032070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Restaurant_dim_category" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_date" left="-5717" top="-3122" logicalid="9" controlid="3" masterid="0" hint1="0" hint2="0" width="4995" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00008313000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="shared_dim_date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_employee" left="3769" top="4378" logicalid="10" controlid="4" masterid="0" hint1="0" hint2="0" width="3620" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000240e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="hotel_dim_employee" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_food" left="7697" top="-3122" logicalid="11" controlid="5" masterid="0" hint1="0" hint2="0" width="3069" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000fd0b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Restaurant_dim_food" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_table" left="-211" top="5598" logicalid="12" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="2180" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000084080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Restaurant_dim_table" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_employee (Restaurant)" left="-4711" top="4378" logicalid="14" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Restaurant_dim_employee" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-10711</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3122</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-5717</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-3122</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0c4a2c76-af93-4e46-9844-39f5a22db4f9">
+      <ID>Fact Transactional Restaurant</ID>
+      <Name>Fact Transactional Restaurant</Name>
+      <DimensionID>Fact Transactional Restaurant</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7d7570fc-f12e-4ae0-b597-095147d42657">
+          <AttributeID>Food Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="675c0553-8c28-4be2-8796-f59508760265">
+      <ID>Dim Category</ID>
+      <Name>Dim Category</Name>
+      <DimensionID>Dim Category</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="338e2dde-89da-4403-ab54-8f1ac1397d13">
+          <AttributeID>Category Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c013f5ab-d086-4134-9891-e4e514a6010d">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4517b8eb-1928-4e70-bd20-b1f749f6ce9a">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0dac1d6-cf72-447f-8f05-2e2ca16a8e2a">
+          <AttributeID>Day Number Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0aae4a6f-c222-465b-b5fe-80563ee72fc0">
+          <AttributeID>Persian Day Number Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8e14b239-71a9-424c-b090-a9852e1d2281">
+          <AttributeID>English Day Name Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e6ca8b6-73fb-49e7-a899-bce0e7f99f10">
+          <AttributeID>Day Number Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9c9e47f8-7d0e-4f4c-b746-6ff68c20499e">
+          <AttributeID>Persian Day Number Of Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4fb03766-65a9-4487-b8db-ef4dae5728a1">
+          <AttributeID>Day Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a806431c-4501-4e43-9ffd-0c1f3fc68482">
+          <AttributeID>Persian Day Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ad8d88bc-e8a0-46bd-91b1-77c60c570b61">
+          <AttributeID>Week Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6e7141a9-4d53-495f-ac46-8d6e1b71bf92">
+          <AttributeID>Persian Week Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0b94d7f5-917b-4a64-b69a-4b95aeef95e3">
+          <AttributeID>English Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e97bf1f0-89ba-4da1-8cc0-f5424dec79a9">
+          <AttributeID>Month Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="15fb645f-1bfe-4bef-90f2-81f9e623681a">
+          <AttributeID>Persian Month Number Of Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b1ad909f-bf03-444e-a9b5-6666e00b8c19">
+          <AttributeID>Calendar Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a62a999d-6027-4e80-ac58-17c0c814512c">
+          <AttributeID>Persian Calendar Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="138d2ae2-c931-4037-873d-9c05a0519fd1">
+          <AttributeID>Calendar Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="43e2f47b-a70b-464e-af6e-995a63afa74c">
+          <AttributeID>Persian Calendar Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fe66ecf5-aa81-497c-add5-17fb2a29b091">
+          <AttributeID>Calendar Semester</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8c7e64e6-c188-4b53-9ae5-8d2d6bac7c93">
+          <AttributeID>Persian Calendar Semester</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="5bac18e7-bbe4-4333-b02c-30db873bc5f0">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="acbd9849-cc49-4bbd-a0cc-cf00119d6c27">
+      <ID>Dim Food</ID>
+      <Name>Dim Food</Name>
+      <DimensionID>Dim Food</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ce70a42d-2d1c-4fc5-80f4-3a2e9988fdf1">
+          <AttributeID>Food Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c58af9b9-1d6e-49d7-ad21-ce75e4e9f214">
+          <AttributeID>Tax</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="863db28f-239a-43e7-afd7-67d199e605cc">
+          <AttributeID>Food Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="60a32fe4-53db-47e9-9175-8ce6b0b286be">
+          <AttributeID>Category Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="138483f5-a846-46be-b86f-ddd8f8301818">
+          <AttributeID>Category Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9725bf63-3f35-4f9c-80ce-f45490d83d0f">
+          <AttributeID>Time To Prepare</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bb544d79-5fff-4700-8172-c857ab4ef144">
+          <AttributeID>Meal</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="21f22a4f-bb96-4c5d-849c-cacaf7ab6aa9">
+          <AttributeID>Cooking Method</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0a02e9ff-294e-4cd6-8404-533328166b06">
+          <AttributeID>Cost</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d296b192-2b35-4bc1-ab32-635f5111f9bf">
+          <AttributeID>Ingrediant Cost</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1795338-84a3-4265-a208-ca467dcf5787">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b501a0e-125f-461a-b986-837e4679d7f9">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9dabec44-1910-4420-9823-052db0e9215d">
+          <AttributeID>Bits</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7e59027d-fefa-4da7-a5ab-6b9550b6568b">
+          <AttributeID>Current Flag</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9906d59f-d1fd-4491-9f92-cfd04174acef">
+          <AttributeID>First Served</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2637736a-7847-4156-b016-fffe78a747ae">
+      <ID>Dim Table</ID>
+      <Name>Dim Table</Name>
+      <DimensionID>Dim Table</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="07a9f94c-51a3-4627-85f4-adbca2e5b272">
+          <AttributeID>Table Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="484eb40d-a352-4c35-b4da-2e5045c708a9">
+      <ID>Dim Employee  Restaurant</ID>
+      <Name>Dim Employee  Restaurant</Name>
+      <DimensionID>Dim Employee  Restaurant</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7b0f599c-7219-4fb3-9d63-a88e68cd42d3">
+          <AttributeID>Employee Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d14e7fb7-0445-438a-8178-d6721c4c559a">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="db7dc41f-1c73-45f0-9ab2-3cfa8cea2cb3">
+          <AttributeID>Last Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="168b81f1-d98c-4439-a2c2-71cfb353e4b6">
+          <AttributeID>Phone Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f09ddfd6-2a11-488c-a9d5-62a63a0caaef">
+          <AttributeID>Birthday</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d8f4abc9-aa0f-4556-b964-9edd2d0068b2">
+          <AttributeID>Role Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bf5aa610-4c01-4773-9193-4fd04279ba6d">
+          <AttributeID>Role Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d5977a2f-0c2f-4c93-a245-884e56cf7619">
+          <AttributeID>Role Description</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="2d0a501e-e6e3-4598-b85f-01856b468550">
+          <AttributeID>Address</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="3916318c-c07a-46af-8cd2-e4d333fc2184">
+          <AttributeID>Salary</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c28d69f5-84fe-4cd2-a63c-b16c20fc765c">
+          <AttributeID>Previous Salary</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="76cdaf59-c6ef-4413-9ad0-e2ac5186b76f">
+          <AttributeID>Effective Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a216210e-ec24-4057-9196-4a0aa5e50f4c">
+          <AttributeID>Hire Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b9e56d82-60b9-4b19-bdf3-a9e272864f98">
+          <AttributeID>Is Active</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b84c45d8-00bb-4496-9058-97c0b3056119">
+          <AttributeID>Gender</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="5791f09e-fac7-4bee-8f2a-35295b8e0cd9">
+      <ID>Fact Transactional Restaurant</ID>
+      <Name>Fact Transactional Restaurant</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="726ce442-26fc-484e-8431-b210fdb77ac2">
+          <ID>Charge</ID>
+          <Name>Charge</Name>
+          <Source dwd:design-time-name="2986cf66-95ff-4bda-988e-c798b68f8d84">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b803ab49-f8a6-4f99-beb0-e06d7d7d45dd">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+              <ColumnID>charge</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a0304f54-1179-4dba-a6ad-d136154575b0">
+          <ID>Ingredient Cost</ID>
+          <Name>Ingredient Cost</Name>
+          <Source dwd:design-time-name="70bba1b2-ca29-4e2e-a89c-e2f490130435">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="486852d0-10b0-4176-b189-102fd2888f2f">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+              <ColumnID>ingredient_cost</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="82577ed9-dd8c-485a-950c-acf5cfc94892">
+          <ID>Tax Amount</ID>
+          <Name>Tax Amount</Name>
+          <Source dwd:design-time-name="feb73ebd-e918-4422-9615-e930ebd9e7cf">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a44ac0bc-842a-4562-9ddb-33f830cd8190">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+              <ColumnID>tax_amount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c9318e8e-7503-40f7-b0d6-07bbd173dc02">
+          <ID>Quantity</ID>
+          <Name>Quantity</Name>
+          <Source dwd:design-time-name="d48745fe-fdbf-4538-a2ad-7428dcaf3ecc">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aa40fb47-cec3-4b5b-ae75-69158fe50cbd">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+              <ColumnID>quantity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6ce8176b-edb2-49b5-b69d-efd5f31a930d">
+          <ID>After Tax Charge</ID>
+          <Name>After Tax Charge</Name>
+          <Source dwd:design-time-name="474a151d-4332-4c36-8a17-4290ad79596f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a602d896-192b-4a6c-94bd-dc6a43c2802d">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+              <ColumnID>after_tax_charge</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="29fca91b-775f-4f90-9389-76d1d42f9abd">
+          <ID>Fact Transactional Restaurant Count</ID>
+          <Name>Fact Transactional Restaurant Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="c96d57fb-ae93-44d5-8ad5-6f3eb94bd5c6">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="5d0538a9-8f25-497b-9994-7325463a1053">
+              <TableID>Restaurant_fact_transactional_restaurant</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="95c16b4b-8f5c-4323-a841-a2b549771821">
+          <CubeDimensionID>Fact Transactional Restaurant</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="adae2bb2-3837-44fc-a1c6-2b6ed85c136a">
+              <AttributeID>Food Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fc4814f1-b52c-4996-9500-817fdd904d3d">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3de4b080-e6da-49ce-b840-c36b714f7590">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>food_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="58ca3725-5fbf-4367-a9ae-05edfd1d1606">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="473b04f3-781e-4994-9037-cecea02c10ad">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>order_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="42d0247d-d930-4fff-9fc5-587f9c8b16f8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ff322565-b725-45a7-a43a-7ff55f9a1328">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>category_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="86c5e001-34d9-47a1-a445-5dd986de36b3">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="be832930-abd5-42a0-8eb0-dada14099bee">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>employee_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="00ae4607-a718-4b7f-b14a-070f6de71403">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cf8ae3e7-b74d-4340-bfcd-798d1a83ad60">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>date_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="ea782d94-1d4c-4d2f-9960-fbeb4c3249a4">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d38c9e60-5fa2-49a2-92bc-020e6a653464">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>table_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c60509d4-40c5-4af1-ac7c-2ced50b1b957">
+          <CubeDimensionID>Dim Category</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b9523157-9dcb-4c8e-8fa2-736851ad80c2">
+              <AttributeID>Category Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1beefebc-c891-44ab-a0ff-6f3e5e2136c6">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1d3521f5-5ddd-44e5-aaf0-29107c23e25d">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>category_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7562075e-838d-4784-854c-05bd5343fe62">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7aa15c27-2759-43a3-b65d-b4849c071057">
+              <AttributeID>Date Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="98b38079-a846-464b-9295-fcce4ffe790f">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68b0cd19-d6b1-411e-abe4-60e838f6241b">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>date_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5356db02-26da-4792-9e53-fb72b58f00cd">
+          <CubeDimensionID>Dim Food</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4887bffc-de51-4ade-8ad2-43b69862d1ee">
+              <AttributeID>Food Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8147df9f-7e4c-4570-8bb2-34879f7167c3">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="026d3374-f2ef-4550-a830-8402de6b9b30">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>food_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7458dbe1-fe66-4fbb-aec8-9efd1325b24f">
+          <CubeDimensionID>Dim Table</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6cbd7e4f-e4fc-42e6-8d67-1bb8222ec391">
+              <AttributeID>Table Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a0b925bf-b2e0-4e6c-b1d2-f6421bab69c9">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f7ba502f-cfb5-410b-bbbc-614628bdea26">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>table_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8e094e71-94d4-4612-bb81-e72cd8458efd">
+          <CubeDimensionID>Dim Employee  Restaurant</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f9594ebb-2a5e-4e80-bc44-971f1b8bf5c7">
+              <AttributeID>Employee Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d790f2da-cc65-4736-9f8f-0fed6de14db2">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e9759180-2487-4c0c-be92-9b363e0b997e">
+                    <TableID>Restaurant_fact_transactional_restaurant</TableID>
+                    <ColumnID>employee_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="728eb7bc-7ce9-47d5-986f-a96ae7dab998">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+</Cube>

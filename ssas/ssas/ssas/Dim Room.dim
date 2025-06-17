@@ -1,0 +1,337 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="de888ef5-d51f-4cad-a619-6049b4efc70f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Room</ID>
+  <Name>Dim Room</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="1be47c78-7aeb-4fcf-9531-135b7e716fac">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="8f10f2dc-a5b4-4f00-8b0a-d84b479077bf">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="64511e3a-777b-483c-b316-7cbec3c9c229">
+      <ID>Room Key</ID>
+      <Name>Room Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a2176118-b6de-4284-892a-7313c7543fa4">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7023e099-5e3b-4893-adc7-b22c9198c82a">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>room_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e694e3d2-1947-466c-bd53-22b029412a9a">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5ae278e6-bd56-4990-9f18-42e7b176656e">
+          <TableID>hotel_dim_room</TableID>
+          <ColumnID>room_number</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="87451ff0-fa32-47a2-83d1-706abe5cf7f1">
+          <AttributeID>Room Id</AttributeID>
+          <Name>Room Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2f42a67b-a82c-4dad-823e-dafd71af5384">
+          <AttributeID>Capacity</AttributeID>
+          <Name>Capacity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b5989918-4671-4981-87fc-8d7df0c59f28">
+          <AttributeID>Floor</AttributeID>
+          <Name>Floor</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="356cfea3-9934-41c8-9f72-e74f084ce61a">
+          <AttributeID>Status Id</AttributeID>
+          <Name>Status Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f91c0bf3-4285-4857-a0b4-c377bdd8afec">
+          <AttributeID>Status Name</AttributeID>
+          <Name>Status Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7c68659d-c4ef-4281-8936-b98ba16fbfbb">
+          <AttributeID>Status Description</AttributeID>
+          <Name>Status Description</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9350a62e-e3c0-4bd1-a0fc-2044b51b66c6">
+          <AttributeID>Number Of Single Bed</AttributeID>
+          <Name>Number Of Single Bed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0d29eccc-a2fe-4552-bce8-714430e4a1d3">
+          <AttributeID>Number Of Double Bed</AttributeID>
+          <Name>Number Of Double Bed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="da6b6fb5-e50b-450c-8ace-2f046f623897">
+          <AttributeID>Cost Per Day</AttributeID>
+          <Name>Cost Per Day</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5821f00e-e6c5-4cc4-925f-95bc608ee945">
+          <AttributeID>Start Date</AttributeID>
+          <Name>Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f7982d9d-2c22-4211-9e7f-af52b3fddc6d">
+          <AttributeID>End Date</AttributeID>
+          <Name>End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b5d7706b-fd09-4b67-9a68-b44f3dfc0d9d">
+          <AttributeID>Current Flag</AttributeID>
+          <Name>Current Flag</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="96fcedb3-a056-42a3-88ac-1449d5e474e7">
+      <ID>Room Id</ID>
+      <Name>Room Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="083c1d9f-37c5-432b-82a1-03b72691f744">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02bacf0a-96d3-4323-a93b-8671856fd16c">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>room_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="06c16da6-f2ed-4ac7-875d-e08f8d69740a">
+      <ID>Capacity</ID>
+      <Name>Capacity</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6d0931cd-8601-4b48-95ec-378b94ee7034">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a1027613-351c-4614-b8be-bfe99f12d049">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>capacity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3521e3c0-256c-499f-8a3c-db5002da9ce6">
+      <ID>Floor</ID>
+      <Name>Floor</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c6860882-8980-4a7b-aa47-7ba2e57cc5db">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="80c3c3ae-cd33-4437-ab92-2acce82e82aa">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>floor</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1e87cd3d-db33-4a1f-a9de-c30b02a91d2d">
+      <ID>Status Id</ID>
+      <Name>Status Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6c7cca8b-7300-4f90-8187-d629052eedd2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3cf028bc-5dd1-476a-a991-61a20f8fc3b6">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>status_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9f866b8a-ad1b-4190-939a-672614b0d078">
+      <ID>Status Name</ID>
+      <Name>Status Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b3d2bb1-fa51-495d-9ab9-3c6cc564ea58">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e41f670e-a755-4340-bb2f-55c30eeee6f3">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>status_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bef8b4f3-64b8-42e8-b9b6-bd56873a4454">
+      <ID>Status Description</ID>
+      <Name>Status Description</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f6d0676b-311d-4ec7-a46c-73199ade9d73">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6edc4a6d-59f5-4a17-9c12-e09d2a793815">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>room_key</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="85bce728-2c69-46eb-a5af-f94f3a363354">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="927e350b-694a-42e9-80e7-045a5b9aaae3">
+          <TableID>hotel_dim_room</TableID>
+          <ColumnID>room_number</ColumnID>
+        </Source>
+      </NameColumn>
+      <ValueColumn dwd:design-time-name="3c7bfb84-9abd-447e-a7cb-de0f78f45abb">
+        <DataType>Binary</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5faa704b-4917-4ac7-a312-6ac180ada6e5">
+          <TableID>hotel_dim_room</TableID>
+          <ColumnID>status_description</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="883ba2c6-bb0d-4cc8-b8df-42ef91784c95">
+      <ID>Number Of Single Bed</ID>
+      <Name>Number Of Single Bed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="713f2af5-0ffc-4cfb-a298-4f34e7f0c94f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0534798f-41a9-4fc9-80b3-76f1232dc2c1">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>number_of_single_bed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="866228cf-7135-4209-b4b6-d62014c543b4">
+      <ID>Number Of Double Bed</ID>
+      <Name>Number Of Double Bed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a935b32b-3a92-4c9d-b95d-12e30bddbd34">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="67af2309-4e07-4414-8059-44f738b2ed20">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>number_of_double_bed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="66d8428c-ebcf-4b64-bc1e-f896b9612330">
+      <ID>Cost Per Day</ID>
+      <Name>Cost Per Day</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="895c50d3-955d-4b95-9159-3fd2976eb753">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7ef89d9b-b893-42cf-aa02-fbe0bf2ad20e">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>cost_per_day</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="83f0b232-d14d-4d94-8e2d-744cb90332a9">
+      <ID>Start Date</ID>
+      <Name>Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5db940bb-7b10-4c6c-9eeb-892780bcc06c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0b292e5b-09c4-4ed8-b9b4-7a7af4409e8b">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>start_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9036921e-2fc1-4b7d-b74e-25011edd6be6">
+      <ID>End Date</ID>
+      <Name>End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a25e4f6e-abb4-4c01-b820-38fb4167f2ee">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8783196c-53cf-4f81-8e66-4f79212fa094">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>end_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7494ba2-2c1e-4ed0-a717-72dddaf66345">
+      <ID>Current Flag</ID>
+      <Name>Current Flag</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aed8509e-1b59-460f-b976-d0c1d5460b39">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bbd0c536-6734-45d1-8bfa-5b729da1b7b7">
+            <TableID>hotel_dim_room</TableID>
+            <ColumnID>current_flag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,351 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b636b876-a298-4ca4-9aad-eac569a62b9e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DataWarehouseSourceView 4</ID>
+  <Name>fact_acc_hotel</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-9843" scrolltop="-3122" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="24807" y="10351" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="fact_acc_hotel" left="20" top="0" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="5080" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d8130000da120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="hotel_fact_acc_hotel" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_room" left="5821" top="-3122" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3916" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00004c0f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="hotel_dim_room" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="dim_room_status" left="5157" top="2404" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000032070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="hotel_dim_room_status" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-9843</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3122</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-3122</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="eb49b1f1-bce4-4e08-9e97-e006dd3b0503">
+      <ID>Fact Acc Hotel</ID>
+      <Name>Fact Acc Hotel</Name>
+      <DimensionID>Fact Acc Hotel</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e181977e-1ee9-4eb9-a4a7-6a5d6e78274c">
+          <AttributeID>Room Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="39d86d81-33bf-4f3c-9d7f-6e261b0258b9">
+      <ID>Dim Room</ID>
+      <Name>Dim Room</Name>
+      <DimensionID>Dim Room</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="45901dd4-0aec-4db5-b6bf-5950694ba1a8">
+          <AttributeID>Room Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3226f7eb-2843-4cf6-82bb-b5f324ec8879">
+          <AttributeID>Room Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="be7ec50f-a9a6-4b3c-90ca-ba20c3bc1dea">
+          <AttributeID>Capacity</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="486b9a8e-00f7-4568-a0ac-4940988e4133">
+          <AttributeID>Floor</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="502b2d11-e60b-45ce-8e3c-6e2dc8aa55dc">
+          <AttributeID>Status Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aa585dbf-5994-4443-8d21-5202a233bd4b">
+          <AttributeID>Status Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2b4e6833-c254-446f-a2bb-14f3badde600">
+          <AttributeID>Status Description</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+        <Attribute dwd:design-time-name="ee4bcc4a-752c-4da4-833b-97fe78d302d4">
+          <AttributeID>Number Of Single Bed</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cefadee6-dd76-4856-b384-d608822dfebc">
+          <AttributeID>Number Of Double Bed</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="35ea5000-6ff8-48ae-96f3-1b9beaadd2f9">
+          <AttributeID>Cost Per Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fec44e46-b5f9-4c9e-aca0-cebe9c844cbf">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6cc00f52-ada7-4fb4-8ff7-daca8334f71c">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0abf0b6e-1786-4e9e-aa38-ac49e65642df">
+          <AttributeID>Current Flag</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2f9b63ab-7af4-406d-9f2f-ad7c2e36b46c">
+      <ID>Dim Room Status</ID>
+      <Name>Dim Room Status</Name>
+      <DimensionID>Dim Room Status</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="dbe558e8-e47c-4921-aee1-30bd85cc6827">
+          <AttributeID>Status Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="53b681dc-fad4-41c8-875e-9dea59cf5d4f">
+      <ID>Fact Acc Hotel</ID>
+      <Name>Fact Acc Hotel</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="e48ed0fc-a843-479c-a521-b2b2616bafed">
+          <ID>Running Service Cost</ID>
+          <Name>Running Service Cost</Name>
+          <Source dwd:design-time-name="959ee453-68d9-40f7-aa0d-e5bb02f53965">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f35dbaa1-128e-4317-a772-39fd251cf4d8">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_service_cost</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b8f19da4-32cf-4cd3-ae49-5aa9c5b17dc7">
+          <ID>Running Service Charge</ID>
+          <Name>Running Service Charge</Name>
+          <Source dwd:design-time-name="922c66ba-24e6-4aed-800c-e226f95c4c25">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="53c84f04-adb2-4623-916d-14d9d2b9ee59">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_service_charge</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5fdd661a-515e-4a6c-ac8a-1cad0eef4711">
+          <ID>Running Service Count</ID>
+          <Name>Running Service Count</Name>
+          <Source dwd:design-time-name="054ca86a-d2fd-4618-8dce-aeab96916d8a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="79cdc749-14c9-4659-9684-4a4468fb36c8">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_service_count</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="305182f5-2128-43ee-871a-8560a9e5833b">
+          <ID>Running Service Discount</ID>
+          <Name>Running Service Discount</Name>
+          <Source dwd:design-time-name="7eedeb3a-0f97-4790-a3bc-a06c24a9c3c1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="03b32e03-6365-4037-87bb-c730bb99c497">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_service_discount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5d120d36-6077-4f75-9a68-1c16c962e183">
+          <ID>Running Room Discount</ID>
+          <Name>Running Room Discount</Name>
+          <Source dwd:design-time-name="93f63346-84f9-4c33-8eba-4b224e798a16">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="52ee87d6-449f-4b63-a5c4-20543879ac25">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_room_discount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="685901f6-74a8-42cd-86ec-c3121b411832">
+          <ID>Running Room Charge</ID>
+          <Name>Running Room Charge</Name>
+          <Source dwd:design-time-name="c348f0bb-323a-41f6-b5c5-f751f175e488">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d72abc63-a995-4988-bc65-0d0dad028794">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_room_charge</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="db5fc8f0-e215-4d55-933d-94cd5b037009">
+          <ID>Avg Duration</ID>
+          <Name>Avg Duration</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="7fc28274-72b3-4204-abc3-2804a19841bb">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="10f9bfa8-4d0e-405e-8ada-fa299b1ea5b4">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>avg_duration</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d27d6c88-e612-4224-b241-99a264d89393">
+          <ID>Running Number Of Bookings</ID>
+          <Name>Running Number Of Bookings</Name>
+          <Source dwd:design-time-name="6d9f8958-ee56-4234-8aab-73459c68b73e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="40f62947-61bd-4b62-93b4-1239e5ab8c7f">
+              <TableID>hotel_fact_acc_hotel</TableID>
+              <ColumnID>running_number_of_bookings</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="48d24c1c-e7cb-477e-bba9-ed2a04010eb6">
+          <ID>Fact Acc Hotel Count</ID>
+          <Name>Fact Acc Hotel Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="e97e1a6e-3fe1-4c2f-9918-7fb254063d6f">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="2e44e312-f351-4acd-b12c-6b040d4777f4">
+              <TableID>hotel_fact_acc_hotel</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1ac62d4f-1dcb-48d0-900e-30746a961c6c">
+          <CubeDimensionID>Fact Acc Hotel</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aa396eea-deaa-4435-90e2-a04125fee5bb">
+              <AttributeID>Room Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0dec7a95-5965-49e4-b991-c76001139f82">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f5b0ce39-ae6e-4dcb-ad45-41a28dc221c0">
+                    <TableID>hotel_fact_acc_hotel</TableID>
+                    <ColumnID>room_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="086a57cf-0b4a-49f6-84dd-42dee3f65397">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="87f61691-e827-44f8-8c4c-c8d783b25b32">
+                    <TableID>hotel_fact_acc_hotel</TableID>
+                    <ColumnID>room_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="c7f849e4-5a29-4cd5-8fd0-7bbc5aa38d0c">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fc499ada-5576-491a-86cc-aaebfe9787cb">
+                    <TableID>hotel_fact_acc_hotel</TableID>
+                    <ColumnID>room_status_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c49d15a8-8159-4c1c-88a8-a881cadd8b7c">
+          <CubeDimensionID>Dim Room</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="76c52cd1-4b59-43ee-9d3d-eddcf4b2fa08">
+              <AttributeID>Room Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4617fa32-6bcd-40f3-9ec0-67ed940d814b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9e9e9d21-ffd9-4def-bffa-bc07d96ce55b">
+                    <TableID>hotel_fact_acc_hotel</TableID>
+                    <ColumnID>room_key</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e272f8a0-3009-421b-b98d-28eeacd1d1ed">
+          <CubeDimensionID>Dim Room Status</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c87e0872-0113-4a3d-9fd6-5aecb7774e34">
+              <AttributeID>Status Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="76fc4788-59df-4fe0-a5a1-c87e14ea76f8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d022cb3a-3cee-4d5c-85b2-f4e372a058dd">
+                    <TableID>hotel_fact_acc_hotel</TableID>
+                    <ColumnID>room_status_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="9a9e3092-bf08-4554-8617-0a15fd165995">
+    <DataSourceViewID>DataWarehouseSourceView</DataSourceViewID>
+  </Source>
+</Cube>
