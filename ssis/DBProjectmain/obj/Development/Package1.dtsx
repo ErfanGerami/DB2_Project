@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{8A11051A-7D64-477E-B7D1-93FE25C1609D}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{21258121-2B20-4B21-8BC8-B03A5B77E634}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -45,7 +45,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calc lat update"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -67,7 +67,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calc lat update 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -89,7 +89,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -117,7 +117,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1293,6 +1293,20 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\fill food\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ingrediant_cost]"
                       lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[ingrediant_cost]" />
+                    <inputColumn
+                      refId="Package\fill food\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_served]"
+                      cachedDataType="dbDate"
+                      cachedName="first_served"
+                      externalMetadataColumnId="Package\fill food\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_served]"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_served]" />
+                    <inputColumn
+                      refId="Package\fill food\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tax]"
+                      cachedDataType="numeric"
+                      cachedName="tax"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\fill food\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tax]"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[tax]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1519,6 +1533,26 @@
                       precision="10"
                       scale="2"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[tax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tax]"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[tax]"
+                      name="tax"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_served]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_served]"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_served]"
+                      name="first_served"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1564,6 +1598,16 @@
                       name="ingrediant_cost"
                       precision="10"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tax]"
+                      dataType="numeric"
+                      name="tax"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_served]"
+                      dataType="dbDate"
+                      name="first_served" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1621,6 +1665,18 @@
                       name="ingrediant_cost"
                       precision="10"
                       scale="2" />
+                    <outputColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tax]"
+                      dataType="numeric"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tax]"
+                      name="tax"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_served]"
+                      dataType="dbDate"
+                      lineageId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_served]"
+                      name="first_served" />
                     <outputColumn
                       refId="Package\fill food\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1995,6 +2051,321 @@ WHERE  (ord.order_date &gt;= CAST(? AS date)) AND (ord.order_date &lt; DATEADD([
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\fill roles"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ce231d0e-3ecd-45c6-93d6-f65540c72dac}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="fill roles"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\fill roles\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Restaurant].[role]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\fill roles\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{1BD52086-EAD6-417F-8C88-EEE3EB9FCD64}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[role_id]"
+                      cachedDataType="i4"
+                      cachedName="role_id"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[role_id]"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_id]" />
+                    <inputColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[role_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="role_name"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[role_name]"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_name]" />
+                    <inputColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="description"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[role_id]"
+                      dataType="i4"
+                      name="role_id" />
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[role_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="role_name" />
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\fill roles\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\fill roles\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\fill roles\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\fill roles\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Restaurant].[role]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\fill roles\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{9D988F3A-4916-4C13-A2DA-E09E2592FEDF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role_id]"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_id]"
+                      name="role_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role_name]"
+                      length="50"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[role_name]"
+                      name="role_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[description]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].Columns[description]"
+                      name="description"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role_id]"
+                      dataType="i4"
+                      name="role_id" />
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="role_name" />
+                    <externalMetadataColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role_id]"
+                      dataType="i4"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role_id]"
+                      name="role_id" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role_name]"
+                      name="role_name" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[description]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[description]"
+                      name="description" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\fill roles.Paths[OLE DB Source Output]"
+              endId="Package\fill roles\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\fill roles\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\fill tables"
@@ -2689,7 +3060,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate category"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2706,7 +3077,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate employee"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2723,12 +3094,29 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate food"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1BD52086-EAD6-417F-8C88-EEE3EB9FCD64}"
           SQLTask:SqlStatementSource="truncate table restaurant.food" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate role"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dfe0c0ae-c742-42bc-8b04-9c5175945c35}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate role"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1BD52086-EAD6-417F-8C88-EEE3EB9FCD64}"
+          SQLTask:SqlStatementSource="truncate table restaurant.[role]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2740,7 +3128,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2782,6 +3170,14 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2 1"
       DTS:To="Package\fill tables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{488455f6-bd94-465b-a2b5-05d208bb4ffc}"
+      DTS:From="Package\truncate role"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2 1 1"
+      DTS:To="Package\fill roles" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -2828,40 +3224,86 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\calc lat update"
+          TopLeft="167.55951470516,250.095236356107" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\calc lat update 1"
+          TopLeft="161.607134078003,502.460313966271" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="348.710298458311,256.698410913364" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="342.757917831154,509.063488523528" />
+        <NodeLayout
           Size="131.2,41.6"
           Id="Package\fill category"
-          TopLeft="517.060160212518,144.692592003651" />
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\fill tables"
-          TopLeft="725.624963631854,148.424073459184" />
+          TopLeft="517.953017357276,144.692592003651" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\fill employee"
-          TopLeft="69.0740735782885,135.399999475678" />
+          TopLeft="69.9669307230463,135.399999475678" />
         <NodeLayout
           Size="111.2,41.6"
           Id="Package\fill food"
-          TopLeft="308.425912352533,143.199999421437" />
+          TopLeft="309.318769497291,143.199999421437" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\fill order_detail\Data Flow Task"
+          TopLeft="85.22218959144,36.8666632615859" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="258.4,129.6"
+          Size="258.4,172.8"
+          Id="Package\fill order_detail"
+          TopLeft="588.048385077977,515.533329325583" />
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\fill roles"
+          TopLeft="908.660715049207,148.944113653795" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\fill tables"
+          TopLeft="726.517820776612,148.424073459184" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\For Loop Container\Data Flow Task"
+          TopLeft="85.22218959144,36.8666632615859" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="348.8,132.8"
+          Size="348.8,176"
+          Id="Package\For Loop Container"
+          TopLeft="563.891690859264,272.126048680537" />
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\truncate category"
-          TopLeft="493.518494832112,60.6259259215734" />
+          TopLeft="494.41135197687,60.6259259215734" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\truncate employee"
-          TopLeft="60,60" />
+          TopLeft="60.8928571447578,60" />
         <NodeLayout
           Size="139.2,41.6"
           Id="Package\truncate food"
-          TopLeft="289.166654145553,62.02222220816" />
+          TopLeft="290.059511290311,62.02222220816" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\truncate role"
+          TopLeft="895.535715766327,63.9215652196141" />
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\truncate table"
-          TopLeft="712.499964348974,64.3574073771065" />
+          TopLeft="713.392821493732,64.3574073771065" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="139.537036789144,101.6">
+          TopLeft="140.429893933902,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2883,7 +3325,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="361.396283249043,103.62222220816">
+          TopLeft="362.289140393801,103.62222220816">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2905,7 +3347,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="572.718494832112,102.225925921573">
+          TopLeft="573.61135197687,102.225925921573">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2939,7 +3381,7 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="784.262463990414,105.957407377107">
+          TopLeft="785.155321135172,105.957407377107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2959,17 +3401,31 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\calc lat update"
-          TopLeft="166.666657560402,250.095236356107" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="347.817441313553,256.698410913364" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2 1 1]"
+          TopLeft="965.498215407767,105.521565219614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.4225484341807"
+              Start="0,0"
+              End="0,35.9225484341807">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9225484341807" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="312.266657560402,274.196823634736">
+          TopLeft="313.15951470516,274.196823634736">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2989,62 +3445,9 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\For Loop Container\Data Flow Task"
-          TopLeft="85.22218959144,36.8666632615859" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="348.8,132.8"
-          Size="348.8,176"
-          Id="Package\For Loop Container"
-          TopLeft="593.611078677631,246.999998282393" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="512.617441313553,277.498410913364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.9936373640783,57.5015873690289"
-              Start="0,0"
-              End="73.4936373640783,57.5015873690289">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="36.4968186820391,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.4968186820391,0"
-                    Point2="40.4968186820391,0"
-                    Point3="40.4968186820391,4" />
-                  <mssgle:LineSegment
-                    End="40.4968186820391,53.5015873690289" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40.4968186820391,53.5015873690289"
-                    Point2="40.4968186820391,57.5015873690289"
-                    Point3="44.4968186820391,57.5015873690289" />
-                  <mssgle:LineSegment
-                    End="73.4936373640783,57.5015873690289" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\calc lat update 1"
-          TopLeft="160.714276933245,502.460313966271" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Execute SQL Task 1"
-          TopLeft="341.865060686396,509.063488523528" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
-          TopLeft="314.314276933245,526.5619012449">
+          TopLeft="315.207134078003,526.5619012449">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3064,20 +3467,43 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\fill order_detail\Data Flow Task"
-          TopLeft="85.22218959144,36.8666632615859" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="258.4,129.6"
-          Size="258.4,172.8"
-          Id="Package\fill order_detail"
-          TopLeft="587.155527933219,515.533329325583" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="513.510298458311,277.498410913364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.3813924009535,82.6276377671732"
+              Start="0,0"
+              End="42.8813924009535,82.6276377671732">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.1906962004767,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.1906962004767,0"
+                    Point2="25.1906962004767,0"
+                    Point3="25.1906962004767,4" />
+                  <mssgle:LineSegment
+                    End="25.1906962004767,78.6276377671732" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.1906962004767,78.6276377671732"
+                    Point2="25.1906962004767,82.6276377671732"
+                    Point3="29.1906962004767,82.6276377671732" />
+                  <mssgle:LineSegment
+                    End="42.8813924009535,82.6276377671732" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="506.665060686396,529.863488523528">
+          TopLeft="507.557917831154,529.863488523528">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3189,82 +3615,6 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\fill tables">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\fill tables\OLE DB Destination"
-          TopLeft="278.333318125871,245.266664961113" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\fill tables\OLE DB Source"
-          TopLeft="107.499994126459,18.1999998734395" />
-        <EdgeLayout
-          Id="Package\fill tables.Paths[OLE DB Source Output]"
-          TopLeft="183.499994126459,59.7999998734395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="180.433323999412,185.466665087674"
-              Start="0,0"
-              End="180.433323999412,177.966665087674">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,88.7333325438368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,88.7333325438368"
-                    Point2="0,92.7333325438368"
-                    Point3="4,92.7333325438368" />
-                  <mssgle:LineSegment
-                    End="176.433323999412,92.7333325438368" />
-                  <mssgle:CubicBezierSegment
-                    Point1="176.433323999412,92.7333325438368"
-                    Point2="180.433323999412,92.7333325438368"
-                    Point3="180.433323999412,96.7333325438368" />
-                  <mssgle:LineSegment
-                    End="180.433323999412,177.966665087674" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\fill tables\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\fill tables\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\fill employee">
     <LayoutInfo>
       <GraphLayout
@@ -3281,40 +3631,6 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Size="191.2,41.6"
           Id="Package\fill employee\change format of gender"
           TopLeft="267.499985384445,125.466665810876" />
-        <EdgeLayout
-          Id="Package\fill employee.Paths[OLE DB Source Output]"
-          TopLeft="183.499994126459,59.7999998734395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="179.599991257986,65.666665937437"
-              Start="0,0"
-              End="179.599991257986,58.166665937437">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8333329687185" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.8333329687185"
-                    Point2="0,32.8333329687185"
-                    Point3="4,32.8333329687185" />
-                  <mssgle:LineSegment
-                    End="175.599991257986,32.8333329687185" />
-                  <mssgle:CubicBezierSegment
-                    Point1="175.599991257986,32.8333329687185"
-                    Point2="179.599991257986,32.8333329687185"
-                    Point3="179.599991257986,36.8333329687185" />
-                  <mssgle:LineSegment
-                    End="179.599991257986,58.166665937437" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\fill employee.Paths[Derived Column Output]"
           TopLeft="363.099985384445,167.066665810876">
@@ -3341,6 +3657,40 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
                     Point3="138.333325228758,46.9999995479982" />
                   <mssgle:LineSegment
                     End="138.333325228758,78.4999990959965" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fill employee.Paths[OLE DB Source Output]"
+          TopLeft="183.499994126459,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179.599991257986,65.666665937437"
+              Start="0,0"
+              End="179.599991257986,58.166665937437">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8333329687185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8333329687185"
+                    Point2="0,32.8333329687185"
+                    Point3="4,32.8333329687185" />
+                  <mssgle:LineSegment
+                    End="175.599991257986,32.8333329687185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175.599991257986,32.8333329687185"
+                    Point2="179.599991257986,32.8333329687185"
+                    Point3="179.599991257986,36.8333329687185" />
+                  <mssgle:LineSegment
+                    End="179.599991257986,58.166665937437" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3429,19 +3779,6 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\fill food\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\fill food\OLE DB Destination">
     <Properties>
       <Property>
@@ -3454,66 +3791,8 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\For Loop Container\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\For Loop Container\Data Flow Task\OLE DB Source"
-          TopLeft="204.999996945262,138.999997928739" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\For Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="285.999995738268,309.99999538064" />
-        <EdgeLayout
-          Id="Package\For Loop Container\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="280.999996945262,180.599997928739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90.599998793006,129.399997451901"
-              Start="0,0"
-              End="90.599998793006,121.899997451901">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.6999987259507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.6999987259507"
-                    Point2="0,64.6999987259507"
-                    Point3="4,64.6999987259507" />
-                  <mssgle:LineSegment
-                    End="86.599998793006,64.6999987259507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86.599998793006,64.6999987259507"
-                    Point2="90.599998793006,64.6999987259507"
-                    Point3="90.599998793006,68.6999987259507" />
-                  <mssgle:LineSegment
-                    End="90.599998793006,121.899997451901" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\fill food\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3590,6 +3869,229 @@ WHERE  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\fill order_detail\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\fill roles">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\fill roles\OLE DB Destination"
+          TopLeft="278.333318125871,245.266664961113" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\fill roles\OLE DB Source"
+          TopLeft="107.499994126459,18.1999998734395" />
+        <EdgeLayout
+          Id="Package\fill roles.Paths[OLE DB Source Output]"
+          TopLeft="183.499994126459,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.433323999412,185.466665087674"
+              Start="0,0"
+              End="180.433323999412,177.966665087674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.7333325438368"
+                    Point2="0,92.7333325438368"
+                    Point3="4,92.7333325438368" />
+                  <mssgle:LineSegment
+                    End="176.433323999412,92.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.433323999412,92.7333325438368"
+                    Point2="180.433323999412,92.7333325438368"
+                    Point3="180.433323999412,96.7333325438368" />
+                  <mssgle:LineSegment
+                    End="180.433323999412,177.966665087674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill roles\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill roles\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\fill tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\fill tables\OLE DB Destination"
+          TopLeft="278.333318125871,245.266664961113" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\fill tables\OLE DB Source"
+          TopLeft="107.499994126459,18.1999998734395" />
+        <EdgeLayout
+          Id="Package\fill tables.Paths[OLE DB Source Output]"
+          TopLeft="183.499994126459,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.433323999412,185.466665087674"
+              Start="0,0"
+              End="180.433323999412,177.966665087674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.7333325438368"
+                    Point2="0,92.7333325438368"
+                    Point3="4,92.7333325438368" />
+                  <mssgle:LineSegment
+                    End="176.433323999412,92.7333325438368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.433323999412,92.7333325438368"
+                    Point2="180.433323999412,92.7333325438368"
+                    Point3="180.433323999412,96.7333325438368" />
+                  <mssgle:LineSegment
+                    End="180.433323999412,177.966665087674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill tables\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\fill tables\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\For Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\For Loop Container\Data Flow Task\OLE DB Source"
+          TopLeft="204.999996945262,138.999997928739" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\For Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="285.999995738268,309.99999538064" />
+        <EdgeLayout
+          Id="Package\For Loop Container\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="280.999996945262,180.599997928739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.599998793006,129.399997451901"
+              Start="0,0"
+              End="90.599998793006,121.899997451901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.6999987259507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60.6999987259507"
+                    Point2="0,64.6999987259507"
+                    Point3="4,64.6999987259507" />
+                  <mssgle:LineSegment
+                    End="86.599998793006,64.6999987259507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.599998793006,64.6999987259507"
+                    Point2="90.599998793006,64.6999987259507"
+                    Point3="90.599998793006,68.6999987259507" />
+                  <mssgle:LineSegment
+                    End="90.599998793006,121.899997451901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

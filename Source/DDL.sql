@@ -35,7 +35,6 @@ CREATE TABLE Restaurant.[table] (
     location VARCHAR(100),
     number SMALLINT NOT NULL
 );
-
 CREATE TABLE Restaurant.food (
     food_id INT PRIMARY KEY IDENTITY(1,1),
     food_name VARCHAR(100) NOT NULL,
@@ -136,9 +135,12 @@ create table Hotel.booking(
     primary_guest_id INT NOT NULL,
     room_id INT,
     guest_id INT,
+    total_charge DECIMAL(10, 2),
+    total_discount DECIMAL(10, 2),
     FOREIGN KEY (guest_id) REFERENCES Hotel.Guest(guest_id) ON DELETE SET NULL,
     FOREIGN KEY (primary_guest_id) REFERENCES Hotel.Guest(guest_id) ON DELETE CASCADE,
-    FOREIGN KEY (room_id) REFERENCES Hotel.room(room_id) ON DELETE SET NULL
+    FOREIGN KEY (room_id) REFERENCES Hotel.room(room_id) ON DELETE SET NULL,
+
 );
 
 

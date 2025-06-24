@@ -24,7 +24,6 @@ BEGIN
                     ISNULL(SUM(fs.discount_amount), 0) AS running_service_discount
                     
                 FROM sa.hotel.room r
-                
                 LEFT JOIN hotel.fact_transactional_service fs 
                     ON fs.room_id = r.room_id
                WHERE fs.date_id >= @current_date AND fs.date_id < DATEADD(DAY, 1, @current_date)
@@ -39,7 +38,7 @@ BEGIN
                     ISNULL(SUM(b.total_discount), 0) AS running_room_discount,
                     ISNULL(SUM(b.total_charge), 0) AS running_room_charge
                 FROM sa.hotel.booking b
-               WHERE b.checkout_time >= @current_date AND b.checkout_time < DATEADD(DAY, 1, @current_date)
+              WHERE b.checkout_time >= @current_date AND b.checkout_time < DATEADD(DAY, 1, @current_date)
                 GROUP BY b.room_id
             )
             INSERT INTO hotel.fact_acc_hotel (

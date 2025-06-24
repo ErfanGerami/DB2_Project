@@ -16,3 +16,4 @@ WITH (
 
 
 select * from shared.dim_date where date_id='2025-06-15'
+select count(*) from source.hotel.booking

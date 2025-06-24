@@ -226,3 +226,59 @@ SELECT service_id, item_id, quantity
 FROM RandomizedDetails;
 
 
+
+
+
+
+
+WITH Days AS (
+    SELECT TOP (7) ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS day_offset
+    FROM master.dbo.spt_values
+),
+Rooms AS (
+    SELECT room_id, cost_per_day, ROW_NUMBER() OVER (ORDER BY room_id) AS rn
+    FROM Hotel.room
+),
+Guests AS (
+    SELECT guest_id, ROW_NUMBER() OVER (ORDER BY guest_id) AS rn
+    FROM Hotel.Guest
+),
+Combinations AS (
+    SELECT 
+        r.room_id,
+        r.cost_per_day,
+        d.day_offset,
+        DATEADD(DAY, -d.day_offset, CAST(GETDATE() AS DATE)) AS checkin_time,
+        DATEADD(DAY, -d.day_offset + 1, CAST(GETDATE() AS DATE)) AS checkout_time,
+        g1.guest_id AS primary_guest_id,
+        g2.guest_id AS guest_id
+    FROM Rooms r
+    CROSS JOIN Days d
+    CROSS APPLY (
+        SELECT guest_id FROM Guests 
+        WHERE rn = ((r.rn + d.day_offset - 2) % (SELECT COUNT(*) FROM Guests)) + 1
+    ) g1
+    CROSS APPLY (
+        SELECT guest_id FROM Guests 
+        WHERE rn = ((r.rn + d.day_offset - 1) % (SELECT COUNT(*) FROM Guests)) + 1
+    ) g2
+)
+INSERT INTO Hotel.booking (
+    checkin_time, checkout_time, primary_guest_id, room_id, guest_id,
+    total_charge, total_discount
+)
+SELECT 
+    checkin_time,
+    checkout_time,
+    primary_guest_id,
+    room_id,
+    guest_id,
+    cost_per_day,
+    cost_per_day*0.5
+FROM Combinations
+ORDER BY room_id, checkin_time;
+
+
+
+
+

@@ -22,7 +22,7 @@ BEGIN
         select 
             b.primary_guest_id as guest_id,
             b.room_id,
-            fs.room_key,
+            dr.room_key,
             g.tier_id,
             b.checkin_time,
             b.checkout_time,
@@ -38,7 +38,7 @@ BEGIN
         left join hotel.fact_transactional_service fs on fs.booking_id = b.booking_id 
         left join sa.hotel.room r on r.room_id = b.room_id
         left join sa.hotel.guest g on g.guest_id = b.primary_guest_id
-     ---   LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
+        LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
 
         where checkout_time >= @current_date and checkout_time < dateadd(day, 1, @current_date)
         group by 
@@ -50,7 +50,7 @@ BEGIN
             b.booking_id,
             b.total_charge,
             b.total_discount,
-            fs.room_key
+            dr.room_key
             ;
 
 
@@ -84,7 +84,7 @@ BEGIN
         select 
             b.primary_guest_id as guest_id,
             b.room_id,
-            fs.room_key,
+            dr.room_key,
             g.tier_id,
             b.checkin_time,
             b.checkout_time,
@@ -100,7 +100,7 @@ BEGIN
         left join hotel.fact_transactional_service fs on fs.booking_id = b.booking_id 
         left join sa.hotel.room r on r.room_id = b.room_id
         left join sa.hotel.guest g on g.guest_id = b.primary_guest_id
-      ---  LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
+        LEFT JOIN hotel.dim_room dr on dr.room_id=r.room_id and current_flag=1
 
         where checkout_time >= @current_date and checkout_time < dateadd(day, 1, @current_date)
         group by 
@@ -112,7 +112,7 @@ BEGIN
             b.booking_id,
             b.total_charge,
             b.total_discount,
-            fs.room_key
+            dr.room_key
 
             ;
 

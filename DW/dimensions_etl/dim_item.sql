@@ -51,7 +51,6 @@ AS BEGIN
            i.duration_to_prepare, i.cost, i.charge, i.description
     FROM SA.hotel.item i
     JOIN SA.hotel.category c ON i.category_id = c.category_id;
-
     INSERT INTO LOG(procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('Hotel.fill_dim_item_first_load', GETDATE(), 'insert into hotel.dim_item', 'hotel.dim_item', @@ROWCOUNT);
 

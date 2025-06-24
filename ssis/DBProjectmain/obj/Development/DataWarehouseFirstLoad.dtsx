@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataWarehouseFirstLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{1F336FD7-C637-4F56-B05B-93C61D7C9EB1}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{62D03AC5-FD23-4D2C-A57A-0BEBE2B48FA3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -80,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5242,7 +5242,7 @@ where [refTable].[food_key] = ?</property>
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_acc_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -7341,7 +7341,7 @@ FROM    restaurant.fact_transactional_restaurant where
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_daily_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -8476,7 +8476,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_transactional_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -8504,7 +8504,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_category"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8521,7 +8521,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_employee"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8530,20 +8530,20 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\truncate dim_food"
+      DTS:refId="Package\truncate dim_food and reset surr_keu"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{3ee0377a-c444-445b-a95e-ba5691267170}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="truncate dim_food"
+      DTS:ObjectName="truncate dim_food and reset surr_keu"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-          SQLTask:SqlStatementSource="truncate table restaurant.dim_food" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table restaurant.dim_food;DBCC CHECKIDENT ('Restaurant.dim_food', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -8555,12 +8555,12 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-          SQLTask:SqlStatementSource="truncate table restaurant.dim_category" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table restaurant.dim_table" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -8589,7 +8589,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate fact_acc_restaurant 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8606,7 +8606,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate fact_transactional_restaurant"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8628,7 +8628,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{00a392bd-de49-481e-81bf-3cac1a793ab7}"
-      DTS:From="Package\truncate dim_food"
+      DTS:From="Package\truncate dim_food and reset surr_keu"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\fill dim_food" />
@@ -8764,11 +8764,11 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\fill diim_table"
-          TopLeft="743.217551984975,144.372221218276" />
+          TopLeft="818.727756227349,137.817599375282" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\fill dim_category"
-          TopLeft="534.652748565639,140.640739762743" />
+          TopLeft="586.693565002951,134.086117919749" />
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\fill dim_employee"
@@ -8776,7 +8776,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         <NodeLayout
           Size="133.6,41.6"
           Id="Package\fill dim_food"
-          TopLeft="326.018500705653,139.148147180529" />
+          TopLeft="301.911357797192,171.648147152042" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\filling fact_acc_restaurant\filling temp_acc"
@@ -8927,19 +8927,19 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\truncate dim_category"
-          TopLeft="511.111083185232,56.5740736806651" />
+          TopLeft="576.417205773231,51.1118888115033" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\truncate dim_employee"
           TopLeft="77.5925883531205,55.9481477590917" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\truncate dim_food"
-          TopLeft="306.759242498673,57.9703699672517" />
+          Size="256.8,41.6"
+          Id="Package\truncate dim_food and reset surr_keu"
+          TopLeft="292.473528182548,87.6027228824543" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\truncate dim_table"
-          TopLeft="730.092552702094,60.3055551361982" />
+          TopLeft="788.255818132031,51.5660593455394" />
         <NodeLayout
           Size="218.4,41.6"
           Id="Package\truncate fact_acc_restaurant 1"
@@ -8976,18 +8976,30 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="390.188871602163,99.5703699672517">
+          TopLeft="420.873528182548,129.202722882454">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.5777772132777"
+              EndConnector="-52.1621703853558,42.4454242695873"
               Start="0,0"
-              End="0,32.0777772132777">
+              End="-52.1621703853558,34.9454242695873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.0777772132777" />
+                    End="0,17.2227121347936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2227121347936"
+                    Point2="0,21.2227121347936"
+                    Point3="-4,21.2227121347936" />
+                  <mssgle:LineSegment
+                    End="-48.1621703853558,21.2227121347936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.1621703853558,21.2227121347936"
+                    Point2="-52.1621703853558,21.2227121347936"
+                    Point3="-52.1621703853558,25.2227121347936" />
+                  <mssgle:LineSegment
+                    End="-52.1621703853558,34.9454242695873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9134,30 +9146,18 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="601.511083185232,98.1740736806651">
+          TopLeft="665.155385388091,92.7118888115033">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.94166538040679,42.4666660820776"
+              EndConnector="0,41.3742291082456"
               Start="0,0"
-              End="9.94166538040679,34.9666660820776">
+              End="0,33.8742291082456">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.2333330410388" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2333330410388"
-                    Point2="0,21.2333330410388"
-                    Point3="4,21.2333330410388" />
-                  <mssgle:LineSegment
-                    End="5.94166538040679,21.2333330410388" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.94166538040679,21.2333330410388"
-                    Point2="9.94166538040679,21.2333330410388"
-                    Point3="9.94166538040679,25.2333330410388" />
-                  <mssgle:LineSegment
-                    End="9.94166538040679,34.9666660820776" />
+                    End="0,33.8742291082456" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9168,18 +9168,30 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="812.255052343535,101.905555136198">
+          TopLeft="870.255818132031,93.1660593455394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.4666660820778"
+              EndConnector="17.6719380953183,44.6515400297425"
               Start="0,0"
-              End="0,34.9666660820778">
+              End="17.6719380953183,37.1515400297425">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9666660820778" />
+                    End="0,18.3257700148712" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.3257700148712"
+                    Point2="0,22.3257700148712"
+                    Point3="4,22.3257700148712" />
+                  <mssgle:LineSegment
+                    End="13.6719380953183,22.3257700148712" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.6719380953183,22.3257700148712"
+                    Point2="17.6719380953183,22.3257700148712"
+                    Point3="17.6719380953183,26.3257700148712" />
+                  <mssgle:LineSegment
+                    End="17.6719380953183,37.1515400297425" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9252,30 +9264,30 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="392.818500705653,180.748147180529">
+          TopLeft="368.711357797192,213.248147152042">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-28.6925857578348,103.133332326876"
+              EndConnector="-57.6521095160411,70.6333323553635"
               Start="0,0"
-              End="-28.6925857578348,95.6333323268757">
+              End="-57.6521095160411,63.1333323553635">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5666661634378" />
+                    End="0,38.1732677087634" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.5666661634378"
-                    Point2="0,51.5666661634378"
-                    Point3="-4,51.5666661634378" />
+                    Point1="0,38.1732677087634"
+                    Point2="0,42.1732677087634"
+                    Point3="-4,42.1732677087634" />
                   <mssgle:LineSegment
-                    End="-24.6925857578348,51.5666661634378" />
+                    End="-53.6521095160411,42.1732677087634" />
                   <mssgle:CubicBezierSegment
-                    Point1="-24.6925857578348,51.5666661634378"
-                    Point2="-28.6925857578348,51.5666661634378"
-                    Point3="-28.6925857578348,55.5666661634378" />
+                    Point1="-53.6521095160411,42.1732677087634"
+                    Point2="-57.6521095160411,42.1732677087634"
+                    Point3="-57.6521095160411,46.1732677087634" />
                   <mssgle:LineSegment
-                    End="-28.6925857578348,95.6333323268757" />
+                    End="-57.6521095160411,63.1333323553635" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9427,15 +9439,15 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     design-time-name="Package\fill diim_table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\fill diim_table\OLE DB Destination"
-          TopLeft="278.333318125871,245.266664961113" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,41.6"
           Id="Package\fill diim_table\OLE DB Source"
           TopLeft="107.499994126459,18.1999998734395" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\fill diim_table\OLE DB Destination"
+          TopLeft="278.333318125871,245.266664961113" />
         <EdgeLayout
           Id="Package\fill diim_table.Paths[OLE DB Source Output]"
           TopLeft="183.499994126459,59.7999998734395">
@@ -9467,7 +9479,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9503,15 +9517,15 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     design-time-name="Package\fill dim_category">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\fill dim_category\OLE DB Destination"
-          TopLeft="278.333318125871,245.266664961113" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,41.6"
           Id="Package\fill dim_category\OLE DB Source"
           TopLeft="107.499994126459,18.1999998734395" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\fill dim_category\OLE DB Destination"
+          TopLeft="278.333318125871,245.266664961113" />
         <EdgeLayout
           Id="Package\fill dim_category.Paths[OLE DB Source Output]"
           TopLeft="183.499994126459,59.7999998734395">
@@ -9543,7 +9557,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9581,10 +9597,6 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\fill dim_employee\OLE DB Source"
-          TopLeft="107.499994126459,18.1999998734395" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\fill dim_employee\OLE DB Destination"
           TopLeft="415.833310613203,253.066664906873" />
@@ -9592,28 +9604,10 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Size="261.6,41.6"
           Id="Package\fill dim_employee\adding effective date and preious salary"
           TopLeft="374.166646223102,176.799998770555" />
-        <EdgeLayout
-          Id="Package\fill dim_employee.Paths[Derived Column Output]"
-          TopLeft="503.199978418153,218.399998770555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.6666661363177"
-              Start="0,0"
-              End="0,27.1666661363177">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1666661363177" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\fill dim_employee\OLE DB Source"
+          TopLeft="107.499994126459,18.1999998734395" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\fill dim_employee\Lookup"
@@ -9649,7 +9643,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9685,6 +9681,30 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="4.84194574948825,28.3999996926387,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fill dim_employee.Paths[Derived Column Output]"
+          TopLeft="503.199978418153,218.399998770555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6666661363177"
+              Start="0,0"
+              End="0,27.1666661363177">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1666661363177" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9792,7 +9812,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9862,7 +9884,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9923,133 +9947,113 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\Sort"
+          TopLeft="300.99999551475,248.999996289611" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\OLE DB Destination"
+          TopLeft="912.99998639524,396.999994501472" />
+        <NodeLayout
           Size="120.8,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\dim_food"
-          TopLeft="134.999997988343,95.9999985694886" />
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\Lookup 1"
+          TopLeft="552.999991759658,171.999997437" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\filling fact_acc_restaurant\filling temp_acc\fact_acc_restaurant"
           TopLeft="507.99999243021,77.9999988377094" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\Lookup"
-          TopLeft="212.999996826053,174.999997392297" />
-        <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Source Output]"
-          TopLeft="195.399997988343,137.599998569489">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.9999988377094,37.3999988228083"
-              Start="0,0"
-              End="73.9999988377094,29.8999988228083">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.6999994114041" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.6999994114041"
-                    Point2="0,18.6999994114041"
-                    Point3="4,18.6999994114041" />
-                  <mssgle:LineSegment
-                    End="69.9999988377094,18.6999994114041" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.9999988377094,18.6999994114041"
-                    Point2="73.9999988377094,18.6999994114041"
-                    Point3="73.9999988377094,22.6999994114041" />
-                  <mssgle:LineSegment
-                    End="73.9999988377094,29.8999988228083" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\Sort"
-          TopLeft="300.99999551475,248.999996289611" />
-        <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Lookup Match Output]"
-          TopLeft="269.399996826053,216.599997392297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.3999986886977,32.3999988973141"
-              Start="0,0"
-              End="80.3999986886977,24.8999988973141">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.1999994486571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.1999994486571"
-                    Point2="0,16.1999994486571"
-                    Point3="4,16.1999994486571" />
-                  <mssgle:LineSegment
-                    End="76.3999986886977,16.1999994486571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.3999986886977,16.1999994486571"
-                    Point2="80.3999986886977,16.1999994486571"
-                    Point3="80.3999986886977,20.1999994486571" />
-                  <mssgle:LineSegment
-                    End="80.3999986886977,24.8999988973141" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-7.99138737440116,21.1999994486571,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\Lookup 1"
-          TopLeft="552.999991759658,171.999997437" />
-        <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Source Output1]"
-          TopLeft="592.79999243021,119.599998837709">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.5999993294479,52.3999985992909"
-              Start="0,0"
-              End="20.5999993294479,44.8999985992909">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.1999992996455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.1999992996455"
-                    Point2="0,26.1999992996455"
-                    Point3="4,26.1999992996455" />
-                  <mssgle:LineSegment
-                    End="16.5999993294479,26.1999992996455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.5999993294479,26.1999992996455"
-                    Point2="20.5999993294479,26.1999992996455"
-                    Point3="20.5999993294479,30.1999992996455" />
-                  <mssgle:LineSegment
-                    End="20.5999993294479,44.8999985992909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="129.6,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\Merge Join"
+          TopLeft="410.999993875623,304.999995455146" />
         <NodeLayout
           Size="106.4,41.6"
           Id="Package\filling fact_acc_restaurant\filling temp_acc\Sort 1"
           TopLeft="554.999991729856,231.999996542931" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\OLE DB Command"
+          TopLeft="699.999989569188,408.999994322658" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\Derived Column"
+          TopLeft="574.999991431832,340.599995008111" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\dim_food"
+          TopLeft="134.999997988343,95.9999985694886" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\filling fact_acc_restaurant\filling temp_acc\Lookup"
+          TopLeft="212.999996826053,174.999997392297" />
+        <EdgeLayout
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Command Output]"
+          TopLeft="867.199989569187,429.799994322658">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.7999968260525,-11.9999998211861"
+              Start="0,0"
+              End="38.2999968260525,-11.9999998211861">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.8999984130263,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.8999984130263,0"
+                    Point2="22.8999984130263,0"
+                    Point3="22.8999984130263,-4" />
+                  <mssgle:LineSegment
+                    End="22.8999984130263,-7.99999982118607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.8999984130263,-7.99999982118607"
+                    Point2="22.8999984130263,-11.9999998211861"
+                    Point3="26.8999984130263,-11.9999998211861" />
+                  <mssgle:LineSegment
+                    End="38.2999968260525,-11.9999998211861" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Merge Join Output]"
+          TopLeft="540.599993875623,325.799995455146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.3999975562095,35.5999995529652"
+              Start="0,0"
+              End="26.8999975562095,35.5999995529652">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="13.1999987781048,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.1999987781048,0"
+                    Point2="17.1999987781048,0"
+                    Point3="17.1999987781048,4" />
+                  <mssgle:LineSegment
+                    End="17.1999987781048,31.5999995529652" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.1999987781048,31.5999995529652"
+                    Point2="17.1999987781048,35.5999995529652"
+                    Point3="21.1999987781048,35.5999995529652" />
+                  <mssgle:LineSegment
+                    End="26.8999975562095,35.5999995529652" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Lookup Match Output1]"
           TopLeft="673.799991759658,192.799997437">
@@ -10086,30 +10090,68 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\Merge Join"
-          TopLeft="410.999993875623,304.999995455146" />
         <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Sort Output]"
-          TopLeft="398.59999551475,269.799996289611">
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Lookup Match Output]"
+          TopLeft="269.399996826053,216.599997392297">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.9333316942057,35.1999991655349"
+              EndConnector="80.3999986886977,32.3999988973141"
               Start="0,0"
-              End="56.9333316942057,27.6999991655349">
+              End="80.3999986886977,24.8999988973141">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.9333316942057,0" />
+                    End="0,12.1999994486571" />
                   <mssgle:CubicBezierSegment
-                    Point1="52.9333316942057,0"
-                    Point2="56.9333316942057,0"
-                    Point3="56.9333316942057,4" />
+                    Point1="0,12.1999994486571"
+                    Point2="0,16.1999994486571"
+                    Point3="4,16.1999994486571" />
                   <mssgle:LineSegment
-                    End="56.9333316942057,27.6999991655349" />
+                    End="76.3999986886977,16.1999994486571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.3999986886977,16.1999994486571"
+                    Point2="80.3999986886977,16.1999994486571"
+                    Point3="80.3999986886977,20.1999994486571" />
+                  <mssgle:LineSegment
+                    End="80.3999986886977,24.8999988973141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.99138737440116,21.1999994486571,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Derived Column Output]"
+          TopLeft="651.399991431832,382.199995008111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.199998137355,26.7999993145465"
+              Start="0,0"
+              End="132.199998137355,19.2999993145465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.39999965727327" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.39999965727327"
+                    Point2="0,13.3999996572733"
+                    Point3="4,13.3999996572733" />
+                  <mssgle:LineSegment
+                    End="128.199998137355,13.3999996572733" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128.199998137355,13.3999996572733"
+                    Point2="132.199998137355,13.3999996572733"
+                    Point3="132.199998137355,17.3999996572733" />
+                  <mssgle:LineSegment
+                    End="132.199998137355,19.2999993145465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10152,36 +10194,26 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\Derived Column"
-          TopLeft="574.999991431832,340.599995008111" />
         <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Merge Join Output]"
-          TopLeft="540.599993875623,325.799995455146">
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Sort Output]"
+          TopLeft="398.59999551475,269.799996289611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34.3999975562095,35.5999995529652"
+              EndConnector="56.9333316942057,35.1999991655349"
               Start="0,0"
-              End="26.8999975562095,35.5999995529652">
+              End="56.9333316942057,27.6999991655349">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="13.1999987781048,0" />
+                    End="52.9333316942057,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.1999987781048,0"
-                    Point2="17.1999987781048,0"
-                    Point3="17.1999987781048,4" />
+                    Point1="52.9333316942057,0"
+                    Point2="56.9333316942057,0"
+                    Point3="56.9333316942057,4" />
                   <mssgle:LineSegment
-                    End="17.1999987781048,31.5999995529652" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.1999987781048,31.5999995529652"
-                    Point2="17.1999987781048,35.5999995529652"
-                    Point3="21.1999987781048,35.5999995529652" />
-                  <mssgle:LineSegment
-                    End="26.8999975562095,35.5999995529652" />
+                    End="56.9333316942057,27.6999991655349" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10190,36 +10222,32 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\OLE DB Command"
-          TopLeft="699.999989569188,408.999994322658" />
         <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[Derived Column Output]"
-          TopLeft="651.399991431832,382.199995008111">
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Source Output1]"
+          TopLeft="592.79999243021,119.599998837709">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="132.199998137355,26.7999993145465"
+              EndConnector="20.5999993294479,52.3999985992909"
               Start="0,0"
-              End="132.199998137355,19.2999993145465">
+              End="20.5999993294479,44.8999985992909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.39999965727327" />
+                    End="0,22.1999992996455" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.39999965727327"
-                    Point2="0,13.3999996572733"
-                    Point3="4,13.3999996572733" />
+                    Point1="0,22.1999992996455"
+                    Point2="0,26.1999992996455"
+                    Point3="4,26.1999992996455" />
                   <mssgle:LineSegment
-                    End="128.199998137355,13.3999996572733" />
+                    End="16.5999993294479,26.1999992996455" />
                   <mssgle:CubicBezierSegment
-                    Point1="128.199998137355,13.3999996572733"
-                    Point2="132.199998137355,13.3999996572733"
-                    Point3="132.199998137355,17.3999996572733" />
+                    Point1="16.5999993294479,26.1999992996455"
+                    Point2="20.5999993294479,26.1999992996455"
+                    Point3="20.5999993294479,30.1999992996455" />
                   <mssgle:LineSegment
-                    End="132.199998137355,19.2999993145465" />
+                    End="20.5999993294479,44.8999985992909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10228,36 +10256,32 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\filling fact_acc_restaurant\filling temp_acc\OLE DB Destination"
-          TopLeft="912.99998639524,396.999994501472" />
         <EdgeLayout
-          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Command Output]"
-          TopLeft="867.199989569187,429.799994322658">
+          Id="Package\filling fact_acc_restaurant\filling temp_acc.Paths[OLE DB Source Output]"
+          TopLeft="195.399997988343,137.599998569489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.7999968260525,-11.9999998211861"
+              EndConnector="73.9999988377094,37.3999988228083"
               Start="0,0"
-              End="38.2999968260525,-11.9999998211861">
+              End="73.9999988377094,29.8999988228083">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.8999984130263,0" />
+                    End="0,14.6999994114041" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.8999984130263,0"
-                    Point2="22.8999984130263,0"
-                    Point3="22.8999984130263,-4" />
+                    Point1="0,14.6999994114041"
+                    Point2="0,18.6999994114041"
+                    Point3="4,18.6999994114041" />
                   <mssgle:LineSegment
-                    End="22.8999984130263,-7.99999982118607" />
+                    End="69.9999988377094,18.6999994114041" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.8999984130263,-7.99999982118607"
-                    Point2="22.8999984130263,-11.9999998211861"
-                    Point3="26.8999984130263,-11.9999998211861" />
+                    Point1="69.9999988377094,18.6999994114041"
+                    Point2="73.9999988377094,18.6999994114041"
+                    Point3="73.9999988377094,22.6999994114041" />
                   <mssgle:LineSegment
-                    End="38.2999968260525,-11.9999998211861" />
+                    End="73.9999988377094,29.8999988228083" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10340,57 +10364,19 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     design-time-name="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="212.8,41.6"
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\fact_transactional_restaurant"
-          TopLeft="629.999990612269,35.9999994635582" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\dim_food"
           TopLeft="274.999995902181,20.9999996870756" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Sort 1"
-          TopLeft="364.999994561076,139.999997913837" />
-        <EdgeLayout
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[OLE DB Source Output]"
-          TopLeft="335.399995902181,62.5999996870756">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78.3999986588952,77.3999982267619"
-              Start="0,0"
-              End="78.3999986588952,69.8999982267619">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.6999991133809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.6999991133809"
-                    Point2="0,38.6999991133809"
-                    Point3="4,38.6999991133809" />
-                  <mssgle:LineSegment
-                    End="74.3999986588952,38.6999991133809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.3999986588952,38.6999991133809"
-                    Point2="78.3999986588952,38.6999991133809"
-                    Point3="78.3999986588952,42.6999991133809" />
-                  <mssgle:LineSegment
-                    End="78.3999986588952,69.8999982267619" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="212.8,41.6"
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\fact_transactional_restaurant"
+          TopLeft="629.999990612269,35.9999994635582" />
         <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Aggregate"
-          TopLeft="545.999991863966,329.999995082617" />
+          Size="152.8,41.6"
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Derived Column"
+          TopLeft="496.999992594123,400.799995231628" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\OLE DB Destination"
@@ -10399,78 +10385,18 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Size="97.6,41.6"
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Sort"
           TopLeft="660.999990150333,133.599998390675" />
-        <EdgeLayout
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[OLE DB Source Output1]"
-          TopLeft="736.399990612269,77.5999994635582">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.600000461936,55.9999989271164"
-              Start="0,0"
-              End="-26.600000461936,48.4999989271164">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9999994635582" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9999994635582"
-                    Point2="0,27.9999994635582"
-                    Point3="-4,27.9999994635582" />
-                  <mssgle:LineSegment
-                    End="-22.600000461936,27.9999994635582" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.600000461936,27.9999994635582"
-                    Point2="-26.600000461936,27.9999994635582"
-                    Point3="-26.600000461936,31.9999994635582" />
-                  <mssgle:LineSegment
-                    End="-26.600000461936,48.4999989271164" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Merge Join"
           TopLeft="513.999992340803,224.599997034669" />
-        <EdgeLayout
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Sort Output]"
-          TopLeft="413.799994561076,181.599997913837">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="144.73333111306,42.9999991208315"
-              Start="0,0"
-              End="144.73333111306,35.4999991208315">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.4853653325904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.4853653325904"
-                    Point2="0,25.4853653325904"
-                    Point3="4,25.4853653325904" />
-                  <mssgle:LineSegment
-                    End="140.73333111306,25.4853653325904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="140.73333111306,25.4853653325904"
-                    Point2="144.73333111306,25.4853653325904"
-                    Point3="144.73333111306,29.4853653325904" />
-                  <mssgle:LineSegment
-                    End="144.73333111306,35.4999991208315" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Sort 1"
+          TopLeft="364.999994561076,139.999997913837" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Aggregate"
+          TopLeft="545.999991863966,329.999995082617" />
         <EdgeLayout
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Sort Output1]"
           TopLeft="709.799990150333,175.199998390675">
@@ -10502,7 +10428,117 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Sort Output]"
+          TopLeft="413.799994561076,181.599997913837">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.73333111306,42.9999991208315"
+              Start="0,0"
+              End="144.73333111306,35.4999991208315">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4853653325904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4853653325904"
+                    Point2="0,25.4853653325904"
+                    Point3="4,25.4853653325904" />
+                  <mssgle:LineSegment
+                    End="140.73333111306,25.4853653325904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.73333111306,25.4853653325904"
+                    Point2="144.73333111306,25.4853653325904"
+                    Point3="144.73333111306,29.4853653325904" />
+                  <mssgle:LineSegment
+                    End="144.73333111306,35.4999991208315" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[OLE DB Source Output1]"
+          TopLeft="736.399990612269,77.5999994635582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.600000461936,55.9999989271164"
+              Start="0,0"
+              End="-26.600000461936,48.4999989271164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9999994635582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9999994635582"
+                    Point2="0,27.9999994635582"
+                    Point3="-4,27.9999994635582" />
+                  <mssgle:LineSegment
+                    End="-22.600000461936,27.9999994635582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.600000461936,27.9999994635582"
+                    Point2="-26.600000461936,27.9999994635582"
+                    Point3="-26.600000461936,31.9999994635582" />
+                  <mssgle:LineSegment
+                    End="-26.600000461936,48.4999989271164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[OLE DB Source Output]"
+          TopLeft="335.399995902181,62.5999996870756">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.3999986588952,77.3999982267619"
+              Start="0,0"
+              End="78.3999986588952,69.8999982267619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6999991133809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.6999991133809"
+                    Point2="0,38.6999991133809"
+                    Point3="4,38.6999991133809" />
+                  <mssgle:LineSegment
+                    End="74.3999986588952,38.6999991133809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.3999986588952,38.6999991133809"
+                    Point2="78.3999986588952,38.6999991133809"
+                    Point3="78.3999986588952,42.6999991133809" />
+                  <mssgle:LineSegment
+                    End="78.3999986588952,69.8999982267619" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10536,13 +10572,35 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\Derived Column"
-          TopLeft="496.999992594123,400.799995231628" />
+        <EdgeLayout
+          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Derived Column Output]"
+          TopLeft="496.999992594123,417.999994814396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.7999962300064,0"
+              Start="0,0"
+              End="-74.2999962300064,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-74.2999962300064,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Aggregate Output 1]"
           TopLeft="609.199991863966,371.599995082617">
@@ -10574,29 +10632,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant.Paths[Derived Column Output]"
-          TopLeft="496.999992594123,417.999994814396">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-81.7999962300064,0"
-              Start="0,0"
-              End="-74.2999962300064,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-74.2999962300064,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10642,10 +10680,6 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\OLE DB Destination"
-          TopLeft="404.99999396503,305.999995440245" />
-        <NodeLayout
           Size="108,41.6"
           Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\orders"
           TopLeft="149.999997764826,36.999999448657" />
@@ -10657,6 +10691,14 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           Size="112.8,41.6"
           Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\Lookup"
           TopLeft="225.999996632338,165.999997526407" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\OLE DB Destination"
+          TopLeft="404.99999396503,305.999995440245" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\Derived Column"
+          TopLeft="431.999993562698,225.999996632338" />
         <EdgeLayout
           Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant.Paths[OLE DB Source Output]"
           TopLeft="203.999997764826,78.599999448657">
@@ -10691,10 +10733,6 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant\Derived Column"
-          TopLeft="431.999993562698,225.999996632338" />
         <EdgeLayout
           Id="Package\filling fact_transactional_restaurant\filling fact_transactional_restaurant.Paths[Lookup Match Output]"
           TopLeft="338.799996632338,186.799997526407">

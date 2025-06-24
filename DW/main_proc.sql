@@ -4,6 +4,12 @@ BEGIN
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
     values ('main_proc_first_load', getdate(), 'start', 'main_proc_first_load', 0);
+
+    -- -- Reset identities in Restaurant schema
+    -- DBCC CHECKIDENT ('Restaurant.dim_food', RESEED, 0);
+
+    DBCC CHECKIDENT ('hotel.dim_room', RESEED, 0);
+
 	DECLARE @end_date DATE=dateadd(day,-1,getdate());
 	DECLARE @start_date DATE;
 
@@ -14,11 +20,13 @@ BEGIN
     exec hotel.fill_dim_employee_first_load;
     exec hotel.fill_dim_room_status_first_load;
     exec hotel.fill_dim_guest_first_load;
+    
 
 
 	--transactional service--------------------------------
 	
     set @start_date = (select min(cast(time as date)) from Sa.Hotel.service);
+
     exec hotel.fill_fact_transactional_service_first_load @start_date=@start_date,@end_date=@end_date;
 
 
@@ -29,17 +37,23 @@ BEGIN
 	---transactional booking---------------------------
 	set @start_date  = (select min(cast(checkin_time as date)) from sa.hotel.booking);
     exec hotel.fill_fact_transactional_booking_first_load @start_date=@start_date,@end_date=@end_date;
+    
 
 
 
 	--daily-----------------------------------
 	set @start_date  = (select min(cast(checkout_time as date)) from sa.hotel.booking);
-    exec hotel.fill_fact_daily_hotel_first_load;
+    exec hotel.fill_fact_daily_hotel_first_load @start_date=@start_date,@end_date=@end_date;;
 
 
 	--acc---------------------------------
+    set @start_date  = (SELECT MIN(CAST(date_id AS DATE)) FROM hotel.fact_daily_hotel);
+    
+    if(@start_date is null)
+    begin
+        return;
+    end
 
-	set @start_date  = (SELECT MAX(CAST(time AS DATE)) FROM LOG WHERE procedure_name = 'fill_fact_acc_hotel' or procedure_name = 'fill_fact_acc_hotel_first_load');
     exec hotel.fill_fact_acc_hotel_first_load @start_date=@start_date,@end_date=@end_date;
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
@@ -55,6 +69,7 @@ BEGIN
 
 	DECLARE @end_date DATE=dateadd(day,-1,getdate());
 	DECLARE @start_date DATE;    
+
 
 
     exec Hotel.fill_dim_tier;
@@ -109,12 +124,9 @@ BEGIN
 	
 
 	---acc-------------------------
-    set @start_date  = (SELECT MIN(CAST(date_id AS DATE)) FROM hotel.fact_daily_hotel);
     
-    if(@start_date is null)
-    begin
-        return;
-    end
+    set @start_date  = (SELECT MAX(CAST(time AS DATE)) FROM LOG WHERE procedure_name = 'fill_fact_acc_hotel' or procedure_name = 'fill_fact_acc_hotel_first_load');
+
     exec hotel.fill_fact_acc_hotel @start_date=@start_date,@end_date=@end_date;
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
@@ -123,4 +135,24 @@ BEGIN
 END;
 
 
+
+exec hotel.main_proc
+
+
+select * from hotel.fact_transactional_service
+select * from hotel.dim_room
+select count(*)  from hotel.fact_transactional_service
+select max(checkin_time) from hotel.fact_transactional_booking
+
+
+select count(*) from sa.hotel.service_detail
+select count(*) from sa.hotel.booking  
+
+select count( *) from hotel.fact_transactional_booking
+
+select * from hotel.dim_room
+
+
+
+select * from hotel.fact_acc_hotel
 

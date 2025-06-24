@@ -7,12 +7,12 @@ as BEGIN
     
     insert into Log(procedure_name,time,description, effected_table, number_of_rows)
     values('Hotel.fill_room', getdate(), 'truncate table Hotel.room', 'Hotel.room', @@ROWCOUNT);
-
     declare @row_count int;
+
     insert into Hotel.room(room_id, capacity, floor, room_number, number_of_single_bed, number_of_double_bed, cost_per_day, status_id)
     (select room_id, capacity, floor, room_number, number_of_single_bed, number_of_double_bed, cost_per_day, status_id from Source.Hotel.room);
+    
     set @row_count = (select count(*) from Hotel.room);
-
     insert into Log(procedure_name,time,description, effected_table, number_of_rows)
     values('Hotel.fill_room', getdate(), 'inserting data', 'Hotel.room', @row_count);
 
@@ -165,8 +165,8 @@ BEGIN
 
     DECLARE @row_count INT;
     
-    INSERT INTO Hotel.category(category_name, description)
-    SELECT category_name, description FROM Source.Hotel.category;
+    INSERT INTO Hotel.category(category_id, category_name , description)
+    SELECT category_id, category_name, description FROM Source.Hotel.category;
     
     SET @row_count = @@ROWCOUNT;
     
@@ -202,7 +202,6 @@ BEGIN
     INSERT INTO Log(procedure_name, time, description, effected_table, number_of_rows)
     VALUES('Hotel.Fill_Employee', GETDATE(), 'end', '', 0);
 END
-
 
 
 GO
@@ -316,8 +315,8 @@ BEGIN
 
     while @current_date <= @end_date
     begin
-        insert into hotel.booking(booking_id, checkin_time, checkout_time, primary_guest_id, room_id)
-        select booking_id, checkin_time, checkout_time, primary_guest_id, room_id
+        insert into hotel.booking(booking_id, checkin_time, checkout_time, primary_guest_id, room_id,total_charge,total_discount)
+        select booking_id, checkin_time, checkout_time, primary_guest_id, room_id,total_charge,total_discount
         from Source.Hotel.booking
         where checkin_time is NULL or (checkin_time >= @current_date and checkin_time < DATEADD(day, 1, @current_date));
 

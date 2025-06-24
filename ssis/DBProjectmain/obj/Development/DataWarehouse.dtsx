@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataWarehouse"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{3B6EB099-802A-4DFF-B7BD-07B172DE7F21}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{7B4C3B96-4BAD-4308-88ED-56FB5C5BAFC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -36,7 +36,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -58,7 +58,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date2"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -80,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -7896,7 +7896,7 @@ where [refTable].[food_key] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7904,7 +7904,7 @@ where [refTable].[food_key] = ?</property>
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_acc_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -9995,7 +9995,7 @@ FROM    restaurant.fact_transactional_restaurant where
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10003,7 +10003,7 @@ FROM    restaurant.fact_transactional_restaurant where
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_daily_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -11130,7 +11130,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -11138,7 +11138,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
               SQLTask:SqlStatementSource="insert into Restaurant.update_log(table_name,time,date,[DESCRIPTION])values('Restaurant.fact_transactional_restaurant',getdate(),?,'')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::StartTime"
+                SQLTask:DtsVariableName="User::current_date"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
@@ -11166,7 +11166,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_category"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11183,12 +11183,12 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-          SQLTask:SqlStatementSource="truncate table restaurant.dim_category" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table restaurant.dim_table" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -12794,7 +12794,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12828,7 +12830,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12934,7 +12938,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12968,7 +12974,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12996,7 +13004,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13030,7 +13040,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13064,7 +13076,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13082,7 +13096,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
     design-time-name="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\filling fact_daily_restaurant\filling fact_transactional_restaurant\dim_food"
@@ -13146,7 +13160,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13180,7 +13196,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13214,7 +13232,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13248,7 +13268,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13282,7 +13304,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13304,7 +13328,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13338,7 +13364,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13408,7 +13436,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13478,7 +13508,9 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -73,7 +73,6 @@ as BEGIN
         )
 
     OUTPUT $action INTO @Changes;
-    
     WITH SourceWithStatus AS (
         SELECT 
             r.room_id, r.capacity, r.floor, r.room_number,

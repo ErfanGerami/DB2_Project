@@ -114,8 +114,8 @@ RandomOrders AS (
         t.table_id,
         -- Cycle through employee_id
         e.employee_id,
-        -- Random order time in the last 6 days
-        DATEADD(MINUTE, -ABS(CHECKSUM(NEWID()) % 8640 + 1), GETDATE()) AS order_date
+        -- Random order time in the last 7 days
+        DATEADD(MINUTE, -(ABS(CHECKSUM(NEWID()) % 8640 )+24*60+ 1), GETDATE()) AS order_date
     FROM Numbers n
     CROSS APPLY (
         SELECT table_id FROM Tables WHERE rn = ((n.n - 1) % (SELECT COUNT(*) FROM Tables)) + 1
@@ -158,6 +158,8 @@ RandomDetails AS (
 INSERT INTO Restaurant.order_details (order_id, food_id, quantity)
 SELECT order_id, food_id, quantity
 FROM RandomDetails;
+
+
 
 
 

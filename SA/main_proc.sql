@@ -28,10 +28,10 @@ BEGIN
 
 
 	set @end_date = dateadd(day,-1,cast(getdate() as date));
-    select @current_date= dateadd(day, 1, cast(max(checkout_time) as date)) from Hotel.booking;
+    select @current_date= dateadd(day, 1, cast(max(checkin_time) as date)) from Hotel.booking;
 
     if @current_date is null
-        select @current_date=cast(min(checkout_time) as date) from source.Hotel.booking;
+        select @current_date=cast(min(checkin_time) as date) from source.Hotel.booking;
 
 
 	PRINT @current_date;
@@ -52,4 +52,23 @@ exec main_proc
 
 select * from [Log]
 
-select count(*) from hotel.service_detail
+select count(*) from hotel.service s JOIN hotel.service_detail d on s.service_id=d.service_id 
+LEFT JOIN dw.hotel.fact_transactional_service f  on f.service_id=s.service_id and f.item_id=d.item_id
+where f.item_id is null and day(cast([time] as date)) =17
+
+select count(*) from sa.hotel.service_detail 
+select count(*) from hotel.booking
+
+
+update  source.hotel.room set cost_per_day=11;
+
+
+select count(*)  from Restaurant.[order_details]
+select * from Restaurant.role
+select count(*) from dw.Restaurant.fact_transactional_restaurant
+select * from dw.Restaurant.fact_acc_restaurant
+
+
+
+truncate table dw.restaurant.update_log
+
