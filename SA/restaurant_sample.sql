@@ -6,6 +6,7 @@ TRUNCATE TABLE Restaurant.[table];
 TRUNCATE TABLE Restaurant.Employee;
 TRUNCATE TABLE Restaurant.[role];
 TRUNCATE TABLE Restaurant.category;
+
 DBCC CHECKIDENT ('dw.[restaurant].[dim_food]', RESEED, 0);
 
 
@@ -85,3 +86,11 @@ select * from Restaurant.dim_employee
 select * from dw.hotel.dim_employee
 update sa.hotel.employee set salary=1111
 exec dw.hotel.main_proc
+
+
+
+select count(*) from sa.restaurant.[ORDER]
+
+
+
+select count(*) from Source.restaurant.[ORDER] 

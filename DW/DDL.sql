@@ -191,7 +191,7 @@ CREATE TABLE Restaurant.fact_acc_restaurant (
 
 
 
-
+drop table sa.moghare
 create schema hotel;
 
 CREATE TABLE hotel.dim_room (

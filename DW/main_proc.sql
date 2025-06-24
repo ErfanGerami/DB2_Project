@@ -141,7 +141,7 @@ exec hotel.main_proc
 
 select * from hotel.fact_transactional_service
 select * from hotel.dim_room
-select count(*)  from hotel.fact_transactional_service
+select top 100 *  from hotel.fact_transactional_service order by date_id desc
 select max(checkin_time) from hotel.fact_transactional_booking
 
 
