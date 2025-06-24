@@ -300,6 +300,26 @@ create table hotel.fact_transactional_booking (
     total_service_discount DECIMAL(10,2),
     total_room_discount DECIMAL(10,2),
 );
+INSERT INTO hotel.fact_transactional_booking (
+    room_key, room_id, guest_id, tier_id, checkin_time, checkout_time,
+    total_service_cost, total_service_charge, total_service_item_count,
+    total_room_charge, total_charge, duration_time,
+    total_service_discount, total_room_discount
+)
+VALUES
+-- Original unique entries
+(11, 202, 202, 2, '2025-06-02', '2025-06-05', 200.00, 20.00, 4, 450.00, 660.00, 3, 15.00, 30.00),
+(4, 202, 203, 1, '2025-06-04', '2025-06-04', 50.00, 5.00, 1, 100.00, 155.00, 1, 0.00, 5.00),
+(4, 202, 204, 3, '2025-06-05', '2025-06-07', 180.00, 18.00, 2, 350.00, 548.00, 2, 20.00, 25.00)
+
+
+
+
+SELECT Restaurant.dim_food.food_id, Restaurant.dim_food.food_name, casT(Restaurant.fact_acc_restaurant.running_quantity as decimal(10,2)) / number_of_days_in_menu AS avg_sale,(select max(casT(f.running_quantity as decimal(10,2)) / f.number_of_days_in_menu ) from Restaurant.fact_acc_restaurant f  ) as max_sale_per_day
+FROM     Restaurant.fact_acc_restaurant INNER JOIN
+                  Restaurant.dim_food ON Restaurant.fact_acc_restaurant.food_key = Restaurant.dim_food.food_key
+
+select * from Restaurant.fact_acc_restaurant  
 create table hotel.fact_daily_hotel (
     room_key INT,
     room_id INT,

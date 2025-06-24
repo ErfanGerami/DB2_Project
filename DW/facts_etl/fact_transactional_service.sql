@@ -1,4 +1,6 @@
 create or alter procedure hotel.fill_fact_transactional_service_first_load
+@start_date date,@end_date date
+
 as 
 BEGIN
 
@@ -9,11 +11,9 @@ BEGIN
     insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('fill_fact_transactional_service_first_load', GETDATE(), 'truncate table hotel.fact_transactional_service', 'hotel.fact_transactional_service', @@ROWCOUNT);
 
-    declare @current_date date = (select min(cast(time as date)) from Sa.Hotel.service);
+    declare @current_date date=@start_date;
 
-    declare @end_date date = getdate();
-
-    while @current_date<@end_date
+    while @current_date<=@end_date
     begin
 
         insert into hotel.fact_transactional_service (item_id,room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)
@@ -72,22 +72,17 @@ Go
 
 
 create or alter procedure hotel.fill_fact_transactional_service
+@start_date date,@end_date date
+
 as 
 BEGIN
 
     insert into LOG (procedure_name, time, description, effected_table, number_of_rows)   
     values ('fill_fact_transactional_service', getdate(), 'start', 'fact_transactional_service', 0);
 
-    declare @current_date date = (select max(date_id) from Hotel.fact_transactional_service);
-    set @current_date = dateadd(day, 1, @current_date);
-    if(@current_date is null)
-    begin
-        set @current_date = (select min(cast(time as date)) from Sa.Hotel.service);
-    end
+    declare @current_date date =@start_date;
 
-    declare @end_date date = getdate();
-
-    while @current_date<@end_date
+    while @current_date<=@end_date
     begin
 
         insert into hotel.fact_transactional_service (item_id,room_id,room_key, guest_id, employee_id, date_id, tier_id, service_id, booking_id, charge, cost, item_count, discount_amount)

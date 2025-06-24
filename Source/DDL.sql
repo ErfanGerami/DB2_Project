@@ -127,6 +127,8 @@ create table Hotel.room(
 
 
 
+
+
 create table Hotel.booking(
     booking_id INT PRIMARY KEY IDENTITY(1,1),
     checkin_time DATETIME NOT NULL,
@@ -139,13 +141,8 @@ create table Hotel.booking(
     FOREIGN KEY (room_id) REFERENCES Hotel.room(room_id) ON DELETE SET NULL
 );
 
--- create table Hotel.Booking_Guest(
---     booking_id INT  ,
---     guest_id INT ,
---     PRIMARY KEY (booking_id, guest_id),
---     FOREIGN KEY (booking_id) REFERENCES Hotel.booking(booking_id) ON DELETE NO ACTION,
---     FOREIGN KEY (guest_id) REFERENCES Hotel.Guest(guest_id) ON DELETE NO ACTION
--- );
+
+
 
 create table Hotel.category(
     category_id INT PRIMARY KEY IDENTITY(1,1),
@@ -165,18 +162,8 @@ create table Hotel.Employee(
     salary DECIMAL(10, 2) NOT NULL,
     hire_date DATE NOT NULL,
     is_active BIT NOT NULL,
-    is_male BIT NOT NULL
-);
-
-create table Hotel.service (
-    service_id INT PRIMARY KEY IDENTITY(1,1),
-    employee_id INT ,
-    room_id INT,
-    duration_to_complete INT NOT NULL,
-    time DATETIME,
-
-    type VARCHAR(50),
-    description TEXT,
+    is_male BIT NOT NULL,
+    role VARCHAR(50)
 );
 create table Hotel.item(
     item_id INT PRIMARY KEY IDENTITY(1,1),
@@ -188,6 +175,17 @@ create table Hotel.item(
     description TEXT,
     foreign key (category_id) references Hotel.category(category_id)
 );
+create table Hotel.service (
+    service_id INT PRIMARY KEY IDENTITY(1,1),
+    employee_id INT ,
+    room_id INT,
+    duration_to_complete INT NOT NULL,
+    time DATETIME,
+
+    type VARCHAR(50),
+    description TEXT,
+);
+
 create table Hotel.service_detail (
     service_detail_id INT PRIMARY KEY IDENTITY(1,1),
     service_id INT NOT NULL,

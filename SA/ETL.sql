@@ -267,8 +267,9 @@ BEGIN
     VALUES('Hotel.Fill_service', GETDATE(), 'end', '', 0);
 END
 GO
-
 CREATE OR ALTER PROCEDURE Hotel.Fill_service_detail
+@from_date DATE,@to_date DATE
+
 AS
 BEGIN
     INSERT INTO Log(procedure_name, time, description, effected_table, number_of_rows)
@@ -276,13 +277,12 @@ BEGIN
     
     DECLARE @row_count INT;
     declare @current_date date;
-    declare @end_date date = cast(getdate() as date);
-    select @current_date= dateadd(day, 1, cast(max(time) as date)) from Hotel.service_detail det  JOIN Hotel.service serv ON serv.service_id = det.service_id;
+    declare @end_date date ;
 
-    if @current_date is null
-        select @current_date=cast(min(time) as date) from source.Hotel.service;
+	set @current_date=@from_date;
+	set @end_date= @to_date;
 
-    while @current_date < @end_date
+    while @current_date <= @end_date
     begin
         insert into hotel.service_detail(service_detail_id, service_id, item_id, quantity)
         select service_detail_id, serv.service_id, item_id, quantity
@@ -301,6 +301,7 @@ BEGIN
 END
 GO
 CREATE OR ALTER PROCEDURE Hotel.Fill_booking
+@from_date DATE,@to_date DATE
 AS
 BEGIN
 
@@ -309,13 +310,11 @@ BEGIN
 
     DECLARE @row_count INT;
     declare @current_date date;
-    declare @end_date date = cast(getdate() as date);
-    select @current_date= dateadd(day, 1, cast(max(checkout_time) as date)) from Hotel.booking;
+	declare @end_date date;
+    set @current_date= @from_date;
+	set @end_date = @to_date;
 
-    if @current_date is null
-        select @current_date=cast(min(checkout_time) as date) from source.Hotel.booking;
-
-    while @current_date < @end_date
+    while @current_date <= @end_date
     begin
         insert into hotel.booking(booking_id, checkin_time, checkout_time, primary_guest_id, room_id)
         select booking_id, checkin_time, checkout_time, primary_guest_id, room_id
@@ -340,3 +339,5 @@ select * from hotel.country;
 
 exec hotel.Fill_Item
 select * from hotel.item
+
+

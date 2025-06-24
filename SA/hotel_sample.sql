@@ -11,6 +11,7 @@ TRUNCATE TABLE Hotel.room_status;
 TRUNCATE TABLE Hotel.Guest;
 TRUNCATE TABLE Hotel.tier;
 TRUNCATE TABLE Hotel.Country;
+truncate table LOG;
 
 -- Populate Hotel.Country
 INSERT INTO Hotel.Country (country_id, country_name, country_code) VALUES
@@ -114,3 +115,5 @@ exec dw.hotel.main_proc_first_load
 select * from dw.hotel.fact_acc_hotel
 
 
+update sa.hotel.room set cost_per_day=1200 
+select * from dw.hotel.dim_room

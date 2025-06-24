@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_room_status.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\hotel_room_status.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_costs_and_charges.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\hotel_costs_and_charges.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_acc.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\hotel_acc.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_order.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\restaurant_food_order.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_sales_per_day.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\restaurant_food_sales_per_day.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_acc_food.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{E7259F2A-F2A3-4D16-A29F-A1F69F37E392}|ssrs\\ssrs.rptproj|solutionrelative:ssrs\\restaurant_acc_food.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hotel_room_status.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_room_status.rdl",
+              "RelativeDocumentMoniker": "ssrs\\hotel_room_status.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_room_status.rdl [Design]",
+              "RelativeToolTip": "ssrs\\hotel_room_status.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T10:43:41.179Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "hotel_costs_and_charges.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_costs_and_charges.rdl",
+              "RelativeDocumentMoniker": "ssrs\\hotel_costs_and_charges.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_costs_and_charges.rdl [Design]",
+              "RelativeToolTip": "ssrs\\hotel_costs_and_charges.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T10:15:43.309Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "hotel_acc.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_acc.rdl",
+              "RelativeDocumentMoniker": "ssrs\\hotel_acc.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\hotel_acc.rdl [Design]",
+              "RelativeToolTip": "ssrs\\hotel_acc.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:26:28.669Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "restaurant_food_order.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_order.rdl",
+              "RelativeDocumentMoniker": "ssrs\\restaurant_food_order.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_order.rdl [Design]",
+              "RelativeToolTip": "ssrs\\restaurant_food_order.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T12:33:53.912Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "restaurant_food_sales_per_day.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_sales_per_day.rdl",
+              "RelativeDocumentMoniker": "ssrs\\restaurant_food_sales_per_day.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_food_sales_per_day.rdl [Design]",
+              "RelativeToolTip": "ssrs\\restaurant_food_sales_per_day.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T13:34:44.263Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "restaurant_acc_food.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_acc_food.rdl",
+              "RelativeDocumentMoniker": "ssrs\\restaurant_acc_food.rdl",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssrs\\ssrs\\restaurant_acc_food.rdl [Design]",
+              "RelativeToolTip": "ssrs\\restaurant_acc_food.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T13:20:59.528Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

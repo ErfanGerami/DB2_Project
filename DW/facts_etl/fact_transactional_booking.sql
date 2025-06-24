@@ -1,4 +1,7 @@
-create or alter procedure hotel.fill_fact_transactional_booking_first_load AS
+create or alter procedure hotel.fill_fact_transactional_booking_first_load 
+@start_date date,@end_date date
+
+AS
 BEGIN
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
@@ -8,9 +11,11 @@ BEGIN
     insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('fill_fact_transactional_booking_first_load', GETDATE(), 'truncate table hotel.fact_transactional_booking', 'hotel.fact_transactional_booking', @@ROWCOUNT);
 
-    declare @current_date date = (select min(cast(checkin_time as date)) from sa.hotel.booking);
-    declare @end_date date = getdate();
-    while @current_date < @end_date
+    declare @current_date date =@start_date;
+
+
+
+    while @current_date <= @end_date
     begin
 
         insert into hotel.fact_transactional_booking (guest_id, room_id,room_key, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)
@@ -62,20 +67,17 @@ end;
 GO
 
 
-create or alter procedure hotel.fill_fact_transactional_booking AS
+create or alter procedure hotel.fill_fact_transactional_booking 
+@start_date date,@end_date date
+
+AS
 BEGIN
 
     insert into log (procedure_name, time, description, effected_table, number_of_rows)
     values ('fill_fact_transactional_booking', getdate(), 'start', 'fact_transactional_booking', 0);
     
-    declare @current_date date = (select max(checkout_time) from hotel.fact_transactional_booking);
-    set @current_date = dateadd(day, 1, @current_date);
-    if @current_date is null
-    begin
-        set @current_date = (select min(cast(checkout_time as date)) from sa.hotel.booking);
-    end
-    declare @end_date date = getdate();
-    while @current_date < @end_date
+    declare @current_date date =@start_date;
+    while @current_date <= @end_date
     begin
 
         insert into hotel.fact_transactional_booking (guest_id, room_id,room_key, tier_id, checkin_time, checkout_time, total_service_cost, total_service_charge, total_service_item_count, total_room_charge, total_charge, duration_time, total_service_discount, total_room_discount)

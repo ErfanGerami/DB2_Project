@@ -1,14 +1,16 @@
 CREATE OR ALTER PROCEDURE hotel.fill_fact_acc_hotel
+@start_date date,@end_date date
+
 AS
 BEGIN
     
     INSERT INTO log (procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('fill_fact_acc_hotel', GETDATE(), 'start', 'fact_acc_hotel', 0);
+    DECLARE @current_date DATE ;
+	set @current_date=@end_date;
 
-    DECLARE @end_date DATE = GETDATE();
-    DECLARE @current_date DATE = (SELECT MAX(CAST(time AS DATE)) FROM LOG WHERE procedure_name = 'fill_fact_acc_hotel' or procedure_name = 'fill_fact_acc_hotel_first_load');
-
-    WHILE @current_date < @end_date
+   
+    WHILE @current_date <= @end_date
     BEGIN
         if(not EXISTS(select * from hotel.fact_acc_hotel ))
         begin
@@ -149,6 +151,7 @@ END;
 
 GO
 CREATE OR ALTER PROCEDURE hotel.fill_fact_acc_hotel_first_load
+@start_date date,@end_date date
 AS
 BEGIN
     
@@ -159,17 +162,9 @@ BEGIN
     insert into [Log] (procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('fill_fact_acc_hotel_first_load', GETDATE(), 'truncate table hotel.fact_acc_hotel', 'hotel.fact_acc_hotel', @@ROWCOUNT);
 
+	declare  @current_date date=@start_date;
 
-    DECLARE @end_date DATE = GETDATE();
-
-    DECLARE @current_date DATE = (SELECT MIN(CAST(date_id AS DATE)) FROM hotel.fact_daily_hotel);
-    
-    if(@current_date is null)
-    begin
-        return;
-    end
-
-    WHILE @current_date < @end_date
+    WHILE @current_date <= @end_date
     BEGIN
         
         if(not EXISTS(select * from hotel.fact_acc_hotel ))

@@ -136,3 +136,6 @@ as BEGIN
     VALUES ('Hotel.fill_dim_room', GETDATE(), 'end', 'hotel.dim_room', 0);
 
 END
+
+
+select * from sa.Restaurant.category

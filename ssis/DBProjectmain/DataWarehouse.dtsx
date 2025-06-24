@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataWarehouse"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{3B6EB099-802A-4DFF-B7BD-07B172DE7F21}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{023906F4-5850-47FE-893B-43D86FA831F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -11166,7 +11166,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_category"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -11183,12 +11183,12 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{23AFD3F0-F605-409F-99D1-1FD7DA5266C6}"
-          SQLTask:SqlStatementSource="truncate table restaurant.dim_category" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table restaurant.dim_table" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
