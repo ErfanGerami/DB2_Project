@@ -13,6 +13,9 @@ TRUNCATE TABLE Hotel.tier;
 TRUNCATE TABLE Hotel.Country;
 truncate table LOG;
 
+SELECT count(*) from dw.hotel.fact_transactional_service
+select count(*) from sa.Hotel.service_detail
+select count(*) from sa.Restaurant.[order]
 -- Populate Hotel.Country
 INSERT INTO Hotel.Country (country_id, country_name, country_code) VALUES
 (1, 'United States', 'US'),

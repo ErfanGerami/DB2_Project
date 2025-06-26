@@ -1,3 +1,15 @@
+
+
+
+--create desired partition (change the date values)
+CREATE PARTITION FUNCTION pf_by_day (DATE)
+AS RANGE LEFT FOR VALUES (
+    '2024-01-01', '2024-01-02', '2024-01-03',
+    '2024-01-04', '2024-01-05', '2024-01-06',
+    '2024-01-07', '2024-01-08', '2024-01-09'
+);
+
+
 create schema Restaurant;
 create schema shared;
 
@@ -6,9 +18,9 @@ CREATE TABLE  Restaurant.dim_category (
     category_name VARCHAR(255),
     description TEXT
 );
-select * from shared.dim_date
+
 CREATE TABLE shared.dim_date (
-    time_key DATE ,
+    date_id DATE ,
     full_date_alternate_key VARCHAR(20),
     persian_full_date_alternate_key VARCHAR(20),
     day_number_of_week INT,
@@ -32,10 +44,7 @@ CREATE TABLE shared.dim_date (
     calendar_semester INT,
     persian_calendar_semester INT
 );
-select * from dw.hotel.fact_acc_hotel
-select * from dw.hotel.fact_daily_hotel
-select * from hotel.dim_room
-select * from sa.hotel.room
+
 -- WITH DateRange AS (
 --     SELECT CAST(GETDATE() - 10 AS DATE) AS d
 --     UNION ALL
@@ -98,13 +107,13 @@ select * from sa.hotel.room
 
 CREATE TABLE  Restaurant.dim_employee (
     employee_id INT ,
-    name VARCHAR(50) ,
-    last_name VARCHAR(50) ,
-    phone_number VARCHAR(20),
-	national_code varchar(20),
+    name VARCHAR(60) ,
+    last_name VARCHAR(60) ,
+    phone_number VARCHAR(30),
+	national_code varchar(30),
 	birthday DATE,
     role_id INT ,
-    role_name VARCHAR(100),
+    role_name VARCHAR(120),
     role_description TEXT,
     address TEXT,
     salary DECIMAL(10, 2),
@@ -115,10 +124,6 @@ CREATE TABLE  Restaurant.dim_employee (
 	gender varchar(6),
    
 );
-
-SELECT food_key, category_id, date_id, time_id AS Expr1, quantity, total_charge, total_ingridient_cost, total_charge_after_tax, total_tax_amount
-FROM     Restaurant.fact_daily_restaurant
-WHERE  (date_id >= CAST(? AS date)) AND (date_id < DATEADD([DAY], 1, CAST(? AS date)))
 
 
 CREATE TABLE  Restaurant.dim_table (
@@ -136,7 +141,7 @@ CREATE TABLE restaurant.dim_food (
     category_name VARCHAR(255),
     time_to_prepare INT,    
     meal VARCHAR(100),
-    cooking_method VARCHAR(100),
+    cooking_method VARCHAR(120),
     cost DECIMAL(10,2),
     ingrediant_cost DECIMAL(10,2),
     start_date DATE,
@@ -146,7 +151,6 @@ CREATE TABLE restaurant.dim_food (
 	first_served date
 );
 
-select * from Restaurant.dim_food
 
 
 
@@ -163,7 +167,7 @@ CREATE TABLE Restaurant.fact_transactional_restaurant (
     tax_amount DECIMAL(10,2),
     quantity INT,
     after_tax_charge DECIMAL(10,2)
-);
+)ON ps_by_day(date_id);
 
 CREATE TABLE Restaurant.fact_daily_restaurant (
     food_key INT,
@@ -174,7 +178,7 @@ CREATE TABLE Restaurant.fact_daily_restaurant (
     total_ingridient_cost DECIMAL(10,2),
     total_charge_after_tax DECIMAL(10,2),
     total_tax_amount DECIMAL(10,2)
-);
+)ON ps_by_day(date_id);
 
 CREATE TABLE Restaurant.fact_acc_restaurant (
     food_key INT,
@@ -189,9 +193,50 @@ CREATE TABLE Restaurant.fact_acc_restaurant (
 );
 
 
+create table Restaurant.update_log(
+    table_name VARCHAR(100),
+    time datetime,
+    date date,
+    DESCRIPTION text
+)
 
 
-drop table sa.moghare
+CREATE NONCLUSTERED INDEX idx_dim_date_date_id
+ON shared.dim_date(date_id);
+CREATE NONCLUSTERED INDEX idx_dim_category_id 
+ON Restaurant.dim_category(category_id);
+CREATE NONCLUSTERED INDEX idx_dim_employee_id 
+ON Restaurant.dim_employee(employee_id);
+CREATE NONCLUSTERED INDEX idx_dim_table_id 
+ON Restaurant.dim_table(table_id);
+CREATE NONCLUSTERED INDEX idx_dim_food_id 
+ON Restaurant.dim_food(food_id);
+
+CREATE NONCLUSTERED INDEX idx_dim_food_key 
+ON Restaurant.dim_food(food_key);
+CREATE NONCLUSTERED INDEX idx_fact_tr_restaurant_date_id 
+ON Restaurant.fact_transactional_restaurant(date_id);
+
+CREATE NONCLUSTERED INDEX idx_fact_tr_restaurant_food_key 
+ON Restaurant.fact_transactional_restaurant(food_key);
+
+CREATE NONCLUSTERED INDEX idx_fact_tr_restaurant_employee_id 
+ON Restaurant.fact_transactional_restaurant(employee_id);
+CREATE NONCLUSTERED INDEX idx_fact_daily_restaurant_date_id 
+ON Restaurant.fact_daily_restaurant(date_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
 create schema hotel;
 
 CREATE TABLE hotel.dim_room (
@@ -200,7 +245,7 @@ CREATE TABLE hotel.dim_room (
     capacity INT,
     floor INT,
     status_id INT,
-    status_name VARCHAR(50),
+    status_name VARCHAR(60),
     status_description TEXT,
     room_number INT,
     number_of_single_bed INT,
@@ -223,11 +268,11 @@ CREATE TABLE hotel.dim_item (
 );
 create table Hotel.dim_employee(
     employee_id INT,
-    national_code VARCHAR(20),
+    national_code VARCHAR(30),
     birthday DATE,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    phone_number VARCHAR(20),
+    first_name VARCHAR(60),
+    last_name VARCHAR(60),
+    phone_number VARCHAR(30),
     address TEXT,
     salary DECIMAL(10, 2),
     previous_salary DECIMAL(10,2),
@@ -241,29 +286,29 @@ create table Hotel.dim_employee(
 
 create table Hotel.dim_room_status(
     status_id INT,
-    status_name VARCHAR(50),
+    status_name VARCHAR(60),
     description TEXT
 );
 CREATE TABLE hotel.dim_guest (
     guest_id INT,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    national_code VARCHAR(20),
-    phone_number VARCHAR(20),
+    first_name VARCHAR(120),
+    last_name VARCHAR(120),
+    national_code VARCHAR(30),
+    phone_number VARCHAR(30),
     country_id INT,
-    country_name VARCHAR(100),
+    country_name VARCHAR(120),
     country_code VARCHAR(10),
     email VARCHAR(255),
     points INT,
     tier_id INT,
-    tier_type VARCHAR(100),
+    tier_type VARCHAR(120),
     tier_points_to_reach INT,
     discount_per_service DECIMAL(5,2),
     discount_per_booking DECIMAL(5,2)
 );
 CREATE TABLE hotel.dim_tier (
     tier_id INT,
-    type VARCHAR(100),
+    type VARCHAR(120),
     points_to_reach INT,
     discount_per_service DECIMAL(5,2),
     discount_per_booking DECIMAL(5,2)
@@ -282,7 +327,7 @@ create table  hotel.fact_transactional_service (
     cost DECIMAL(10,2),
     item_count INT,
     discount_amount DECIMAL(10,2)
-);
+)ON ps_by_day(date_id);
 
 create table hotel.fact_transactional_booking (
     room_key INT,
@@ -299,27 +344,9 @@ create table hotel.fact_transactional_booking (
     duration_time INT,
     total_service_discount DECIMAL(10,2),
     total_room_discount DECIMAL(10,2),
-);
-INSERT INTO hotel.fact_transactional_booking (
-    room_key, room_id, guest_id, tier_id, checkin_time, checkout_time,
-    total_service_cost, total_service_charge, total_service_item_count,
-    total_room_charge, total_charge, duration_time,
-    total_service_discount, total_room_discount
-)
-VALUES
--- Original unique entries
-(11, 202, 202, 2, '2025-06-02', '2025-06-05', 200.00, 20.00, 4, 450.00, 660.00, 3, 15.00, 30.00),
-(4, 202, 203, 1, '2025-06-04', '2025-06-04', 50.00, 5.00, 1, 100.00, 155.00, 1, 0.00, 5.00),
-(4, 202, 204, 3, '2025-06-05', '2025-06-07', 180.00, 18.00, 2, 350.00, 548.00, 2, 20.00, 25.00)
+)ON ps_by_day(date_id);
 
 
-
-
-SELECT Restaurant.dim_food.food_id, Restaurant.dim_food.food_name, casT(Restaurant.fact_acc_restaurant.running_quantity as decimal(10,2)) / number_of_days_in_menu AS avg_sale,(select max(casT(f.running_quantity as decimal(10,2)) / f.number_of_days_in_menu ) from Restaurant.fact_acc_restaurant f  ) as max_sale_per_day
-FROM     Restaurant.fact_acc_restaurant INNER JOIN
-                  Restaurant.dim_food ON Restaurant.fact_acc_restaurant.food_key = Restaurant.dim_food.food_key
-
-select * from Restaurant.fact_acc_restaurant  
 create table hotel.fact_daily_hotel (
     room_key INT,
     room_id INT,
@@ -330,7 +357,7 @@ create table hotel.fact_daily_hotel (
     total_service_cost DECIMAL(10,2),
     total_service_charge DECIMAL(10,2),
     total_service_discount DECIMAL(10,2),    
-);
+)ON ps_by_day(date_id);
 
 create table hotel.fact_acc_hotel (
     room_key INT,
@@ -355,10 +382,30 @@ CREATE table Log(
     number_of_rows INT
 );
 
-create table restaurant.update_log(
-    table_name VARCHAR(100),
-    time datetime,
-    date date,
-    DESCRIPTION text
-)
+
+
+CREATE NONCLUSTERED INDEX idx_dim_room_key 
+ON hotel.dim_room(room_key);
+
+CREATE NONCLUSTERED INDEX idx_dim_room_id 
+ON hotel.dim_room(room_id);
+
+CREATE NONCLUSTERED INDEX idx_dim_item_id 
+ON hotel.dim_item(item_id);
+CREATE NONCLUSTERED INDEX idx_dim_employee_id 
+ON hotel.dim_employee(employee_id);
+CREATE NONCLUSTERED INDEX idx_dim_guest_id 
+ON hotel.dim_guest(guest_id);
+
+
+CREATE NONCLUSTERED INDEX idx_fact_tr_service_date_id 
+ON hotel.fact_transactional_service(date_id);
+
+CREATE NONCLUSTERED INDEX idx_fact_tr_service_guest_id 
+ON hotel.fact_transactional_service(guest_id);
+
+CREATE NONCLUSTERED INDEX idx_fact_tr_service_item_id 
+ON hotel.fact_transactional_service(item_id);
+CREATE NONCLUSTERED INDEX idx_fact_daily_hotel_date_id 
+ON hotel.fact_daily_hotel(date_id);
 

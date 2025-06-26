@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataWarehouse"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{BF5165F7-A986-4780-BE0E-1C9EC36FCDD1}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{DC999D01-6D0B-4FD9-B704-B38B0231CFD7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -36,7 +36,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -58,7 +58,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date2"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -80,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="calculate first date3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8832,7 +8832,7 @@ where [refTable].[food_key] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10931,7 +10931,7 @@ FROM    restaurant.fact_transactional_restaurant where
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -12066,7 +12066,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
           DTS:LocaleID="-1"
           DTS:ObjectName="log"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -12119,7 +12119,7 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate dim_table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12660,33 +12660,33 @@ where  (order_date &gt;= CAST(? AS date)) AND (order_date &lt; DATEADD([DAY], 1,
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="464.285715274057,266.196078270502" />
+          TopLeft="475.00000101115,282.764705706959" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="415.582525873539,201.170369677971">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="123.903189400517,65.025708592531"
+              EndConnector="134.617475137611,81.5943360289884"
               Start="0,0"
-              End="123.903189400517,57.525708592531">
+              End="134.617475137611,74.0943360289884">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.47200444477" />
+                    End="0,29.2171024780734" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.47200444477"
-                    Point2="0,26.47200444477"
-                    Point3="4,26.47200444477" />
+                    Point1="0,29.2171024780734"
+                    Point2="0,33.2171024780734"
+                    Point3="4,33.2171024780734" />
                   <mssgle:LineSegment
-                    End="119.903189400517,26.47200444477" />
+                    End="130.617475137611,33.2171024780734" />
                   <mssgle:CubicBezierSegment
-                    Point1="119.903189400517,26.47200444477"
-                    Point2="123.903189400517,26.47200444477"
-                    Point3="123.903189400517,30.47200444477" />
+                    Point1="130.617475137611,33.2171024780734"
+                    Point2="134.617475137611,33.2171024780734"
+                    Point3="134.617475137611,37.2171024780734" />
                   <mssgle:LineSegment
-                    End="123.903189400517,57.525708592531" />
+                    End="134.617475137611,74.0943360289884" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
