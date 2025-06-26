@@ -26,13 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-AV3QQ5H</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG+xpzefZPkW2S2i/z+4wJAAAAAACAAAAAAAQZgAAAAEAACAAAACRJwhK7HANPhSW4iObngMpI4/Oofvd0+YSFJgKXAW9gQAAAAAOgAAAAAIAACAAAACmp26ttGNFMxxzUYi1cLwjuB4vWzcxR0BkaBu7uyFRPZAAAADQG7b9/MwyWzVrkeo4dwDt7JPDOVbQQVKH2bdDpieazfEiOrozgU0i54Gjv+OsIgZpbBl8+SFfkniX47OnZTZP7CRoshd1delHMgqac/WU4D5bTZNRphlv8z67Y5MWrI5YYzYYmH3jTiDI8yuDM46VamniqLlU0cTtndrkr3hRxhnYO7Y9DxMegf22ko/aKulAAAAAgfrz/qn7+Xia0btwPljOF/hvOqLVPq9d3PbK3Ks5StdVU2jqiFSXwv4iyqVHWyu/pFgeygp1y/ApKah5PPT/Bw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG+xpzefZPkW2S2i/z+4wJAAAAAACAAAAAAAQZgAAAAEAACAAAAAwFp9uX4F74tb1SjVImnoNXleJcq+Hx76eaTu25qe62gAAAAAOgAAAAAIAACAAAACXWpRrvtf9l5sCE83/0kWn5GgMnVHkHQp23oH8nB2hN5AAAAD/VOnsh+h0u+M6NzgtM7WP0xim/tkE08KTKY3OSPySlMMiIRJbTIUdkjqvR0hrt9HOXbJD7oDyA92h081U9QMgl7OuMEtIr6WBM+4CgUTCFBeFwVUASyhu4QJpLA3uJrrVN4Y/E9MZWMQSeUi9KM6nkv0Dep1Sa95+TCr+NokM2QYfWGX6J4niJ1o9qhrQiKxAAAAAwIcHwt66++4wgQ1A1/VPnX70i9ngkVc86kq6N529KSZJtm3v3g9lC1QRSYkZgEdHyNjL/BCoYUpMmV09lUIaXA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="DataWarehouseFirstLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DataWarehouse.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="StaginArea.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LocalHost.DW.conmgr" />
@@ -493,10 +493,10 @@
                 <SSIS:Property SSIS:Name="Name">DataWarehouseFirstLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">62</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">63</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{62D03AC5-FD23-4D2C-A57A-0BEBE2B48FA3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8AEE5754-9589-4C3C-9C73-002D16056E4E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -510,10 +510,10 @@
                 <SSIS:Property SSIS:Name="Name">DataWarehouse</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">16</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">20</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7B4C3B96-4BAD-4308-88ED-56FB5C5BAFC2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BF5165F7-A986-4780-BE0E-1C9EC36FCDD1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -521,16 +521,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="StaginArea.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{61F29E00-90BE-44F7-A1C2-C88EE3C42E2A}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{07D23E12-14FF-494F-8350-DA01A096C0C8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">StaginArea</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{21258121-2B20-4B21-8BC8-B03A5B77E634}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0851DE7E-35CC-48FC-90F5-41010BB4AA63}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

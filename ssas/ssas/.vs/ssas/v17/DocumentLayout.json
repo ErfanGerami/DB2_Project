@@ -1,62 +1,74 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\",
+  "WorkspaceRootPath": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_service.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_service.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_transactional_service.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_booking.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_transactional_booking.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_transactional_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_daily_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_acc_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_daily_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_acc_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Transactional Service.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Transactional Service.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_daily_hotel.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Daily Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Room.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Acc Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\DataWarehouseSourceView.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Item.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Item.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Role.role||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Role.role||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Room Status.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room Status.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Room Status.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\DataWarehouseSourceView.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Guest.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Guest.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_booking.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_transactional_booking.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_daily_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\fact_transactional_restaurant.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Transactional Service.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Transactional Service.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Daily Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Fact Acc Hotel.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Role.role||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{83C8DE7E-0AEF-49DD-9710-7882FC9A0B46}|ssas\\ssas.dwproj|solutionrelative:ssas\\Role.role||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,15 +78,26 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "fact_acc_restaurant.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube",
+              "RelativeDocumentMoniker": "ssas\\fact_acc_restaurant.cube",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube [Design]",
+              "RelativeToolTip": "ssas\\fact_acc_restaurant.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:02:05.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "fact_acc_hotel.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_hotel.cube",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_hotel.cube",
               "RelativeDocumentMoniker": "ssas\\fact_acc_hotel.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_hotel.cube [Design]",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_acc_hotel.cube [Design]",
               "RelativeToolTip": "ssas\\fact_acc_hotel.cube [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-06-17T11:57:50.736Z",
@@ -82,47 +105,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fact_daily_restaurant.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube",
-              "RelativeDocumentMoniker": "ssas\\fact_daily_restaurant.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube [Design]",
-              "RelativeToolTip": "ssas\\fact_daily_restaurant.cube [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T09:01:54.538Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fact_transactional_restaurant.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube",
-              "RelativeDocumentMoniker": "ssas\\fact_transactional_restaurant.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube [Design]",
-              "RelativeToolTip": "ssas\\fact_transactional_restaurant.cube [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T09:01:53.522Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "fact_transactional_booking.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_booking.cube",
-              "RelativeDocumentMoniker": "ssas\\fact_transactional_booking.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_booking.cube [Design]",
-              "RelativeToolTip": "ssas\\fact_transactional_booking.cube [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T09:02:01.611Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "fact_transactional_service.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_service.cube",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_service.cube",
               "RelativeDocumentMoniker": "ssas\\fact_transactional_service.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_service.cube [Design]",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_service.cube [Design]",
               "RelativeToolTip": "ssas\\fact_transactional_service.cube [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-06-17T09:01:53.042Z",
@@ -130,109 +117,157 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "fact_daily_hotel.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_hotel.cube",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_hotel.cube",
               "RelativeDocumentMoniker": "ssas\\fact_daily_hotel.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_daily_hotel.cube [Design]",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_hotel.cube [Design]",
               "RelativeToolTip": "ssas\\fact_daily_hotel.cube [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T11:14:35.999Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-17T11:14:35.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fact_acc_restaurant.cube [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube",
-              "RelativeDocumentMoniker": "ssas\\fact_acc_restaurant.cube",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_acc_restaurant.cube [Design]",
-              "RelativeToolTip": "ssas\\fact_acc_restaurant.cube [Design]",
+              "DocumentIndex": 4,
+              "Title": "Dim Room.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room.dim",
+              "RelativeDocumentMoniker": "ssas\\Dim Room.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room.dim [Design]",
+              "RelativeToolTip": "ssas\\Dim Room.dim [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T09:02:05.183Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-23T22:00:00.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Fact Transactional Service.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Transactional Service.dim",
-              "RelativeDocumentMoniker": "ssas\\Fact Transactional Service.dim",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Transactional Service.dim [Design]",
-              "RelativeToolTip": "ssas\\Fact Transactional Service.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T12:08:38.26Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Fact Daily Hotel.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim",
-              "RelativeDocumentMoniker": "ssas\\Fact Daily Hotel.dim",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim [Design]",
-              "RelativeToolTip": "ssas\\Fact Daily Hotel.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T12:07:29.945Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Fact Acc Hotel.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim",
-              "RelativeDocumentMoniker": "ssas\\Fact Acc Hotel.dim",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim [Design]",
-              "RelativeToolTip": "ssas\\Fact Acc Hotel.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T12:07:52.039Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Role.role [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Role.role",
-              "RelativeDocumentMoniker": "ssas\\Role.role",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Role.role [Design]",
-              "RelativeToolTip": "ssas\\Role.role [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T11:09:47.206Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "DataWarehouseSourceView.dsv [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv",
               "RelativeDocumentMoniker": "ssas\\DataWarehouseSourceView.dsv",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv [Design]",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\DataWarehouseSourceView.dsv [Design]",
               "RelativeToolTip": "ssas\\DataWarehouseSourceView.dsv [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-06-17T11:22:19.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dim Date.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Date.dim",
-              "RelativeDocumentMoniker": "ssas\\Dim Date.dim",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Date.dim [Design]",
-              "RelativeToolTip": "ssas\\Dim Date.dim [Design]",
+              "DocumentIndex": 6,
+              "Title": "Dim Item.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Item.dim",
+              "RelativeDocumentMoniker": "ssas\\Dim Item.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Item.dim [Design]",
+              "RelativeToolTip": "ssas\\Dim Item.dim [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T09:32:09.466Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-23T21:59:38.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Dim Room Status.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room Status.dim",
+              "RelativeDocumentMoniker": "ssas\\Dim Room Status.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Room Status.dim [Design]",
+              "RelativeToolTip": "ssas\\Dim Room Status.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T11:46:57.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Dim Guest.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Guest.dim",
+              "RelativeDocumentMoniker": "ssas\\Dim Guest.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Guest.dim [Design]",
+              "RelativeToolTip": "ssas\\Dim Guest.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-23T21:59:04.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "fact_transactional_booking.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_booking.cube",
+              "RelativeDocumentMoniker": "ssas\\fact_transactional_booking.cube",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_booking.cube [Design]",
+              "RelativeToolTip": "ssas\\fact_transactional_booking.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:02:01.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "fact_daily_restaurant.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube",
+              "RelativeDocumentMoniker": "ssas\\fact_daily_restaurant.cube",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_daily_restaurant.cube [Design]",
+              "RelativeToolTip": "ssas\\fact_daily_restaurant.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:01:54.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "fact_transactional_restaurant.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube",
+              "RelativeDocumentMoniker": "ssas\\fact_transactional_restaurant.cube",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\fact_transactional_restaurant.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:01:53.522Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Dim Room Status.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Room Status.dim",
-              "RelativeDocumentMoniker": "ssas\\Dim Room Status.dim",
-              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Room Status.dim [Design]",
-              "RelativeToolTip": "ssas\\Dim Room Status.dim [Design]",
+              "Title": "Fact Transactional Service.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Transactional Service.dim",
+              "RelativeDocumentMoniker": "ssas\\Fact Transactional Service.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Transactional Service.dim [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\Fact Transactional Service.dim [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-17T11:46:57.939Z"
+              "WhenOpened": "2025-06-17T12:08:38.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Fact Daily Hotel.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim",
+              "RelativeDocumentMoniker": "ssas\\Fact Daily Hotel.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\Fact Daily Hotel.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T12:07:29.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Fact Acc Hotel.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim",
+              "RelativeDocumentMoniker": "ssas\\Fact Acc Hotel.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\Fact Acc Hotel.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T12:07:52.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Role.role [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Role.role",
+              "RelativeDocumentMoniker": "ssas\\Role.role",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Role.role [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\Role.role [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T11:09:47.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\CD CENTER\\Desktop\\DB2_Project\\ssas\\ssas\\ssas\\Dim Date.dim",
+              "RelativeDocumentMoniker": "ssas\\Dim Date.dim",
+              "ToolTip": "C:\\Users\\CD CENTER\\Desktop\\DBProject\\ssas\\ssas\\ssas\\Dim Date.dim [Design]",
+              "RelativeToolTip": "..\\..\\..\\DBProject\\ssas\\ssas\\ssas\\Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-17T09:32:09.466Z"
             }
           ]
         }

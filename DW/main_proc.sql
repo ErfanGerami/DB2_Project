@@ -156,3 +156,10 @@ select * from hotel.dim_room
 
 select * from hotel.fact_acc_hotel
 
+
+
+select * from hotel.dim_room
+
+select * from dw.hotel.fact_acc_hotel 
+
+select * from hotel.dim_room_status

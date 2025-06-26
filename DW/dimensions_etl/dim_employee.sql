@@ -10,11 +10,11 @@ AS BEGIN
     insert into hotel.dim_employee (
         employee_id, national_code, birthday,
         first_name, last_name, phone_number, address,
-        salary, hire_date, is_active,gender
+        salary, hire_date, is_active,gender,[role]
     )
     SELECT employee_id, national_code, birthday,
            first_name, last_name, phone_number, address,
-           salary, hire_date, is_active,gender
+           salary, hire_date, is_active,gender,[role]
     FROM SA.hotel.employee;
     INSERT INTO LOG(procedure_name, time, description, effected_table, number_of_rows)
     VALUES ('Hotel.fill_dim_employee_first_load', GETDATE(), 'insert into hotel.dim_employee', 'hotel.dim_employee', @@ROWCOUNT);
@@ -51,12 +51,12 @@ BEGIN
         INSERT (
             employee_id, national_code, birthday,
             first_name, last_name, phone_number, address,
-            salary, hire_date, is_active, gender
+            salary, hire_date, is_active, gender,[role]
         )
         VALUES (
             source.employee_id, source.national_code, source.birthday,
             source.first_name, source.last_name, source.phone_number, source.address,
-            source.salary, source.hire_date, source.is_active, source.gender
+            source.salary, source.hire_date, source.is_active, source.gender,[role]
         )
     OUTPUT $action INTO @Changes;
 
@@ -81,3 +81,4 @@ BEGIN
 END;
 
 
+update sa.restaurant.food set tax=100;
